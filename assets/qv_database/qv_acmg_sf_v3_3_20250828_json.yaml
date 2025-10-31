@@ -1,0 +1,90 @@
+qv_set_id: qv_acmg_sf_v3_3_20250828
+version: 1.0.0
+title: ACMG secondary findings
+description: Report pathogenic or likely pathogenic variants in ACMG SF v3.3 genes with inheritance-aware rules and technical QC.
+metadata:
+  created: '2025-08-28'
+  authors: SwitzerlandOmics
+  tags: [ACMG, SF, Clinical, QC]
+  acmg_sf_version: v3.3
+  schema_fields: SYMBOL,Inheritance,sex,genotype,IMPACT,ACMG_CLASS,SVTYPE,CNV_EXON_COUNT,DP,GQ,AB,TTN_PSI
+
+filters:
+  region_include: { description: Limit to ACMG SF genes v3.3, logic: keep_if, field: "OVERLAP(targets.acmg_sf.v3_3.bed)", operator: '>=', value: 1 }
+  consent_sf:     { description: Patient opted in to receive secondary findings, logic: keep_if, field: consent_sf_return, operator: '==', value: 1 }
+  min_dp:         { description: Minimum read depth, logic: keep_if, field: DP, operator: '>=', value: 10 }
+  min_gq:         { description: Minimum genotype quality, logic: keep_if, field: GQ, operator: '>=', value: 20 }
+
+_common:
+  p_or_lp: &p_or_lp
+    any_of:
+      - { field: ACMG_CLASS, operator: '==', value: P }
+      - { field: ACMG_CLASS, operator: '==', value: LP }
+  gt_het_or_hom: &gt_het_or_hom
+    any_of:
+      - { field: genotype, operator: '==', value: 1 }
+      - { field: genotype, operator: '==', value: 2 }
+
+criteria:
+  SF_P_or_LP:
+    description: Variant classified as pathogenic or likely pathogenic
+    all_of:
+      - *p_or_lp
+
+  SF_AD:
+    description: Autosomal dominant or X linked dominant. One qualifying allele is sufficient.
+    all_of:
+      - any_of:
+          - { field: Inheritance, operator: '==', value: AD }
+          - { field: Inheritance, operator: '==', value: XLD }
+      - *gt_het_or_hom
+      - *p_or_lp
+
+  SF_XL_male:
+    description: X linked recessive. Male hemizygous.
+    all_of:
+      - { field: Inheritance, operator: '==', value: XLR }
+      - { field: sex, operator: '==', value: M }
+      - { field: genotype, operator: '==', value: 1 }
+      - *p_or_lp
+
+  SF_AR_homozygous:
+    description: Autosomal recessive. Homozygous P or LP variant.
+    all_of:
+      - { field: Inheritance, operator: '==', value: AR }
+      - { field: genotype, operator: '==', value: 2 }
+      - *p_or_lp
+
+  SF_AR_comphet:
+    description: Autosomal recessive. Compound heterozygous P or LP variants. Phase check recommended.
+    all_of:
+      - { field: Inheritance, operator: '==', value: AR }
+      - { field: genotype, operator: '==', value: 1 }
+      - *p_or_lp
+      - group_by:
+          keys: [sample, SYMBOL]
+          count: { operator: '>=', value: 2 }
+
+  SF_TTN_truncating_psi90:
+    description: TTN truncating in exons with high cardiac expression (PSI >= 0.9).
+    all_of:
+      - { field: SYMBOL, operator: '==', value: TTN }
+      - { field: IMPACT, operator: '==', value: HIGH }
+      - { field: TTN_PSI, operator: '>=', value: 0.9 }
+      - *gt_het_or_hom
+      - *p_or_lp
+
+  SF_SV_CNV:
+    description: P or LP exon level CNVs in SF genes.
+    all_of:
+      - any_of:
+          - { field: SVTYPE, operator: '==', value: DEL }
+          - { field: SVTYPE, operator: '==', value: DUP }
+      - { field: CNV_EXON_COUNT, operator: '>=', value: 1 }
+      - *p_or_lp
+
+notes:
+  - Assumes ACMG_CLASS values P or LP. If not available, add gene specific LoF rules separately.
+  - Assumes targets.acmg_sf.v3_3.bed defines the ACMG SF v3.3 gene set.
+  - Consent filter is optional. Remove if not applicable.
+

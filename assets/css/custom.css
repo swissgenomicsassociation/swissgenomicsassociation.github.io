@@ -1,0 +1,20 @@
+.table-wrapper {
+  overflow-x: scroll;
+}
+
+/* Custom iframe overflow scroll box for PanelAppRex */
+
+.full-width-iframe iframe {
+  /* display: block; */
+  width: 100%;
+  border: none;
+}
+
+.full-width-iframe,
+.full-width-iframe iframe {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  display: block;
+}
+
+

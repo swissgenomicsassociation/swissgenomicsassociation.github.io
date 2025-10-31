@@ -1,0 +1,29 @@
+[
+  {
+	    "title": "Community Support",
+    "description": "We offer free access to data and technical documents to foster a collaborative environment.",
+    "image": {
+      "url": "images/features/noun_branding_1885335.svg",
+      "width": 80,
+      "height": 80
+    }
+  },
+  {
+    "title": "Designed for clarity",
+    "description": "Our tools distil complex omic evidence into clean, confident answers, built for those who need to know, not guess.",
+    "image": {
+      "url": "images/features/noun_The Process_1885341.svg",
+      "width": 80,
+      "height": 80
+    }
+  },
+  {
+    "title": "Compliance",
+    "description": "We stay up to date on the latest regulations and trends in drug / device development including ICH and EudraLex.",
+    "image": {
+      "url": "images/features/noun_3d modeling_1885342.svg",
+      "width": 80,
+      "height": 80
+    }
+  }
+]

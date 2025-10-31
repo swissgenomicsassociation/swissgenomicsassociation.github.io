@@ -1,0 +1,28 @@
+<!-- <a href="{{ site.baseurl }}"> -->
+
+<div class='header'>
+  <div class="container">
+    <div class="logo">
+      <a href="{{ '/' | relative_url }}">
+        <span><img width="{{ site.logo.desktop_width }}" height="{{ site.logo.desktop_height }}" alt="{{ site.title }}" src="{{ site.logo.desktop | relative_url }}" /></span>
+        <span class="logo-text">Swiss Genomics Association</span>
+      </a>
+    </div>
+    <div class="logo-mobile">
+      <a href="{{ '/' | relative_url }}">
+        <span><img width="{{ site.logo.mobile_width }}" height="{{ site.logo.mobile_height }}" alt="{{ site.title }}" src="{{ site.logo.mobile | relative_url }}" /></span>
+        <span class="logo-text">Swiss Genomics Association</span>
+      </a>
+    </div>
+    {% include main-menu.html %}
+    {% include hamburger.html %}
+  </div>
+</div>
+
+{% assign math = page.math | default: layout.math | default: site.math %}
+
+{% case math %}
+  {% when "mathjax" %}
+    {% include mathjax.html %}
+{% endcase %}
+
