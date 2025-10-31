@@ -39,6 +39,8 @@ GEM
       webrick (~> 1.7)
     jekyll-environment-variables (1.0.1)
       jekyll (>= 3.0, < 5.x)
+    jekyll-multiple-languages-plugin (1.8.0)
+      jekyll (>= 2.0, < 5.0)
     jekyll-sass-converter (3.0.0)
       sass-embedded (~> 1.54)
     jekyll-watch (2.2.1)
@@ -79,6 +81,7 @@ PLATFORMS
 DEPENDENCIES
   jekyll (~> 4.4.1)
   jekyll-environment-variables
+  jekyll-multiple-languages-plugin
   webrick
 
 BUNDLED WITH

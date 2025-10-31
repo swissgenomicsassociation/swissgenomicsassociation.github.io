@@ -3,6 +3,8 @@ permalink: pretty
 title: 'Swiss Genomics Association'
 motto: 'Science-backed guidelines.'
 
+
+
 logo:
   mobile: "images/logo/logo_v2.svg"
   mobile_height: "33px"
@@ -57,6 +59,13 @@ sass:
 
 plugins:
   - jekyll-environment-variables
+  - jekyll-multiple-languages-plugin
+
+# language support
+languages: ["en", "de", "fr", "it"]  # choose the languages you want
+exclude_from_localizations: ["javascript", "images", "css", "assets"]
+
+default_locale_in_subfolder: false  # keep English at the root
 
 exclude:
   - Gemfile
@@ -69,3 +78,4 @@ exclude:
   - LICENSE.md
   - LICENSE
   - README.md
+
