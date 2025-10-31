@@ -1,0 +1,87 @@
+meta qv_set_id="qv_acmg_sf_v3_3_20250828"
+meta version="1.0.0"
+meta title="ACMG secondary findings"
+meta description="Report pathogenic or likely pathogenic variants in ACMG SF v3.3 genes with inheritance-aware rules and technical QC."
+meta created="2025-08-28"
+meta authors=SwitzerlandOmics
+meta tags=ACMG,SF,Clinical,QC
+meta acmg_sf_version="v3.3"
+meta schema_fields="SYMBOL,Inheritance,sex,genotype,IMPACT,ACMG_CLASS,SVTYPE,CNV_EXON_COUNT,DP,GQ,AB,TTN_PSI"
+
+note "Assumes ACMG_CLASS values P or LP. If not available, add gene specific LoF rules separately."
+note "Assumes targets.acmg_sf.v3_3.bed defines the ACMG SF v3.3 gene set."
+note "Consent filter is optional. Remove if not applicable."
+
+filter region_include desc="Limit to ACMG SF genes v3.3" field=OVERLAP(targets.acmg_sf.v3_3.bed) operator=">=" value=1 logic=keep_if
+filter consent_sf desc="Patient opted in to receive secondary findings" field=consent_sf_return operator="==" value=1 logic=keep_if
+filter min_dp desc="Minimum read depth" field=DP operator=">=" value=10 logic=keep_if
+filter min_gq desc="Minimum genotype quality" field=GQ operator=">=" value=20 logic=keep_if
+
+criteria SF_P_or_LP logic=and desc="Variant classified as pathogenic or likely pathogenic"
+criteria SF_P_or_LP group=any_of:start
+criteria SF_P_or_LP field=ACMG_CLASS operator="==" value=P
+criteria SF_P_or_LP field=ACMG_CLASS operator="==" value=LP
+criteria SF_P_or_LP group=any_of:end
+
+criteria SF_AD logic=and desc="Autosomal dominant or X linked dominant. One qualifying allele is sufficient."
+criteria SF_AD group=any_of:start
+criteria SF_AD field=Inheritance operator="==" value=AD
+criteria SF_AD field=Inheritance operator="==" value=XLD
+criteria SF_AD group=any_of:end
+criteria SF_AD group=any_of:start
+criteria SF_AD field=genotype operator="==" value=1
+criteria SF_AD field=genotype operator="==" value=2
+criteria SF_AD group=any_of:end
+criteria SF_AD field=ACMG_CLASS operator="==" value=P
+criteria SF_AD field=ACMG_CLASS operator="==" value=LP
+
+criteria SF_XL_male logic=and desc="X linked recessive. Male hemizygous."
+criteria SF_XL_male field=Inheritance operator="==" value=XLR
+criteria SF_XL_male field=sex operator="==" value=M
+criteria SF_XL_male field=genotype operator="==" value=1
+criteria SF_XL_male group=any_of:start
+criteria SF_XL_male field=ACMG_CLASS operator="==" value=P
+criteria SF_XL_male field=ACMG_CLASS operator="==" value=LP
+criteria SF_XL_male group=any_of:end
+
+criteria SF_AR_homozygous logic=and desc="Autosomal recessive. Homozygous P or LP variant."
+criteria SF_AR_homozygous field=Inheritance operator="==" value=AR
+criteria SF_AR_homozygous field=genotype operator="==" value=2
+criteria SF_AR_homozygous group=any_of:start
+criteria SF_AR_homozygous field=ACMG_CLASS operator="==" value=P
+criteria SF_AR_homozygous field=ACMG_CLASS operator="==" value=LP
+criteria SF_AR_homozygous group=any_of:end
+
+criteria SF_AR_comphet logic=and desc="Autosomal recessive. Compound heterozygous P or LP variants. Phase check recommended."
+criteria SF_AR_comphet field=Inheritance operator="==" value=AR
+criteria SF_AR_comphet field=genotype operator="==" value=1
+criteria SF_AR_comphet group=any_of:start
+criteria SF_AR_comphet field=ACMG_CLASS operator="==" value=P
+criteria SF_AR_comphet field=ACMG_CLASS operator="==" value=LP
+criteria SF_AR_comphet group=any_of:end
+criteria SF_AR_comphet group_by=sample,SYMBOL count=">=2"
+
+criteria SF_TTN_truncating_psi90 logic=and desc="TTN truncating in exons with high cardiac expression (PSI >= 0.9)."
+criteria SF_TTN_truncating_psi90 field=SYMBOL operator="==" value=TTN
+criteria SF_TTN_truncating_psi90 field=IMPACT operator="==" value=HIGH
+criteria SF_TTN_truncating_psi90 field=TTN_PSI operator=">=" value=0.9
+criteria SF_TTN_truncating_psi90 group=any_of:start
+criteria SF_TTN_truncating_psi90 field=genotype operator="==" value=1
+criteria SF_TTN_truncating_psi90 field=genotype operator="==" value=2
+criteria SF_TTN_truncating_psi90 group=any_of:end
+criteria SF_TTN_truncating_psi90 group=any_of:start
+criteria SF_TTN_truncating_psi90 field=ACMG_CLASS operator="==" value=P
+criteria SF_TTN_truncating_psi90 field=ACMG_CLASS operator="==" value=LP
+criteria SF_TTN_truncating_psi90 group=any_of:end
+
+criteria SF_SV_CNV logic=and desc="P or LP exon level CNVs in SF genes."
+criteria SF_SV_CNV group=any_of:start
+criteria SF_SV_CNV field=SVTYPE operator="==" value=DEL
+criteria SF_SV_CNV field=SVTYPE operator="==" value=DUP
+criteria SF_SV_CNV group=any_of:end
+criteria SF_SV_CNV field=CNV_EXON_COUNT operator=">=" value=1
+criteria SF_SV_CNV group=any_of:start
+criteria SF_SV_CNV field=ACMG_CLASS operator="==" value=P
+criteria SF_SV_CNV field=ACMG_CLASS operator="==" value=LP
+criteria SF_SV_CNV group=any_of:end
+

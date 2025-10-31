@@ -1,0 +1,130 @@
+
+## Swiss Genomics Association – Comprehensive Writing Philosophy
+
+### Core Principles
+
+* Clarity is authority. Simplicity is not style alone; it demonstrates rigorous thinking.
+* Truth before style. Insight beats adjectives. Avoid selling; reveal the system.
+* The user or reader is the hero. Write for intelligent, sceptical people who respect evidence and logic.
+* Precision over performance. Good writing persuades through clarity and structure, not flair.
+* Structure reveals thinking. Show how parts connect: cause and consequence, observation and insight, architecture and outcome.
+* Consequence trumps capability. The result for the user or the field matters more than features or technical terms.
+
+---
+
+### Scientific Writing Principles (e.g. for Nature Genetics)
+
+* Use clear, precise, succinct language.
+* Avoid generic phrasing or vague summaries.
+* Maintain a professional, academic tone without hype or promotional language.
+* Prefer sentence-based exposition over lists, unless a list truly clarifies complex ideas.
+* Avoid rhetorical questions.
+* Never use em-dashes; choose commas, semicolons, or separate sentences.
+* Keep paragraphs concise, typically three to five sentences.
+* Maintain British spelling.
+* Cite references inline when provided, preserving citation details unless instructed otherwise.
+* Prioritise clarity, logical flow, and evidence-based reasoning.
+* Avoid filler phrases such as “It is important to note that…” or “It should be highlighted that…”.
+* Do not use superlatives like “ground-breaking” or “revolutionary” unless substantiated by evidence.
+* Ensure comparisons and claims are cautious and evidence-based.
+* Write with persuasive precision, aiming to inform and convince expert readers.
+* Vary sentence structures; avoid repetition of phrases like “Importantly,” or “Notably,” at sentence beginnings.
+* Preserve technical detail, but explain it succinctly and accessibly.
+* Keep titles and section headings in sentence case.
+* When summarising, synthesise rather than simply listing facts.
+* Prefer direct statements over hedging, unless genuine uncertainty exists.
+
+---
+
+### General Writing Style for All Contexts
+
+* One core idea per piece. The reader should be able to summarise it in one sentence.
+
+* Avoid puffery and clichés:
+
+  * “game-changing”
+  * “revolutionary”
+  * “unlocking the power of…”
+  * “seamless”
+  * “at the intersection of X and Y”
+  * “empowering clinicians”
+  * “designed with you in mind”
+  * “built for the future”
+  * “in today’s world…”
+
+* Replace hype with consequences:
+
+  > Instead of “delivering revolutionary insights,” write “quantifying the probability of genetic disease, even when no variant is observed.”
+
+* Avoid long introductory flourishes. Begin with a direct statement of problem, insight, or result.
+
+* Use precise words: “probability,” “evidence,” “uncertainty,” “coverage,” “diagnostic yield.”
+
+* Be transparent about limitations, data gaps, or remaining uncertainties. This earns trust.
+
+* Keep sentences short where possible. Split complex thoughts into separate sentences for clarity.
+
+* Let your writing leave room for the reader’s conclusion. Don’t tie every piece with a marketing bow.
+
+* Avoid adjectives unless they are provable or meaningful.
+
+---
+
+### Structure Patterns
+
+* **The Reveal**
+
+  > “Everyone looks at observed variants. Few measure what’s missing. We do both.”
+
+* **The Bridge**
+
+  > “Genetic testing typically stops at what’s seen. Missing variants matter. We quantify them so clinicians can act on a complete picture.”
+
+* **The Mirror**
+
+  > “Historians measure silence as carefully as speech. We measure unsequenced regions as rigorously as observed data.”
+
+* **Quiet Power Statements**
+
+  > “We quantify uncertainty. So it stops being uncertainty.”
+
+---
+
+### Practical Writing Prompts
+
+* What is the single idea of this piece?
+* Can a colleague repeat it back after thirty seconds?
+* What problem does this solve? Why couldn’t it be solved before?
+* What is the evidence or architecture behind our claim?
+* Why should anyone outside our company care?
+* Have I avoided clichés and filler phrases?
+* Have I avoided adjectives unless strictly provable?
+* Could this piece be read aloud in a quiet room and feel honest and intelligent rather than performative?
+
+---
+
+### Design & Visual Alignment
+
+* Colour: restrained, monochrome plus a single accent.
+* Typography: clean sans-serif, generous spacing, calm authority.
+* Motion: slow fades, confident cuts, logical rather than decorative transitions.
+* Layout: grid-based, with white space used as an active design element.
+* Icons: abstract systems or processes, not literal metaphors.
+* Visuals should illustrate:
+
+  * System architecture
+  * Data evidence
+  * Consequences for users or science
+
+---
+
+### Mantras to Remember
+
+* We clarify genomics. We don’t sell it.
+* We reveal systems, not surface hype.
+* We write for intelligent readers who demand evidence.
+* We let users be the hero.
+* We quantify what others ignore.
+* Technically sound. Incredibly simple.
+
+---
