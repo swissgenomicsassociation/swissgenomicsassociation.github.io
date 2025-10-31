@@ -36,3 +36,23 @@
   }
  }
 
+.language-switch {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-left: 1.5rem;
+
+  a {
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+

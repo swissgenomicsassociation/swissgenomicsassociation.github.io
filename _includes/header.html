@@ -15,6 +15,38 @@
       </a>
     </div>
     {% include main-menu.html %}
+
+<div class="language-switch">
+  {%- assign p = page.url -%}
+  {%- assign p = p | replace_first: '/en/', '/' 
+                   | replace_first: '/de/', '/' 
+                   | replace_first: '/fr/', '/' 
+                   | replace_first: '/it/', '/' -%}
+  {%- if p == '/en' or p == '/de' or p == '/fr' or p == '/it' -%}{% assign p = '/' %}{% endif %}
+
+  {%- if site.lang == "en" -%}
+    <a href="{{ '/de' | append: p | relative_url }}">DE</a>
+    <a href="{{ '/fr' | append: p | relative_url }}">FR</a>
+    <a href="{{ '/it' | append: p | relative_url }}">IT</a>
+  {%- elsif site.lang == "de" -%}
+    <a href="{{ p | relative_url }}">EN</a>
+    <a href="{{ '/fr' | append: p | relative_url }}">FR</a>
+    <a href="{{ '/it' | append: p | relative_url }}">IT</a>
+  {%- elsif site.lang == "fr" -%}
+    <a href="{{ p | relative_url }}">EN</a>
+    <a href="{{ '/de' | append: p | relative_url }}">DE</a>
+    <a href="{{ '/it' | append: p | relative_url }}">IT</a>
+  {%- elsif site.lang == "it" -%}
+    <a href="{{ p | relative_url }}">EN</a>
+    <a href="{{ '/de' | append: p | relative_url }}">DE</a>
+    <a href="{{ '/fr' | append: p | relative_url }}">FR</a>
+  {%- else -%}
+    <a href="{{ '/de' | append: p | relative_url }}">DE</a>
+    <a href="{{ '/fr' | append: p | relative_url }}">FR</a>
+    <a href="{{ '/it' | append: p | relative_url }}">IT</a>
+  {%- endif -%}
+</div>
+
     {% include hamburger.html %}
   </div>
 </div>
