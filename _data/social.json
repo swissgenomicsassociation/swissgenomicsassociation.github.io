@@ -1,12 +1,12 @@
 [
   {
     "name": "Github",
-    "link": "https://github.com/DylanLawless/switzerlandomics.github.io",
+    "link": "https://github.com/swissgenomicsassociation/swissgenomicsassociation.github.io",
     "image": "images/social/github.svg"
   },
   {
       "name": "Email",
-      "link": "mailto:admin@switzerlandomics.ch ",
+      "link": "mailto:dylan@switzerlandomics.ch ",
       "image": "images/social/email.svg"
   }
 
