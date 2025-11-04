@@ -173,7 +173,7 @@ Registrierte Mitglieder erhalten gelegentlich Informationen zu bevorstehenden Tr
     const { error } = await supabase.auth.signInWithOtp({
       email,
       options: {
-        emailRedirectTo: window.location.origin + '/profile.html'
+        emailRedirectTo: window.location.origin + '/profile/'
       }
     })
     document.getElementById('msg').textContent = error
