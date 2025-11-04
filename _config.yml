@@ -64,7 +64,7 @@ languages: ["en", "de", "fr", "it"]  # choose the languages you want
 default_lang: ""
 # default_lang: "en"
 # default_locale_in_subfolder: false  # keep English at the root
-exclude_from_localizations: ["javascript", "images", "css", "assets"]
+exclude_from_localizations: ["javascript", "images", "css", "assets", "member"]
 
 exclude:
   - Gemfile
