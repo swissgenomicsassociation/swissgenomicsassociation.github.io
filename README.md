@@ -62,6 +62,58 @@ It supports Jekyll 4.x, additional plugins, and ensures consistent builds betwee
 
 ---
 
+
+Here’s a clean, README-ready section you can add directly to your project’s documentation:
+
+---
+
+### Database structure
+
+The Supabase instance for this site uses a single public table, **`profiles`**, which stores all member profile data.
+You can reproduce the live schema using the following SQL queries.
+
+```sql
+SELECT table_schema,
+       table_name,
+       column_name,
+       data_type,
+       is_nullable,
+       column_default
+FROM information_schema.columns
+WHERE table_schema = 'public'
+ORDER BY table_name, ordinal_position;
+```
+
+| table_schema | table_name | column_name   | data_type                | is_nullable | column_default |
+| ------------ | ---------- | ------------- | ------------------------ | ----------- | -------------- |
+| public       | profiles   | id            | uuid                     | NO          | null           |
+| public       | profiles   | name          | text                     | YES         | null           |
+| public       | profiles   | credentials   | text                     | YES         | null           |
+| public       | profiles   | biotext       | text                     | YES         | null           |
+| public       | profiles   | contact_email | text                     | YES         | null           |
+| public       | profiles   | orcid_id      | text                     | YES         | null           |
+| public       | profiles   | updated_at    | timestamp with time zone | YES         | now()          |
+| public       | profiles   | title         | text                     | YES         | null           |
+
+You can list all tables in the current schema using:
+
+```sql
+SELECT table_name
+FROM information_schema.tables
+WHERE table_schema = 'public'
+ORDER BY table_name;
+```
+
+| table_name |
+| ---------- |
+| profiles   |
+
+---
+
+This confirms that only one public table, `profiles`, is currently used by the Supabase backend for all member profile storage.
+
+---
+
 ## Contributions
 
 This website is maintained by the Swiss Genomics Association.
