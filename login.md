@@ -35,7 +35,7 @@ intro_image_hide_on_mobile: false
     const { error } = await supabase.auth.signInWithOtp({
       email,
       options: {
-        emailRedirectTo: window.location.origin + '/profile.html'
+        emailRedirectTo: window.location.origin + '/profile/'
       }
     })
     document.getElementById('msg').textContent = error
