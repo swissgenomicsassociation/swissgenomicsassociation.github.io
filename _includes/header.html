@@ -27,13 +27,17 @@
     {% assign p = '/' %}
   {%- endif -%}
 
-  {%- if p == '/login/' -%}
+  {%- if p contains '/member/' or p == '/member/' -%}
+  {%- comment -%}Hide language switch on dynamic member profile pages{%- endcomment -%}
+  <!-- no language links shown -->
+
+  {%- elsif p == '/login/' -%}
     {%- if site.lang == "en" -%}
       <a href="/de/login/">DE</a>
       <a href="/fr/login/">FR</a>
       <a href="/it/login/">IT</a>
     {%- elsif site.lang == "de" -%}
-    <!-- workaround: fixes language link bug where /login/ incorrectly resolves to /de/login/ in English -->
+      <!-- workaround: fixes language link bug where /login/ incorrectly resolves to /de/login/ in English -->
       <a href="/login/">EN</a>
       <a href="/fr/login/">FR</a>
       <a href="/it/login/">IT</a>
@@ -46,6 +50,7 @@
       <a href="/de/login/">DE</a>
       <a href="/fr/login/">FR</a>
     {%- endif -%}
+
   {%- else -%}
     {%- if site.lang == "en" -%}
       <a href="{{ '/de' | append: p | relative_url }}">DE</a>
@@ -72,6 +77,7 @@
 </div>
 
 
+
     {% include hamburger.html %}
   </div>
 </div>
@@ -82,4 +88,5 @@
   {% when "mathjax" %}
     {% include mathjax.html %}
 {% endcase %}
+
 
