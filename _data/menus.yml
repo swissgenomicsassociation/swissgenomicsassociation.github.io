@@ -2,8 +2,11 @@ main:
   # - name: "Technologies"
   #   url: "/technologies/"
   #   weight: 2
-  - name: "Team"
-    url: "/team/"
+  # - name: "Team"
+  #   url: "/team/"
+  #   weight: 3
+  - name: "Members"
+    url: "/members/"
     weight: 3
   - name: "Publication"
     url: "/publications/"

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<!-- <html lang="en"> -->
+
+<head>
+  <meta charset="utf-8">
+  <title>Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" sizes="32x32"   href="/images/favicon-32x32.png">
+  <link rel="apple-touch-icon"      sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="manifest" href="/images/site.webmanifest">
+  <!-- Google Fonts CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Self host font -->
+  <!-- <link rel="preload" href="/assets/fonts/playfair-display.woff2" as="font" type="font/woff2" crossorigin> -->
+  <link href="/assets/css/style.css" rel="stylesheet">
+  <link href="/assets/css/custom.css" rel="stylesheet">
+  
+  
+  <meta property="og:title" content="Profile"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content=""/>
+  
+  
+  <meta name="twitter:card" content="summary"/>
+  
+  
+
+</head>
+
+<body class='page page-basic'>
+  <div id="main-menu-mobile" class="main-menu-mobile">
+  
+  <ul>
+    
+    <li class="">
+      <a href="/members/">Members</a>
+    </li>
+    
+    <li class="">
+      <a href="/publications/">Publication</a>
+    </li>
+    
+    <li class="">
+      <a href="/releases/">Releases</a>
+    </li>
+    
+    <li class="">
+      <a href="/partnerships/">Partners</a>
+    </li>
+    
+    <li class="">
+      <a href="/about/">About</a>
+    </li>
+    
+    <li class="">
+      <a href="/contact/">Contact</a>
+    </li>
+    
+  </ul>
+</div>
+
+  <div id="wrapper" class="wrapper">
+    <!-- <a href="//it"> -->
+
+<div class='header'>
+  <div class="container">
+    <div class="logo">
+      <a href="/">
+        <span><img width="40px" height="40px" alt="Swiss Genomics Association" src="/images/logo/logo_v2.svg" /></span>
+        <span class="logo-text">Swiss Genomics Association</span>
+      </a>
+    </div>
+    <div class="logo-mobile">
+      <a href="/">
+        <span><img width="33px" height="33px" alt="Swiss Genomics Association" src="/images/logo/logo_v2.svg" /></span>
+        <span class="logo-text">Swiss Genomics Association</span>
+      </a>
+    </div>
+    <div id="main-menu" class="main-menu">
+  
+  <ul>
+    
+    <li class="">
+      <a href="/members/">Members</a>
+    </li>
+    
+    <li class="">
+      <a href="/publications/">Publication</a>
+    </li>
+    
+    <li class="">
+      <a href="/releases/">Releases</a>
+    </li>
+    
+    <li class="">
+      <a href="/partnerships/">Partners</a>
+    </li>
+    
+    <li class="">
+      <a href="/about/">About</a>
+    </li>
+    
+    <li class="">
+      <a href="/contact/">Contact</a>
+    </li>
+    
+  </ul>
+</div>
+
+
+    <div class="language-switch"><a href="//de/profile.html">EN</a>
+      <a href="/de/profile.html">DE</a>
+      <a href="/fr/profile.html">FR</a></div>
+
+
+    <button id="toggle-main-menu-mobile" class="hamburger hamburger--slider" type="button" aria-label="Mobile Menu">
+  <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
+</button>
+  </div>
+</div>
+
+
+
+
+
+
+    <div class="container pb-6 pt-6 pt-md-10 pb-md-10">
+    <div class="row justify-content-start">
+        <div class="col-12 col-md-8">
+            <div class="tech tech-single">
+                <h1 class="title">Profile</h1>
+                <div class="content"><h1>Your profile</h1>
+
+<button id="logout">Log out</button>
+
+<style>
+  .profile-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 1rem;
+  }
+  .profile-section {
+    flex: 1 1 300px;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fafafa;
+  }
+  .profile-section h2 {
+    margin-top: 0;
+  }
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  input, textarea {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.4rem;
+  }
+  button {
+    padding: 0.5rem 1rem;
+  }
+</style>
+
+<p id="msg">Loading...</p>
+
+<div class="profile-wrapper" style="display:none;" id="profile-wrapper">
+
+  <div class="profile-section" id="profile-view">
+    <h2>Current public profile</h2>
+    <p><strong>Name:</strong> <span id="v-name"></span></p>
+    <p><strong>Title / Specialty:</strong> <span id="v-title"></span></p>
+    <p><strong>Credentials:</strong> <span id="v-credentials"></span></p>
+    <p><strong>Bio:</strong> <span id="v-biotext"></span></p>
+    <p><strong>Email:</strong> <span id="v-contact_email"></span></p>
+    <p><strong>ORCID:</strong> <span id="v-orcid_id"></span></p>
+  </div>
+
+  <div class="profile-section" id="profile-area">
+    <h2>Enter or update your information</h2>
+    <form id="profile-form">
+      <label>Name<br><input id="name"></label>
+      <label>Title / Specialty<br><input id="title" placeholder="e.g. Bioinformatician"></label>
+      <label>Credentials<br><input id="credentials"></label>
+      <label>Bio<br><textarea id="biotext"></textarea></label>
+      <label>Contact email<br><input id="contact_email"></label>
+      <label>
+        ORCID iD<br>
+        <input id="orcid_id" placeholder="e.g. https://orcid.org/0000-0001-8496-3725">
+      </label>
+      <small>Please enter your full ORCID link or the 16-digit identifier.</small><br><br>
+      <button type="button" id="save">Save</button>
+    </form>
+  </div>
+
+</div>
+
+<script type="module">
+  import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+
+  const supabase = createClient(
+    'https://pjslulmnfxtfihdtzrbu.supabase.co',
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBqc2x1bG1uZnh0ZmloZHR6cmJ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyNjEzODUsImV4cCI6MjA3NzgzNzM4NX0.7fPGKu7rbziVGl4X5T2qVoqu0Yt0enR4lisYq3sdnMY'
+  )
+
+  // handle logout
+  document.getElementById('logout').onclick = async () => {
+    await supabase.auth.signOut()
+    window.location.href = '/login/'
+  }
+
+  // track auth
+  await supabase.auth.onAuthStateChange(async (event, session) => {
+    if (event === 'SIGNED_IN') loadProfile()
+  })
+
+  const { data: { session } } = await supabase.auth.getSession()
+  if (session) {
+    loadProfile()
+  } else {
+    document.getElementById('msg').textContent = 'Please log in first.'
+  }
+
+  async function loadProfile() {
+    document.getElementById('msg').style.display = 'none'
+    document.getElementById('profile-wrapper').style.display = 'flex'
+
+    const { data: { user } } = await supabase.auth.getUser()
+    let { data, error } = await supabase
+      .from('profiles')
+      .select('*')
+      .eq('id', user.id)
+      .single()
+
+    // create blank record if not exists
+    if (error && error.code === 'PGRST116') {
+      await supabase.from('profiles').insert({ id: user.id, name: '' })
+      data = { name: '', title: '', credentials: '', biotext: '', contact_email: '', orcid_id: '' }
+    }
+
+    // safely reference form fields
+    const elName = document.getElementById('name')
+    const elTitle = document.getElementById('title')
+    const elCred = document.getElementById('credentials')
+    const elBio  = document.getElementById('biotext')
+    const elMail = document.getElementById('contact_email')
+    const elOrc  = document.getElementById('orcid_id')
+
+    const fields = { name: elName, title: elTitle, credentials: elCred, biotext: elBio, contact_email: elMail, orcid_id: elOrc }
+
+    for (const key in fields) {
+      const val = data?.[key] || ''
+      fields[key].value = val
+      const vEl = document.getElementById('v-' + key)
+      if (vEl) {
+        if (key === 'orcid_id' && val) {
+          vEl.innerHTML = `<a href="${val}" target="_blank">${val}</a>`
+        } else {
+          vEl.textContent = val
+        }
+      }
+    }
+
+    document.getElementById('save').onclick = async () => {
+      let orcid = elOrc.value.trim()
+      const orcidPattern = /^(https:\/\/orcid\.org\/)?\d{4}-\d{4}-\d{4}-\d{3}[\dX]$/
+      if (orcid && !orcidPattern.test(orcid)) {
+        alert('Please enter a valid ORCID iD (e.g. https://orcid.org/0000-0001-8496-3725)')
+        return
+      }
+      if (orcid && !orcid.startsWith('https://orcid.org/')) {
+        orcid = 'https://orcid.org/' + orcid
+      }
+
+      const profile = {
+        id: user.id,
+        name: elName.value.trim() || null,
+        title: elTitle.value.trim() || null,
+        credentials: elCred.value.trim() || null,
+        biotext: elBio.value.trim() || null,
+        contact_email: elMail.value.trim() || null,
+        orcid_id: orcid || null
+      }
+
+      const { error } = await supabase.from('profiles').upsert(profile, { onConflict: 'id' })
+      if (error) {
+        alert('Error: ' + error.message)
+        return
+      }
+
+      alert('Profile saved')
+
+      for (const k in profile) {
+        const vEl = document.getElementById('v-' + k)
+        if (vEl) {
+          if (k === 'orcid_id' && profile[k]) {
+            vEl.innerHTML = `<a href="${profile[k]}" target="_blank">${profile[k]}</a>`
+          } else {
+            vEl.textContent = profile[k] || ''
+          }
+        }
+      }
+    }
+  }
+</script>
+
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  </div>
+  <div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="footer-inner">
+          <!-- <h2 class="footer-title">Swiss Genomics Association</h2> -->
+
+		  <!-- requires clearing to update config -->
+		  <!-- bundle exec jekyll clean -->
+		  <!-- bundle exec jekyll serve -->
+		  <p class="footer-title">Science-backed guidelines.</p>
+          <ul>
+            
+            
+            <li class="">
+              <a href="/">Home</a>
+            </li>
+            
+            <li class="">
+              <a href="/contact/">Contact</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="sub-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="sub-footer-inner">
+          
+            <div class="social">
+  
+    <a href="https://github.com/swissgenomicsassociation/swissgenomicsassociation.github.io" target="blank"><img src="/images/social/github.svg" title="Github" alt="Github" /></a>
+  
+    <a href="mailto:dylan@switzerlandomics.ch " target="blank"><img src="/images/social/email.svg" title="Email" alt="Email" /></a>
+  
+</div>
+
+          
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <script type="text/javascript" src="/assets/js/scripts.js"></script>
+  
+
+
+<script>
+  window.addEventListener('DOMContentLoaded', function () {
+    const iframe = document.getElementById('responsive-iframe');
+
+    function resizeIframe() {
+      try {
+        const doc = iframe.contentDocument || iframe.contentWindow.document;
+        const rawHeight = doc.documentElement.scrollHeight;
+        const paddedHeight = Math.ceil(rawHeight * 1.1);  // add 10%
+        <!-- const paddedHeight = Math.max(Math.ceil(rawHeight * 1.08)); // max height safeguard -->
+
+        iframe.style.height = paddedHeight + 'px';
+      } catch (e) {
+        console.warn('Could not auto-resize iframe:', e);
+      }
+    }
+
+    iframe.addEventListener('load', function () {
+      resizeIframe();
+      setTimeout(resizeIframe, 150);  // in case datatable renders late
+    });
+  });
+</script>
+</body>
+
+</html>

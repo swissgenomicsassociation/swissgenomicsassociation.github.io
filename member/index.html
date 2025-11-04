@@ -1,0 +1,96 @@
+---
+layout: page
+title: Member Profile
+permalink: /member/
+---
+
+<p id="msg">Loading...</p>
+
+<style>
+  .member-profile {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fafafa;
+  }
+  .member-profile h2 {
+    margin-top: 0;
+  }
+  .member-profile p {
+    margin: 0.5rem 0;
+  }
+  .own-profile-link {
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+</style>
+
+<div id="profile" class="member-profile" style="display:none;">
+  <h2 id="v-name"></h2>
+  <p id="v-title" style="font-weight:bold;"></p>
+  <p id="v-biotext"></p>
+  <p id="v-contact_email"></p>
+  <p id="v-orcid_id"></p>
+</div>
+
+<p id="own-profile-link" class="own-profile-link" style="display:none;">
+  <a href="/profile/">Go to your own profile »</a>
+</p>
+
+<script type="module">
+  import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+
+  const supabase = createClient(
+    'https://pjslulmnfxtfihdtzrbu.supabase.co',
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBqc2x1bG1uZnh0ZmloZHR6cmJ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyNjEzODUsImV4cCI6MjA3NzgzNzM4NX0.7fPGKu7rbziVGl4X5T2qVoqu0Yt0enR4lisYq3sdnMY'
+  )
+
+  const params = new URLSearchParams(window.location.search)
+  const memberId = params.get('id')
+
+  if (!memberId) {
+    document.getElementById('msg').textContent = 'Invalid member profile link.'
+  } else {
+    const { data, error } = await supabase
+      .from('profiles')
+      .select('id, name, credentials, title, biotext, contact_email, orcid_id')
+      .eq('id', memberId)
+      .single()
+
+    if (error || !data) {
+      document.getElementById('msg').textContent = 'Member not found.'
+    } else {
+      document.getElementById('msg').style.display = 'none'
+      const container = document.getElementById('profile')
+      container.style.display = 'block'
+
+      const nameField = document.getElementById('v-name')
+      const nameLine = [data.name, data.credentials].filter(Boolean).join(', ')
+      nameField.textContent = nameLine || '(Unnamed)'
+      document.getElementById('v-title').textContent = data.title || ''
+      document.getElementById('v-biotext').textContent = data.biotext || ''
+
+      const emailEl = document.getElementById('v-contact_email')
+      emailEl.innerHTML = data.contact_email
+        ? `<a href="mailto:${data.contact_email}">${data.contact_email}</a>`
+        : ''
+
+      const orcidEl = document.getElementById('v-orcid_id')
+      if (data.orcid_id) {
+        const orcidUrl = data.orcid_id.startsWith('http')
+          ? data.orcid_id
+          : 'https://orcid.org/' + data.orcid_id
+        orcidEl.innerHTML = `ORCID: <a href="${orcidUrl}" target="_blank">${orcidUrl}</a>`
+      }
+
+      // Show link to own profile if logged in
+      const { data: { session } } = await supabase.auth.getSession()
+      if (session?.user?.id) {
+        document.getElementById('own-profile-link').style.display = 'block'
+      }
+    }
+  }
+</script>
+

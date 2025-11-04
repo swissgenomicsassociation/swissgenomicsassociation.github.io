@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<!-- <html lang="en"> -->
+
+<head>
+  <meta charset="utf-8">
+  <title>Swiss Genomics Association</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" sizes="32x32"   href="/images/favicon-32x32.png">
+  <link rel="apple-touch-icon"      sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="manifest" href="/images/site.webmanifest">
+  <!-- Google Fonts CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Self host font -->
+  <!-- <link rel="preload" href="/assets/fonts/playfair-display.woff2" as="font" type="font/woff2" crossorigin> -->
+  <link href="/assets/css/style.css" rel="stylesheet">
+  <link href="/assets/css/custom.css" rel="stylesheet">
+  
+  <meta name="description" content="Members" />
+  <meta property="og:title" content=""/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content=""/>
+  
+  <meta property="og:description" content="Members"/>
+  <meta name="twitter:card" content="summary"/>
+  
+  
+
+</head>
+
+<body class='page page-basic'>
+  <div id="main-menu-mobile" class="main-menu-mobile">
+  
+  <ul>
+    
+    <li class="active">
+      <a href="/members/">Members</a>
+    </li>
+    
+    <li class="">
+      <a href="/publications/">Publication</a>
+    </li>
+    
+    <li class="">
+      <a href="/releases/">Releases</a>
+    </li>
+    
+    <li class="">
+      <a href="/partnerships/">Partners</a>
+    </li>
+    
+    <li class="">
+      <a href="/about/">About</a>
+    </li>
+    
+    <li class="">
+      <a href="/contact/">Contact</a>
+    </li>
+    
+  </ul>
+</div>
+
+  <div id="wrapper" class="wrapper">
+    <!-- <a href="//fr"> -->
+
+<div class='header'>
+  <div class="container">
+    <div class="logo">
+      <a href="/">
+        <span><img width="40px" height="40px" alt="Swiss Genomics Association" src="/images/logo/logo_v2.svg" /></span>
+        <span class="logo-text">Swiss Genomics Association</span>
+      </a>
+    </div>
+    <div class="logo-mobile">
+      <a href="/">
+        <span><img width="33px" height="33px" alt="Swiss Genomics Association" src="/images/logo/logo_v2.svg" /></span>
+        <span class="logo-text">Swiss Genomics Association</span>
+      </a>
+    </div>
+    <div id="main-menu" class="main-menu">
+  
+  <ul>
+    
+    <li class="active">
+      <a href="/members/">Members</a>
+    </li>
+    
+    <li class="">
+      <a href="/publications/">Publication</a>
+    </li>
+    
+    <li class="">
+      <a href="/releases/">Releases</a>
+    </li>
+    
+    <li class="">
+      <a href="/partnerships/">Partners</a>
+    </li>
+    
+    <li class="">
+      <a href="/about/">About</a>
+    </li>
+    
+    <li class="">
+      <a href="/contact/">Contact</a>
+    </li>
+    
+  </ul>
+</div>
+
+
+    <div class="language-switch"><a href="/members/">EN</a>
+      <a href="/de/members/">DE</a>
+      <a href="/it/members/">IT</a></div>
+
+
+    <button id="toggle-main-menu-mobile" class="hamburger hamburger--slider" type="button" aria-label="Mobile Menu">
+  <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
+</button>
+  </div>
+</div>
+
+
+
+
+
+
+    <div class="container pb-6 pt-6 pt-md-10 pb-md-10">
+    <div class="row justify-content-start">
+        <div class="col-12 col-md-8">
+            <div class="tech tech-single">
+                <h1 class="title"></h1>
+                <div class="content"><h1>Annuaire des membres</h1>
+<p>
+<a href="/login/" class="button-link">Connexion ou inscription »</a>
+</p>
+<p>
+Cet annuaire répertorie tous les membres enregistrés ayant un profil public.  
+La Swiss Genomics Association réunit des professionnels issus de tous les domaines de la génomique, y compris la science des données, la bioinformatique, la génétique clinique, la médecine, l’éthique, la sécurité et la représentation des patients.  
+L’adhésion est ouverte à tous afin de favoriser une large participation et l’adoption des meilleures pratiques modernes.  
+Les membres encouragent la collaboration nationale en génomique, tandis que les directives et normes sont préparées avec rigueur par des experts représentant l’ensemble des membres, garantissant des résultats scientifiquement solides, équilibrés et pertinents au niveau national.
+</p>
+
+<style>
+  .member-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    background: #fafafa;
+  }
+  .member-card h3 {
+    margin: 0 0 0.3rem 0;
+  }
+  .member-card p {
+    margin: 0.2rem 0;
+  }
+</style>
+
+<div id="members">Loading...</div>
+
+<script type="module">
+  import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+
+  const supabase = createClient(
+    'https://pjslulmnfxtfihdtzrbu.supabase.co',
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBqc2x1bG1uZnh0ZmloZHR6cmJ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyNjEzODUsImV4cCI6MjA3NzgzNzM4NX0.7fPGKu7rbziVGl4X5T2qVoqu0Yt0enR4lisYq3sdnMY'
+  )
+
+  const container = document.getElementById('members')
+
+  const { data, error } = await supabase
+    .from('profiles')
+    .select('id, name, credentials, title, orcid_id')
+    .order('name')
+
+  if (error) {
+    container.textContent = 'Error loading members.'
+  } else if (!data || data.length === 0) {
+    container.textContent = 'No members found.'
+  } else {
+    container.innerHTML = data.map(p => {
+      const nameText = [p.name, p.credentials].filter(Boolean).join(', ') || '(Unnamed)'
+      const nameHTML = `<a href="/member/?id=${p.id}" class="member-link">${nameText}</a>`
+
+      const titleHTML = p.title
+        ? `<p><strong>${p.title}</strong></p>`
+        : ''
+
+      const orcidHTML = p.orcid_id
+        ? `<p><a href="${p.orcid_id}" target="_blank">${p.orcid_id}</a></p>`
+        : ''
+
+      return `
+        <div class="member-card">
+          <h3>${nameHTML}</h3>
+          ${titleHTML}
+          ${orcidHTML}
+        </div>
+      `
+    }).join('')
+  }
+</script>
+
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  </div>
+  <div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="footer-inner">
+          <!-- <h2 class="footer-title">Swiss Genomics Association</h2> -->
+
+		  <!-- requires clearing to update config -->
+		  <!-- bundle exec jekyll clean -->
+		  <!-- bundle exec jekyll serve -->
+		  <p class="footer-title">Science-backed guidelines.</p>
+          <ul>
+            
+            
+            <li class="">
+              <a href="/">Home</a>
+            </li>
+            
+            <li class="">
+              <a href="/contact/">Contact</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="sub-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="sub-footer-inner">
+          
+            <div class="social">
+  
+    <a href="https://github.com/swissgenomicsassociation/swissgenomicsassociation.github.io" target="blank"><img src="/images/social/github.svg" title="Github" alt="Github" /></a>
+  
+    <a href="mailto:dylan@switzerlandomics.ch " target="blank"><img src="/images/social/email.svg" title="Email" alt="Email" /></a>
+  
+</div>
+
+          
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <script type="text/javascript" src="/assets/js/scripts.js"></script>
+  
+
+
+<script>
+  window.addEventListener('DOMContentLoaded', function () {
+    const iframe = document.getElementById('responsive-iframe');
+
+    function resizeIframe() {
+      try {
+        const doc = iframe.contentDocument || iframe.contentWindow.document;
+        const rawHeight = doc.documentElement.scrollHeight;
+        const paddedHeight = Math.ceil(rawHeight * 1.1);  // add 10%
+        <!-- const paddedHeight = Math.max(Math.ceil(rawHeight * 1.08)); // max height safeguard -->
+
+        iframe.style.height = paddedHeight + 'px';
+      } catch (e) {
+        console.warn('Could not auto-resize iframe:', e);
+      }
+    }
+
+    iframe.addEventListener('load', function () {
+      resizeIframe();
+      setTimeout(resizeIframe, 150);  // in case datatable renders late
+    });
+  });
+</script>
+</body>
+
+</html>
