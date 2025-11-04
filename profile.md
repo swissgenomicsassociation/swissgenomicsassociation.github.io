@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Profile
-permalink: /profile.html
-lang: en
+description: profile
+intro_image_absolute: true
+intro_image_hide_on_mobile: false
 ---
 
 <h1>Your profile</h1>
