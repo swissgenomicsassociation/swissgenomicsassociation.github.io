@@ -3,6 +3,7 @@ layout: page
 description: profile
 intro_image_absolute: true
 intro_image_hide_on_mobile: false
+permalink: /profile/
 ---
 
 <h1>Your profile</h1>
