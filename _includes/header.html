@@ -16,36 +16,61 @@
     </div>
     {% include main-menu.html %}
 
-<div class="language-switch">
+    <div class="language-switch">
   {%- assign p = page.url -%}
-  {%- assign p = p | replace_first: '/en/', '/' 
-                   | replace_first: '/de/', '/' 
-                   | replace_first: '/fr/', '/' 
-                   | replace_first: '/it/', '/' -%}
-  {%- if p == '/en' or p == '/de' or p == '/fr' or p == '/it' -%}{% assign p = '/' %}{% endif %}
+  {%- assign p = p
+    | replace_first: '/en/', '/'
+    | replace_first: '/de/', '/'
+    | replace_first: '/fr/', '/'
+    | replace_first: '/it/', '/' -%}
+  {%- if p == '/en' or p == '/de' or p == '/fr' or p == '/it' -%}
+    {% assign p = '/' %}
+  {%- endif -%}
 
-  {%- if site.lang == "en" -%}
-    <a href="{{ '/de' | append: p | relative_url }}">DE</a>
-    <a href="{{ '/fr' | append: p | relative_url }}">FR</a>
-    <a href="{{ '/it' | append: p | relative_url }}">IT</a>
-  {%- elsif site.lang == "de" -%}
-    <a href="{{ p | relative_url }}">EN</a>
-    <a href="{{ '/fr' | append: p | relative_url }}">FR</a>
-    <a href="{{ '/it' | append: p | relative_url }}">IT</a>
-  {%- elsif site.lang == "fr" -%}
-    <a href="{{ p | relative_url }}">EN</a>
-    <a href="{{ '/de' | append: p | relative_url }}">DE</a>
-    <a href="{{ '/it' | append: p | relative_url }}">IT</a>
-  {%- elsif site.lang == "it" -%}
-    <a href="{{ p | relative_url }}">EN</a>
-    <a href="{{ '/de' | append: p | relative_url }}">DE</a>
-    <a href="{{ '/fr' | append: p | relative_url }}">FR</a>
+  {%- if p == '/login/' -%}
+    {%- if site.lang == "en" -%}
+      <a href="/de/login/">DE</a>
+      <a href="/fr/login/">FR</a>
+      <a href="/it/login/">IT</a>
+    {%- elsif site.lang == "de" -%}
+    <!-- workaround: fixes language link bug where /login/ incorrectly resolves to /de/login/ in English -->
+      <a href="/login/">EN</a>
+      <a href="/fr/login/">FR</a>
+      <a href="/it/login/">IT</a>
+    {%- elsif site.lang == "fr" -%}
+      <a href="/login/">EN</a>
+      <a href="/de/login/">DE</a>
+      <a href="/it/login/">IT</a>
+    {%- elsif site.lang == "it" -%}
+      <a href="/login/">EN</a>
+      <a href="/de/login/">DE</a>
+      <a href="/fr/login/">FR</a>
+    {%- endif -%}
   {%- else -%}
-    <a href="{{ '/de' | append: p | relative_url }}">DE</a>
-    <a href="{{ '/fr' | append: p | relative_url }}">FR</a>
-    <a href="{{ '/it' | append: p | relative_url }}">IT</a>
+    {%- if site.lang == "en" -%}
+      <a href="{{ '/de' | append: p | relative_url }}">DE</a>
+      <a href="{{ '/fr' | append: p | relative_url }}">FR</a>
+      <a href="{{ '/it' | append: p | relative_url }}">IT</a>
+    {%- elsif site.lang == "de" -%}
+      <a href="{{ p | relative_url }}">EN</a>
+      <a href="{{ '/fr' | append: p | relative_url }}">FR</a>
+      <a href="{{ '/it' | append: p | relative_url }}">IT</a>
+    {%- elsif site.lang == "fr" -%}
+      <a href="{{ p | relative_url }}">EN</a>
+      <a href="{{ '/de' | append: p | relative_url }}">DE</a>
+      <a href="{{ '/it' | append: p | relative_url }}">IT</a>
+    {%- elsif site.lang == "it" -%}
+      <a href="{{ p | relative_url }}">EN</a>
+      <a href="{{ '/de' | append: p | relative_url }}">DE</a>
+      <a href="{{ '/fr' | append: p | relative_url }}">FR</a>
+    {%- else -%}
+      <a href="{{ '/de' | append: p | relative_url }}">DE</a>
+      <a href="{{ '/fr' | append: p | relative_url }}">FR</a>
+      <a href="{{ '/it' | append: p | relative_url }}">IT</a>
+    {%- endif -%}
   {%- endif -%}
 </div>
+
 
     {% include hamburger.html %}
   </div>

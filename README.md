@@ -21,6 +21,12 @@ English: Swiss Genomics Association
 
 ---
 
+## Security
+
+This site uses Supabase for member authentication and profile storage. The public repository includes the **Supabase anon key**, which is safe to expose. This key only allows limited, policy-controlled access defined by Supabase Row Level Security (RLS). All edits and updates to member profiles require a verified user session obtained through Supabase’s email-based magic link login. Public pages, such as the member directory, can read selected non-sensitive fields (e.g. name, credentials, ORCID) under a read-only policy. No service or administrative keys are stored in this repository. All member data is intentionally public, and the database exists solely to allow users to edit and maintain their own public profile information. No service or administrative keys are stored in this repository.
+
+---
+
 ## Local development
 
 To build and serve the site locally:

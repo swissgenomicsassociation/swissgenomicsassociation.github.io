@@ -128,3 +128,28 @@
 * Technically sound. Incredibly simple.
 
 ---
+
+The quality of reporting expected from the **Swiss Genomics Association** is defined by precision, transparency, and scientific accountability. Reports and publications issued under its name should reflect:
+
+1. **Evidence-based rigour**
+   All statements and recommendations must be supported by verifiable data, established literature, or expert consensus drawn from peer-reviewed sources. References should be clearly cited, and interpretations should distinguish between evidence, consensus, and opinion.
+
+2. **National representativeness**
+   Outputs should integrate input from the Association’s multi-institutional membership, representing Switzerland’s academic, clinical, governmental, and industrial sectors. Reports must show that diverse perspectives have been considered and reconciled through structured discussion.
+
+3. **Ethical and regulatory alignment**
+   Publications should address ethical, legal, and societal implications where relevant, ensuring alignment with Swiss and international frameworks governing health data, clinical genomics, and public research.
+
+4. **Clarity and neutrality**
+   Text should be written in clear, accessible language, free from promotional or partisan tone. The style should match the impartial and authoritative tone expected from a national coordination body.
+
+5. **Transparency of process**
+   Each released document should indicate how the topic was prioritised, what evidence or consultations informed the outcome, and how consensus was achieved.
+
+6. **Scientific traceability and reproducibility**
+   Data sources, methodologies, and analytical reasoning should be stated in enough detail for others to assess or reproduce conclusions.
+
+7. **Public value and accessibility**
+   Reports are to be made openly available, serving health, research, and policy communities. They should contribute to collective understanding, sustainable infrastructure, and coordinated national standards.
+
+In short, reporting under the Swiss Genomics Association is expected to meet the same editorial and ethical standards as peer-reviewed scientific work, while providing concise, credible, and nationally coordinated guidance for genomics in health and research.
