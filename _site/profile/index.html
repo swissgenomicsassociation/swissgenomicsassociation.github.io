@@ -40,10 +40,6 @@
     </li>
     
     <li class="">
-      <a href="/publications/">Publication</a>
-    </li>
-    
-    <li class="">
       <a href="/releases/">Releases</a>
     </li>
     
@@ -85,10 +81,6 @@
     
     <li class="">
       <a href="/members/">Members</a>
-    </li>
-    
-    <li class="">
-      <a href="/publications/">Publication</a>
     </li>
     
     <li class="">
@@ -169,6 +161,11 @@
   button {
     padding: 0.5rem 1rem;
   }
+  .checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
 </style>
 
 <p id="msg">Loading...</p>
@@ -183,6 +180,7 @@
     <p><strong>Bio:</strong> <span id="v-biotext"></span></p>
     <p><strong>Email:</strong> <span id="v-contact_email"></span></p>
     <p><strong>ORCID:</strong> <span id="v-orcid_id"></span></p>
+    <p><strong>Email visibility:</strong> <span id="v-email_public"></span></p>
   </div>
 
   <div class="profile-section" id="profile-area">
@@ -196,6 +194,9 @@
       <label>
         ORCID iD<br />
         <input id="orcid_id" placeholder="e.g. https://orcid.org/0000-0001-8496-3725" />
+      </label>
+      <label class="checkbox-label">
+        <input type="checkbox" id="email_public" /> Show email publicly
       </label>
       <small>Please enter your full ORCID link or the 16-digit identifier.</small><br /><br />
       <button type="button" id="save">Save</button>
@@ -212,13 +213,11 @@
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBqc2x1bG1uZnh0ZmloZHR6cmJ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyNjEzODUsImV4cCI6MjA3NzgzNzM4NX0.7fPGKu7rbziVGl4X5T2qVoqu0Yt0enR4lisYq3sdnMY'
   )
 
-  // handle logout
   document.getElementById('logout').onclick = async () => {
     await supabase.auth.signOut()
     window.location.href = '/login/'
   }
 
-  // track auth
   await supabase.auth.onAuthStateChange(async (event, session) => {
     if (event === 'SIGNED_IN') loadProfile()
   })
@@ -241,19 +240,18 @@
       .eq('id', user.id)
       .single()
 
-    // create blank record if not exists
     if (error && error.code === 'PGRST116') {
       await supabase.from('profiles').insert({ id: user.id, name: '' })
-      data = { name: '', title: '', credentials: '', biotext: '', contact_email: '', orcid_id: '' }
+      data = { name: '', title: '', credentials: '', biotext: '', contact_email: '', orcid_id: '', email_public: true }
     }
 
-    // safely reference form fields
     const elName = document.getElementById('name')
     const elTitle = document.getElementById('title')
     const elCred = document.getElementById('credentials')
     const elBio  = document.getElementById('biotext')
     const elMail = document.getElementById('contact_email')
     const elOrc  = document.getElementById('orcid_id')
+    const elEmailPublic = document.getElementById('email_public')
 
     const fields = { name: elName, title: elTitle, credentials: elCred, biotext: elBio, contact_email: elMail, orcid_id: elOrc }
 
@@ -269,6 +267,9 @@
         }
       }
     }
+
+    elEmailPublic.checked = data?.email_public ?? true
+    document.getElementById('v-email_public').textContent = elEmailPublic.checked ? 'Public' : 'Hidden'
 
     document.getElementById('save').onclick = async () => {
       let orcid = elOrc.value.trim()
@@ -288,7 +289,8 @@
         credentials: elCred.value.trim() || null,
         biotext: elBio.value.trim() || null,
         contact_email: elMail.value.trim() || null,
-        orcid_id: orcid || null
+        orcid_id: orcid || null,
+        email_public: elEmailPublic.checked
       }
 
       const { error } = await supabase.from('profiles').upsert(profile, { onConflict: 'id' })
@@ -304,6 +306,8 @@
         if (vEl) {
           if (k === 'orcid_id' && profile[k]) {
             vEl.innerHTML = `<a href="${profile[k]}" target="_blank">${profile[k]}</a>`
+          } else if (k === 'email_public') {
+            vEl.textContent = profile[k] ? 'Public' : 'Hidden'
           } else {
             vEl.textContent = profile[k] || ''
           }

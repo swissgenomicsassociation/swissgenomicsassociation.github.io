@@ -8,9 +8,9 @@ main:
   - name: "Members"
     url: "/members/"
     weight: 3
-  - name: "Publication"
-    url: "/publications/"
-    weight: 4
+  # - name: "Publication"
+  #   url: "/publications/"
+  #   weight: 4
   - name: "Releases"
     url: "/releases/"
     weight: 4

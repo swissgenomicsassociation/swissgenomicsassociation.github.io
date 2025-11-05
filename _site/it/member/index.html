@@ -40,10 +40,6 @@
     </li>
     
     <li class="">
-      <a href="/publications/">Publication</a>
-    </li>
-    
-    <li class="">
       <a href="/releases/">Releases</a>
     </li>
     
@@ -85,10 +81,6 @@
     
     <li class="">
       <a href="/members/">Members</a>
-    </li>
-    
-    <li class="">
-      <a href="/publications/">Publication</a>
     </li>
     
     <li class="">
@@ -155,6 +147,10 @@
     text-align: center;
     margin-top: 1.5rem;
   }
+  .not-public {
+    font-style: italic;
+    colour: #777;
+  }
 </style>
 
 <div id="profile" class="member-profile" style="display:none;">
@@ -185,7 +181,7 @@
   } else {
     const { data, error } = await supabase
       .from('profiles')
-      .select('id, name, credentials, title, biotext, contact_email, orcid_id')
+      .select('id, name, credentials, title, biotext, contact_email, orcid_id, email_public')
       .eq('id', memberId)
       .single()
 
@@ -203,9 +199,11 @@
       document.getElementById('v-biotext').textContent = data.biotext || ''
 
       const emailEl = document.getElementById('v-contact_email')
-      emailEl.innerHTML = data.contact_email
-        ? `<a href="mailto:${data.contact_email}">${data.contact_email}</a>`
-        : ''
+      if (data.email_public && data.contact_email) {
+        emailEl.innerHTML = `<a href="mailto:${data.contact_email}">${data.contact_email}</a>`
+      } else {
+        emailEl.innerHTML = '<span class="not-public">Email not public</span>'
+      }
 
       const orcidEl = document.getElementById('v-orcid_id')
       if (data.orcid_id) {
@@ -215,7 +213,6 @@
         orcidEl.innerHTML = `ORCID: <a href="${orcidUrl}" target="_blank">${orcidUrl}</a>`
       }
 
-      // Show link to own profile if logged in
       const { data: { session } } = await supabase.auth.getSession()
       if (session?.user?.id) {
         document.getElementById('own-profile-link').style.display = 'block'
