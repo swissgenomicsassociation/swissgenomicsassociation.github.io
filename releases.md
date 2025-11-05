@@ -7,6 +7,15 @@ intro_image_absolute: true
 intro_image_hide_on_mobile: false
 ---
 
+
+## Drafts
+
+
+* **Guideline**: Swiss Genomics Association consensus guideline for evidence-based genomic variant interpretation in Mendelian disease.\
+[PDF](https://github.com/swissgenomicsassociation/mendelian_disease_interpretation/raw/main/latex/mendelian_disease_interpretation_v1.pdf)
+
+## Recommended guidelines
+
 * **Quant calc 000**: Minimal prototype showcasing core Bayesian engine, public data, and open-source code.\
 [DOI](https://doi.org/10.1101/2025.03.25.25324607) | 
 [PDF](https://www.medrxiv.org/content/10.1101/2025.03.25.25324607v5.full.pdf) | 
