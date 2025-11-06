@@ -10,16 +10,16 @@ intro_image_hide_on_mobile: false
 
 ## Drafts
 
-
 * **Guideline**: Swiss Genomics Association consensus guideline for evidence-based genomic variant interpretation in Mendelian disease.\
-[PDF](https://github.com/swissgenomicsassociation/mendelian_disease_interpretation/raw/main/latex/mendelian_disease_interpretation_v1.pdf)
+[PDF]({{ '/assets/release/mendelian_disease_interpretation/latest/mendelian_disease_interpretation_v1.pdf' | relative_url }}){:target="_blank"} |
+[Repository](https://github.com/swissgenomicsassociation/mendelian_disease_interpretation)
 
-## Recommended guidelines
+## Related release from partners
 
-* **Quant calc 000**: Minimal prototype showcasing core Bayesian engine, public data, and open-source code.\
-[DOI](https://doi.org/10.1101/2025.03.25.25324607) | 
-[PDF](https://www.medrxiv.org/content/10.1101/2025.03.25.25324607v5.full.pdf) | 
-[Video](https://player.vimeo.com/video/1103512246)  
+<!-- * **Quant calc 000**: Minimal prototype showcasing core Bayesian engine, public data, and open-source code.\ -->
+<!-- [DOI](https://doi.org/10.1101/2025.03.25.25324607) |  -->
+<!-- [PDF](https://www.medrxiv.org/content/10.1101/2025.03.25.25324607v5.full.pdf) |  -->
+<!-- [Video](https://player.vimeo.com/video/1103512246)   -->
 
 * **Qualifying variant (QV)**: The QV database offers an open, shareable, and reproducible framework for genomic interpretation.\
 [DOI](https://doi.org/10.1101/2025.05.09.25324975) | 

@@ -1,5 +1,7 @@
 #!/bin/bash
 # bundle install
+
+sh src/sync_relseases.sh
 bundle exec jekyll serve &
 sleep 3
 
