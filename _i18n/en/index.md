@@ -26,4 +26,5 @@
 }
 </style>
 
-<p><a href="/about" class="button-link">About »</a></p>
+<p><a href="/members" class="button-link">Members / sign-up</a></p>
+<p><a href="/releases" class="button-link">Latest releases</a></p>

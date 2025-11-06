@@ -25,4 +25,4 @@
 }
 </style>
 
-<p><a href="/about" class="button-link">About »</a></p>
+<p><a href="/members" class="button-link">Membres / inscription</a></p>
