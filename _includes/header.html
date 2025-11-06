@@ -51,6 +51,48 @@
       <a href="/fr/login/">FR</a>
     {%- endif -%}
 
+  
+    {%- elsif p == '/links/' -%}
+    {%- if site.lang == "en" -%}
+      <a href="/de/links/">DE</a>
+      <a href="/fr/links/">FR</a>
+      <a href="/it/links/">IT</a>
+    {%- elsif site.lang == "de" -%}
+      <!-- workaround: fixes language link bug where /login/ incorrectly resolves to /de/login/ in English -->
+      <a href="/links/">EN</a>
+      <a href="/fr/links/">FR</a>
+      <a href="/it/links/">IT</a>
+    {%- elsif site.lang == "fr" -%}
+      <a href="/links/">EN</a>
+      <a href="/de/links/">DE</a>
+      <a href="/it/links/">IT</a>
+    {%- elsif site.lang == "it" -%}
+      <a href="/links/">EN</a>
+      <a href="/de/links/">DE</a>
+      <a href="/fr/links/">FR</a>
+    {%- endif -%}
+    
+{%- elsif p == '/404.html' -%}
+  {%- if site.lang == "en" -%}
+    <a href="/de/404.html">DE</a>
+    <a href="/fr/404.html">FR</a>
+    <a href="/it/404.html">IT</a>
+  {%- elsif site.lang == "de" -%}
+    <a href="/404.html">EN</a>
+    <a href="/fr/404.html">FR</a>
+    <a href="/it/404.html">IT</a>
+  {%- elsif site.lang == "fr" -%}
+    <a href="/404.html">EN</a>
+    <a href="/de/404.html">DE</a>
+    <a href="/it/404.html">IT</a>
+  {%- elsif site.lang == "it" -%}
+    <a href="/404.html">EN</a>
+    <a href="/de/404.html">DE</a>
+    <a href="/fr/404.html">FR</a>
+  {%- endif -%}
+
+
+
   {%- else -%}
     {%- if site.lang == "en" -%}
       <a href="{{ '/de' | append: p | relative_url }}">DE</a>

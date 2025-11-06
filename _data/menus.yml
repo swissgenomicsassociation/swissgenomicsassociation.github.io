@@ -31,6 +31,9 @@ footer:
   - name: "Contact"
     url: "/contact/"
     weight: 2
+  - name: "Links"
+    url: "links/"
+    weight: 3
   # - name: "Docs"
   #   url: "https://docs.switzerlandomics.ch"
   #   weight: 3

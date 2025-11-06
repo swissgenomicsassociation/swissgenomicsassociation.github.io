@@ -63,54 +63,140 @@ It supports Jekyll 4.x, additional plugins, and ensures consistent builds betwee
 ---
 
 
-Here’s a clean, README-ready section you can add directly to your project’s documentation:
-
----
-
 ### Database structure
 
-The Supabase instance for this site uses a single public table, **`profiles`**, which stores all member profile data.
-You can reproduce the live schema using the following SQL queries.
+The Supabase project backing this site defines two public tables:
+**`profiles`** (for member information) and **`deletion_requests`** (for account deletion logs).
+
+Both are fully managed client-side through the Supabase JavaScript client using the anonymous key.
+
+#### 1. `profiles` table
+
+Stores all public and private member information.
+Each profile row corresponds one-to-one with a Supabase Auth user (`auth.users.id`).
 
 ```sql
-SELECT table_schema,
+create table public.profiles (
+  id uuid primary key references auth.users (id),
+  name text,
+  credentials text,
+  biotext text,
+  contact_email text,
+  orcid_id text,
+  updated_at timestamp with time zone default now(),
+  title text,
+  email_public boolean default false
+);
+```
+
+**Notes**
+
+* `email_public` defaults to `false`, so user email addresses are hidden unless explicitly made public.
+* The authenticated user’s `id` acts as the primary key and foreign key to `auth.users`.
+* The `contact_email` field mirrors the verified Supabase Auth email and is read-only in the client interface.
+
+#### 2. `deletion_requests` table
+
+Logs user-initiated requests for account removal.
+These are created client-side and manually processed by an administrator.
+
+```sql
+create table public.deletion_requests (
+  id bigint generated always as identity primary key,
+  user_id uuid not null,
+  email text not null,
+  requested_at timestamp with time zone default now(),
+  processed boolean default false
+);
+```
+
+**Notes**
+
+* A record is inserted whenever a signed-in user submits a deletion request.
+* `processed` remains `false` until an administrator confirms deletion.
+* No automatic deletion is executed client-side.
+
+#### 3. Inspecting the schema
+
+To view all tables:
+
+```sql
+select table_name
+from information_schema.tables
+where table_schema = 'public'
+order by table_name;
+```
+
+To list all columns for verification:
+
+```sql
+select table_schema,
        table_name,
        column_name,
        data_type,
        is_nullable,
        column_default
-FROM information_schema.columns
-WHERE table_schema = 'public'
-ORDER BY table_name, ordinal_position;
+from information_schema.columns
+where table_schema = 'public'
+order by table_name, ordinal_position;
 ```
 
-| table_schema | table_name | column_name   | data_type                | is_nullable | column_default |
-| ------------ | ---------- | ------------- | ------------------------ | ----------- | -------------- |
-| public       | profiles   | id            | uuid                     | NO          | null           |
-| public       | profiles   | name          | text                     | YES         | null           |
-| public       | profiles   | credentials   | text                     | YES         | null           |
-| public       | profiles   | biotext       | text                     | YES         | null           |
-| public       | profiles   | contact_email | text                     | YES         | null           |
-| public       | profiles   | orcid_id      | text                     | YES         | null           |
-| public       | profiles   | updated_at    | timestamp with time zone | YES         | now()          |
-| public       | profiles   | title         | text                     | YES         | null           |
+**Expected output**
 
-You can list all tables in the current schema using:
-
-```sql
-SELECT table_name
-FROM information_schema.tables
-WHERE table_schema = 'public'
-ORDER BY table_name;
-```
-
-| table_name |
-| ---------- |
-| profiles   |
+| table_name        | purpose                               |
+| ----------------- | ------------------------------------- |
+| profiles          | Stores all member profile information |
+| deletion_requests | Logs account deletion submissions     |
 
 ---
 
-This confirms that only one public table, `profiles`, is currently used by the Supabase backend for all member profile storage.
+This schema represents the complete and current Supabase configuration used by the live Swiss Genomics Association website.
+
+## Account deletion
+
+To list all recorded deletion requests (for admin review or verification), you can run:
+
+```sql
+select
+  id,
+  user_id,
+  email,
+  requested_at,
+  processed
+from public.deletion_requests
+order by requested_at desc;
+```
+
+If you only want to see pending (unprocessed) requests:
+
+```sql
+select
+  id,
+  user_id,
+  email,
+  requested_at
+from public.deletion_requests
+where processed = false
+order by requested_at desc;
+```
+
+And to quickly count how many are still pending:
+
+```sql
+select count(*) as pending_requests
+from public.deletion_requests
+where processed = false;
+```
+
+To validate the count of all legally valid users
+
+```sql
+select count(*) as active_accounts
+from public.profiles
+where id not in (
+  select user_id from public.deletion_requests
+);
+```
 
 ---
 

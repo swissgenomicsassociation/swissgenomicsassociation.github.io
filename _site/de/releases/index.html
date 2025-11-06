@@ -123,12 +123,19 @@
 
 
 
-    <div class="container pb-6 pt-6 pt-md-10 pb-md-10">
-    <div class="row justify-content-start">
-        <div class="col-12 col-md-8">
-            <div class="tech tech-single">
-                <h1 class="title">Releases</h1>
-                <div class="content"><h2 id="drafts">Drafts</h2>
+    <div class="page-wrapper position-relative">
+
+  
+
+
+  <div class="container pb-6 pt-6 pt-md-10 pb-md-10 position-relative">
+  
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-9 col-lg-8">
+        <div class="content-block">
+          <h1 class="title">Releases</h1>
+          <div class="content"><h2 id="drafts">Drafts</h2>
 
 <ul>
   <li><strong>Guideline</strong>: Swiss Genomics Association consensus guideline for evidence-based genomic variant interpretation in Mendelian disease.<br />
@@ -136,7 +143,7 @@
 <a href="https://github.com/swissgenomicsassociation/mendelian_disease_interpretation">Repository</a></li>
 </ul>
 
-<h2 id="related-release-from-partners">Related release from partners</h2>
+<h2 id="related-release-from-external-partners">Related release from external partners</h2>
 
 <!-- * **Quant calc 000**: Minimal prototype showcasing core Bayesian engine, public data, and open-source code.\ -->
 <!-- [DOI](https://doi.org/10.1101/2025.03.25.25324607) |  -->
@@ -185,10 +192,113 @@
 <!-- </ul> -->
 
 </div>
-            </div>
         </div>
+      </div>
     </div>
+  </div>
+
 </div>
+
+<style>
+.intro-image-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40%;
+  max-width: 500px;
+  opacity: 0.60;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.intro-image-bg img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.page-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.content-block {
+  position: relative;
+  z-index: 1;
+}
+</style>
+
+
+
+<!-- <div class="container pb-6 pt-6 pt-md-10 pb-md-10"> -->
+<!--     <div class="row justify-content-start"> -->
+<!--         <div class="col-12 col-md-8"> -->
+<!--             <div class="tech tech-single"> -->
+<!--                 <h1 class="title">Releases</h1> -->
+<!--                 <div class="content"><h2 id="drafts">Drafts</h2>
+
+<ul>
+  <li><strong>Guideline</strong>: Swiss Genomics Association consensus guideline for evidence-based genomic variant interpretation in Mendelian disease.<br />
+<a href="/assets/release/mendelian_disease_interpretation/latest/mendelian_disease_interpretation_v1.pdf" target="_blank">PDF</a> |
+<a href="https://github.com/swissgenomicsassociation/mendelian_disease_interpretation">Repository</a></li>
+</ul>
+
+<h2 id="related-release-from-external-partners">Related release from external partners</h2>
+
+<!-- * **Quant calc 000**: Minimal prototype showcasing core Bayesian engine, public data, and open-source code.\ -->
+<!-- [DOI](https://doi.org/10.1101/2025.03.25.25324607) |  -->
+<!-- [PDF](https://www.medrxiv.org/content/10.1101/2025.03.25.25324607v5.full.pdf) |  -->
+<!-- [Video](https://player.vimeo.com/video/1103512246)   -->
+
+<ul>
+  <li>
+    <p><strong>Qualifying variant (QV)</strong>: The QV database offers an open, shareable, and reproducible framework for genomic interpretation.<br />
+<a href="https://doi.org/10.1101/2025.05.09.25324975">DOI</a> | 
+<a href="https://www.medrxiv.org/content/10.1101/2025.05.09.25324975v2.full.pdf">PDF</a> | 
+<a href="https://player.vimeo.com/video/1083533047">Video</a> | 
+<a href="https://switzerlandomics.ch/technologies/qv_database/">Database</a></p>
+  </li>
+  <li>
+    <p><strong>Archipelago</strong>: R package for summary and interpretation of variant set association test statistics (GitHub).<br />
+<a href="https://doi.org/10.1101/2025.03.17.25324111">DOI</a> | 
+<a href="https://www.medrxiv.org/content/10.1101/2025.03.17.25324111v2.full.pdf">PDF</a> | 
+<a href="https://github.com/DylanLawless/archipelago">Repository</a></p>
+  </li>
+  <li>
+    <p><strong>PanelAppRex basic</strong>: R setup and data for building an open-source base model (GitHub and Zenodo).<br />
+<a href="https://doi.org/10.1101/2025.03.20.25324319">DOI</a> | 
+<a href="https://www.medrxiv.org/content/10.1101/2025.03.20.25324319v3.full.pdf">PDF</a> | 
+<a href="https://github.com/DylanLawless/PanelAppRex">Repository</a> |
+<a href="https://player.vimeo.com/video/1099451293">Video</a> | 
+<a href="https://switzerlandomics.ch/technologies/panelAppRexAi/">Application</a> | 
+<a href="https://doi.org/10.5281/zenodo.15736688">Dataset</a></p>
+  </li>
+  <li>
+    <p><strong>Genetic diagnosis of inborn-errors of immunity (IEI)</strong>: open-source, world-leading database of IEI genetics provided as a subset of PanelAppRex for the community.<br />
+<a href="https://iei-genetics.github.io">Homepage</a> | 
+<a href="https://iei-genetics.github.io/assets/iusis_iei_table_2025.html">Database</a> | 
+<a href="https://github.com/DylanLawless/iei_genetics">Repository</a></p>
+  </li>
+</ul>
+
+<!-- ## Media -->
+<!-- <ul> -->
+<!--    -->
+<!--    -->
+<!--     <li> -->
+<!--       <a href="/release/etherial-precision/">Etherial precision</a> — 2025-11-06 -->
+<!--     </li> -->
+<!--    -->
+<!-- </ul> -->
+
+</div> -->
+<!--             </div> -->
+<!--         </div> -->
+<!--     </div> -->
+<!-- </div> -->
+
+
+
 
   </div>
   <div class="footer">
@@ -211,6 +321,10 @@
             
             <li class="">
               <a href="/contact/">Contact</a>
+            </li>
+            
+            <li class="">
+              <a href="/links/">Links</a>
             </li>
             
           </ul>

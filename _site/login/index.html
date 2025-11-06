@@ -123,12 +123,19 @@
 
 
 
-    <div class="container pb-6 pt-6 pt-md-10 pb-md-10">
-    <div class="row justify-content-start">
-        <div class="col-12 col-md-8">
-            <div class="tech tech-single">
-                <h1 class="title"></h1>
-                <div class="content"><h1>Login or sign up</h1>
+    <div class="page-wrapper position-relative">
+
+  
+
+
+  <div class="container pb-6 pt-6 pt-md-10 pb-md-10 position-relative">
+  
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-9 col-lg-8">
+        <div class="content-block">
+          <h1 class="title"></h1>
+          <div class="content"><h1>Login or sign up</h1>
 <p>
   Membership and sign-up are free. Existing members can log in to update their public profile, and new members can register using the same email-based login process.  
 </p>
@@ -174,10 +181,102 @@
 </script>
 
 </div>
-            </div>
         </div>
+      </div>
     </div>
+  </div>
+
 </div>
+
+<style>
+.intro-image-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40%;
+  max-width: 500px;
+  opacity: 0.60;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.intro-image-bg img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.page-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.content-block {
+  position: relative;
+  z-index: 1;
+}
+</style>
+
+
+
+<!-- <div class="container pb-6 pt-6 pt-md-10 pb-md-10"> -->
+<!--     <div class="row justify-content-start"> -->
+<!--         <div class="col-12 col-md-8"> -->
+<!--             <div class="tech tech-single"> -->
+<!--                 <h1 class="title"></h1> -->
+<!--                 <div class="content"><h1>Login or sign up</h1>
+<p>
+  Membership and sign-up are free. Existing members can log in to update their public profile, and new members can register using the same email-based login process.  
+</p>
+<p>
+  Registered members may occasionally receive information about upcoming meetings or invitations to contribute to association content. These messages are limited to essential communications and will never include advertising or spam.
+</p>
+
+<form id="login-form">
+  <input id="email" type="email" placeholder="Email" required="" />
+  <button type="submit">Send magic link</button>
+</form>
+<p id="msg"></p>
+
+<script type="module">
+  import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+
+  const supabase = createClient(
+    'https://pjslulmnfxtfihdtzrbu.supabase.co',
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBqc2x1bG1uZnh0ZmloZHR6cmJ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyNjEzODUsImV4cCI6MjA3NzgzNzM4NX0.7fPGKu7rbziVGl4X5T2qVoqu0Yt0enR4lisYq3sdnMY'
+  )
+
+  // Check if already logged in
+  const { data: { session } } = await supabase.auth.getSession()
+  if (session) {
+    window.location.href = '/profile/'
+  }
+
+  // Handle login form
+  const form = document.getElementById('login-form')
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault()
+    const email = document.getElementById('email').value
+    const { error } = await supabase.auth.signInWithOtp({
+      email,
+      options: {
+        emailRedirectTo: window.location.origin + '/profile/'
+      }
+    })
+    document.getElementById('msg').textContent = error
+      ? 'Error: ' + error.message
+      : 'Check your email for a sign-in link.'
+  })
+</script>
+
+</div> -->
+<!--             </div> -->
+<!--         </div> -->
+<!--     </div> -->
+<!-- </div> -->
+
+
+
 
   </div>
   <div class="footer">
@@ -200,6 +299,10 @@
             
             <li class="">
               <a href="/contact/">Contact</a>
+            </li>
+            
+            <li class="">
+              <a href="/links/">Links</a>
             </li>
             
           </ul>

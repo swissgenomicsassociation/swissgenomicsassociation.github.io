@@ -123,21 +123,44 @@
 
 
 
-    <div class="container pb-6 pt-6 pt-md-10 pb-md-10">
-    <div class="row justify-content-start">
-        <div class="col-12 col-md-8">
-            <div class="tech tech-single">
-                <h1 class="title"></h1>
-                <div class="content">
-<h1>Members Directory</h1>
+    <div class="page-wrapper position-relative">
+
+  
+  <div class="intro-image-bg">
+    <img
+      src="/images/freepik_vectorjuice/distance-working.jpg"
+      alt="">
+  </div>
+  
+
+
+  <div class="container pb-6 pt-6 pt-md-10 pb-md-10 position-relative">
+  
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-9 col-lg-8">
+        <div class="content-block">
+          <h1 class="title"></h1>
+          <div class="content"><h1>Members</h1>
+
 <p>
 <a href="/login/" class="button-link">Sign up »</a>
 <a href="/profile/" class="button-link">Your profile »</a>
 </p>
-<p>
-This directory lists all registered members with public profiles.
-The Swiss Genomics Association brings together professionals from across genomics, including data science, bioinformatics, clinical genetics, medicine, ethics, security, and patient representation. Membership is barrier free to encourage broad participation and adoption of modern best practices. Members promote nationwide collaboration in genomics, while guidelines and standards are rigorously prepared by expert authors who represent the wider membership and ensure that outputs remain scientifically robust, balanced, and nationally relevant.
-</p>
+
+<p>The Swiss Genomics Association connects people across genomics to bridge the gap between research, clinical practice, and industry. Real progress in precision medicine depends on shared effort, where every perspective contributes to better national outcomes.</p>
+
+<p>Membership is open to anyone supporting responsible, evidence-based genomics in Switzerland. Current members include people from a wide range of backgrounds, such as:</p>
+
+<ul>
+  <li>Academic researchers and clinicians</li>
+  <li>Industry professionals and data engineers</li>
+  <li>Medical geneticists and laboratory specialists</li>
+  <li>Ethics, policy, and legal experts</li>
+  <li>Patients, parents, and public representatives</li>
+</ul>
+
+<p>Your email address is used only to notify you of new guideline initiatives. Never for spam.</p>
 
 <style>
   .member-card {
@@ -201,10 +224,139 @@ The Swiss Genomics Association brings together professionals from across genomic
 </script>
 
 </div>
-            </div>
         </div>
+      </div>
     </div>
+  </div>
+
 </div>
+
+<style>
+.intro-image-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40%;
+  max-width: 500px;
+  opacity: 0.60;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.intro-image-bg img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.page-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.content-block {
+  position: relative;
+  z-index: 1;
+}
+</style>
+
+
+
+<!-- <div class="container pb-6 pt-6 pt-md-10 pb-md-10"> -->
+<!--     <div class="row justify-content-start"> -->
+<!--         <div class="col-12 col-md-8"> -->
+<!--             <div class="tech tech-single"> -->
+<!--                 <h1 class="title"></h1> -->
+<!--                 <div class="content"><h1>Members</h1>
+
+<p>
+<a href="/login/" class="button-link">Sign up »</a>
+<a href="/profile/" class="button-link">Your profile »</a>
+</p>
+
+<p>The Swiss Genomics Association connects people across genomics to bridge the gap between research, clinical practice, and industry. Real progress in precision medicine depends on shared effort, where every perspective contributes to better national outcomes.</p>
+
+<p>Membership is open to anyone supporting responsible, evidence-based genomics in Switzerland. Current members include people from a wide range of backgrounds, such as:</p>
+
+<ul>
+  <li>Academic researchers and clinicians</li>
+  <li>Industry professionals and data engineers</li>
+  <li>Medical geneticists and laboratory specialists</li>
+  <li>Ethics, policy, and legal experts</li>
+  <li>Patients, parents, and public representatives</li>
+</ul>
+
+<p>Your email address is used only to notify you of new guideline initiatives. Never for spam.</p>
+
+<style>
+  .member-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    background: #fafafa;
+  }
+  .member-card h3 {
+    margin: 0 0 0.3rem 0;
+  }
+  .member-card p {
+    margin: 0.2rem 0;
+  }
+</style>
+
+<div id="members">Loading...</div>
+
+<script type="module">
+  import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+
+  const supabase = createClient(
+    'https://pjslulmnfxtfihdtzrbu.supabase.co',
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBqc2x1bG1uZnh0ZmloZHR6cmJ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyNjEzODUsImV4cCI6MjA3NzgzNzM4NX0.7fPGKu7rbziVGl4X5T2qVoqu0Yt0enR4lisYq3sdnMY'
+  )
+
+  const container = document.getElementById('members')
+
+  const { data, error } = await supabase
+    .from('profiles')
+    .select('id, name, credentials, title, orcid_id')
+    .order('name')
+
+  if (error) {
+    container.textContent = 'Error loading members.'
+  } else if (!data || data.length === 0) {
+    container.textContent = 'No members found.'
+  } else {
+    container.innerHTML = data.map(p => {
+      const nameText = [p.name, p.credentials].filter(Boolean).join(', ') || '(Unnamed)'
+      const nameHTML = `<a href="/member/?id=${p.id}" class="member-link">${nameText}</a>`
+
+      const titleHTML = p.title
+        ? `<p><strong>${p.title}</strong></p>`
+        : ''
+
+      const orcidHTML = p.orcid_id
+        ? `<p><a href="${p.orcid_id}" target="_blank">${p.orcid_id}</a></p>`
+        : ''
+
+      return `
+        <div class="member-card">
+          <h3>${nameHTML}</h3>
+          ${titleHTML}
+          ${orcidHTML}
+        </div>
+      `
+    }).join('')
+  }
+</script>
+
+</div> -->
+<!--             </div> -->
+<!--         </div> -->
+<!--     </div> -->
+<!-- </div> -->
+
+
+
 
   </div>
   <div class="footer">
@@ -227,6 +379,10 @@ The Swiss Genomics Association brings together professionals from across genomic
             
             <li class="">
               <a href="/contact/">Contact</a>
+            </li>
+            
+            <li class="">
+              <a href="/links/">Links</a>
             </li>
             
           </ul>

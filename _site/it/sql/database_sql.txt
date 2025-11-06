@@ -1,0 +1,24 @@
+-- WARNING: This schema is for context only and is not meant to be run.
+-- Table order and constraints may not be valid for execution.
+
+CREATE TABLE public.deletion_requests (
+  id bigint GENERATED ALWAYS AS IDENTITY NOT NULL,
+  user_id uuid NOT NULL,
+  email text NOT NULL,
+  requested_at timestamp with time zone DEFAULT now(),
+  processed boolean DEFAULT false,
+  CONSTRAINT deletion_requests_pkey PRIMARY KEY (id)
+);
+CREATE TABLE public.profiles (
+  id uuid NOT NULL,
+  name text,
+  credentials text,
+  biotext text,
+  contact_email text,
+  orcid_id text,
+  updated_at timestamp with time zone DEFAULT now(),
+  title text,
+  email_public boolean DEFAULT false,
+  CONSTRAINT profiles_pkey PRIMARY KEY (id),
+  CONSTRAINT profiles_id_fkey FOREIGN KEY (id) REFERENCES auth.users(id)
+);

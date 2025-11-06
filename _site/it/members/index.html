@@ -123,22 +123,43 @@
 
 
 
-    <div class="container pb-6 pt-6 pt-md-10 pb-md-10">
-    <div class="row justify-content-start">
-        <div class="col-12 col-md-8">
-            <div class="tech tech-single">
-                <h1 class="title"></h1>
-                <div class="content"><h1>Elenco dei membri</h1>
+    <div class="page-wrapper position-relative">
+
+  
+  <div class="intro-image-bg">
+    <img
+      src="/images/freepik_vectorjuice/distance-working.jpg"
+      alt="">
+  </div>
+  
+
+
+  <div class="container pb-6 pt-6 pt-md-10 pb-md-10 position-relative">
+  
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-9 col-lg-8">
+        <div class="content-block">
+          <h1 class="title"></h1>
+          <div class="content"><h1 id="elenco-dei-membri">Elenco dei membri</h1>
 <p>
 <a href="/login/" class="button-link">Registrati »</a>
 <a href="/profile/" class="button-link">Il tuo profilo »</a>
 </p>
-<p>
-Questo elenco presenta tutti i membri registrati con un profilo pubblico.  
-La Swiss Genomics Association riunisce professionisti provenienti da tutti i settori della genomica, tra cui scienza dei dati, bioinformatica, genetica clinica, medicina, etica, sicurezza e rappresentanza dei pazienti.  
-L’iscrizione è aperta a tutti per favorire un’ampia partecipazione e l’adozione delle migliori pratiche moderne.  
-I membri promuovono la collaborazione nazionale nel campo della genomica, mentre le linee guida e gli standard sono elaborati con rigore da esperti che rappresentano l’intera comunità dei membri, garantendo risultati scientificamente solidi, equilibrati e di rilevanza nazionale.
-</p>
+
+<p>La Swiss Genomics Association riunisce persone provenienti da tutti gli ambiti della genomica per colmare il divario tra ricerca, pratica clinica e industria. Il vero progresso nella medicina di precisione dipende da uno sforzo condiviso, in cui ogni prospettiva contribuisce a risultati migliori a livello nazionale.</p>
+
+<p>L’iscrizione è aperta a chiunque sostenga una genomica responsabile e basata sull’evidenza in Svizzera. I membri attuali provengono da diversi settori, tra cui:</p>
+
+<ul>
+  <li>Ricercatori e clinici accademici</li>
+  <li>Professionisti dell’industria e ingegneri dei dati</li>
+  <li>Genetisti medici e specialisti di laboratorio</li>
+  <li>Esperti di etica, politica e diritto</li>
+  <li>Pazienti, genitori e rappresentanti pubblici</li>
+</ul>
+
+<p>Il tuo indirizzo e-mail viene utilizzato solo per informarti su nuove iniziative relative alle linee guida. Mai per spam.</p>
 
 <style>
   .member-card {
@@ -202,10 +223,138 @@ I membri promuovono la collaborazione nazionale nel campo della genomica, mentre
 </script>
 
 </div>
-            </div>
         </div>
+      </div>
     </div>
+  </div>
+
 </div>
+
+<style>
+.intro-image-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40%;
+  max-width: 500px;
+  opacity: 0.60;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.intro-image-bg img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.page-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.content-block {
+  position: relative;
+  z-index: 1;
+}
+</style>
+
+
+
+<!-- <div class="container pb-6 pt-6 pt-md-10 pb-md-10"> -->
+<!--     <div class="row justify-content-start"> -->
+<!--         <div class="col-12 col-md-8"> -->
+<!--             <div class="tech tech-single"> -->
+<!--                 <h1 class="title"></h1> -->
+<!--                 <div class="content"><h1 id="elenco-dei-membri">Elenco dei membri</h1>
+<p>
+<a href="/login/" class="button-link">Registrati »</a>
+<a href="/profile/" class="button-link">Il tuo profilo »</a>
+</p>
+
+<p>La Swiss Genomics Association riunisce persone provenienti da tutti gli ambiti della genomica per colmare il divario tra ricerca, pratica clinica e industria. Il vero progresso nella medicina di precisione dipende da uno sforzo condiviso, in cui ogni prospettiva contribuisce a risultati migliori a livello nazionale.</p>
+
+<p>L’iscrizione è aperta a chiunque sostenga una genomica responsabile e basata sull’evidenza in Svizzera. I membri attuali provengono da diversi settori, tra cui:</p>
+
+<ul>
+  <li>Ricercatori e clinici accademici</li>
+  <li>Professionisti dell’industria e ingegneri dei dati</li>
+  <li>Genetisti medici e specialisti di laboratorio</li>
+  <li>Esperti di etica, politica e diritto</li>
+  <li>Pazienti, genitori e rappresentanti pubblici</li>
+</ul>
+
+<p>Il tuo indirizzo e-mail viene utilizzato solo per informarti su nuove iniziative relative alle linee guida. Mai per spam.</p>
+
+<style>
+  .member-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    background: #fafafa;
+  }
+  .member-card h3 {
+    margin: 0 0 0.3rem 0;
+  }
+  .member-card p {
+    margin: 0.2rem 0;
+  }
+</style>
+
+<div id="members">Loading...</div>
+
+<script type="module">
+  import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+
+  const supabase = createClient(
+    'https://pjslulmnfxtfihdtzrbu.supabase.co',
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBqc2x1bG1uZnh0ZmloZHR6cmJ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyNjEzODUsImV4cCI6MjA3NzgzNzM4NX0.7fPGKu7rbziVGl4X5T2qVoqu0Yt0enR4lisYq3sdnMY'
+  )
+
+  const container = document.getElementById('members')
+
+  const { data, error } = await supabase
+    .from('profiles')
+    .select('id, name, credentials, title, orcid_id')
+    .order('name')
+
+  if (error) {
+    container.textContent = 'Error loading members.'
+  } else if (!data || data.length === 0) {
+    container.textContent = 'No members found.'
+  } else {
+    container.innerHTML = data.map(p => {
+      const nameText = [p.name, p.credentials].filter(Boolean).join(', ') || '(Unnamed)'
+      const nameHTML = `<a href="/member/?id=${p.id}" class="member-link">${nameText}</a>`
+
+      const titleHTML = p.title
+        ? `<p><strong>${p.title}</strong></p>`
+        : ''
+
+      const orcidHTML = p.orcid_id
+        ? `<p><a href="${p.orcid_id}" target="_blank">${p.orcid_id}</a></p>`
+        : ''
+
+      return `
+        <div class="member-card">
+          <h3>${nameHTML}</h3>
+          ${titleHTML}
+          ${orcidHTML}
+        </div>
+      `
+    }).join('')
+  }
+</script>
+
+</div> -->
+<!--             </div> -->
+<!--         </div> -->
+<!--     </div> -->
+<!-- </div> -->
+
+
+
 
   </div>
   <div class="footer">
@@ -228,6 +377,10 @@ I membri promuovono la collaborazione nazionale nel campo della genomica, mentre
             
             <li class="">
               <a href="/contact/">Contact</a>
+            </li>
+            
+            <li class="">
+              <a href="/links/">Links</a>
             </li>
             
           </ul>

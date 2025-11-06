@@ -14,7 +14,7 @@ intro_image_hide_on_mobile: false
 [PDF]({{ '/assets/release/mendelian_disease_interpretation/latest/mendelian_disease_interpretation_v1.pdf' | relative_url }}){:target="_blank"} |
 [Repository](https://github.com/swissgenomicsassociation/mendelian_disease_interpretation)
 
-## Related release from partners
+## Related release from external partners
 
 <!-- * **Quant calc 000**: Minimal prototype showcasing core Bayesian engine, public data, and open-source code.\ -->
 <!-- [DOI](https://doi.org/10.1101/2025.03.25.25324607) |  -->
