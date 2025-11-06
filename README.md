@@ -114,6 +114,12 @@ This confirms that only one public table, `profiles`, is currently used by the S
 
 ---
 
+## Release sync
+
+All Swiss Genomics Association projects are developed in separate repositories under the organisation domain, each producing versioned outputs such as manuscripts, datasets, or configuration files. The main website (`swissgenomicsassociation.github.io`) hosts the latest public releases from these projects. During the site build, the `sync_releases.sh` script automatically copies current release files from their respective repositories into the `assets/release/` directory, making them directly accessible for viewing or download, for example:
+`https://swissgenomicsassociation.github.io/assets/release/mendelian_disease_interpretation/latest/mendelian_disease_interpretation_v1.pdf`.
+
+
 ## Contributions
 
 This website is maintained by the Swiss Genomics Association.
