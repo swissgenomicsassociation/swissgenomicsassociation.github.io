@@ -63,7 +63,49 @@ It supports Jekyll 4.x, additional plugins, and ensures consistent builds betwee
 ---
 
 
-### Database structure
+
+## Database structure
+
+User info 
+```sql
+select 
+  id,
+  email,
+  raw_user_meta_data,
+  created_at,
+  last_sign_in_at,
+  phone,
+  role
+from auth.users
+order by created_at desc;
+```
+
+Essential info 
+
+```sql
+select 
+  id,
+  email,
+  created_at,
+  last_sign_in_at
+from auth.users
+order by created_at desc;
+```
+
+User info and public profile
+
+```sql
+select 
+  u.id,
+  u.email,
+  u.created_at,
+  p.name,
+  p.title,
+  p.updated_at
+from auth.users u
+left join public.profiles p on p.id = u.id
+order by u.created_at desc;
+```
 
 The Supabase project backing this site defines two public tables:
 **`profiles`** (for member information) and **`deletion_requests`** (for account deletion logs).
@@ -197,6 +239,22 @@ where id not in (
   select user_id from public.deletion_requests
 );
 ```
+
+---
+
+### Custom email domain handling
+
+Supabase magic links are single-use tokens. Some corporate mail filters (e.g. Trend Micro, Proofpoint) prefetch or rewrite these links, causing them to expire before the user clicks.
+
+Use a **verified custom sender domain** to prevent this. Configure DNS for your domain with:
+
+* **MX:** `mx01.mail.icloud.com`, `mx02.mail.icloud.com`
+* **SPF:** `v=spf1 include:icloud.com ~all`
+* **DKIM:** `sig1._domainkey → sig1.dkim.mail.icloud.com`
+* **DMARC (optional):** `v=DMARC1; p=quarantine; aspf=r; adkim=r`
+
+Then add the domain’s SMTP credentials in Supabase → Auth → Email Templates.
+Magic links will send from your trusted domain (e.g. `auth@swissgenomicsassociation.ch`), ensuring they bypass filters and remain valid.
 
 ---
 
