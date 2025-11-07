@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+</head>
+<body>
+<script type="module">
+  // extract token + redirect manually
+  const params = new URLSearchParams(window.location.search);
+  const token = params.get('token');
+  const type = params.get('type');
+  const redirect = params.get('redirect_to') || '/auth/callback.html';
+
+  if (token && type) {
+    // forward only when user clicks (scanners won’t trigger this)
+    window.location.href = `https://pjslulmnfxtfihdtzrbu.supabase.co/auth/v1/verify?token=${token}&type=${type}&redirect_to=${redirect}`;
+  } else {
+    document.body.textContent = 'Invalid link.';
+  }
+</script>
+</body>
+</html>
+
