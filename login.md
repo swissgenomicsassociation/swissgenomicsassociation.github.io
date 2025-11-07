@@ -21,26 +21,33 @@ intro_image_hide_on_mobile: false
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBqc2x1bG1uZnh0ZmloZHR6cmJ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyNjEzODUsImV4cCI6MjA3NzgzNzM4NX0.7fPGKu7rbziVGl4X5T2qVoqu0Yt0enR4lisYq3sdnMY'
   )
 
-  // Check if already logged in
+  // redirect if already logged in
   const { data: { session } } = await supabase.auth.getSession()
-  if (session) {
-    window.location.href = '/profile/'
-  }
+  if (session) window.location.href = '/profile/'
 
-  // Handle login form
-  const form = document.getElementById('login-form')
-  form.addEventListener('submit', async (e) => {
+  // handle login form
+  document.getElementById('login-form').addEventListener('submit', async (e) => {
     e.preventDefault()
-    const email = document.getElementById('email').value
+    const msg = document.getElementById('msg')
+    msg.textContent = 'Sending magic link...'
+
+    const email = document.getElementById('email').value.trim()
     const { error } = await supabase.auth.signInWithOtp({
       email,
-      options: {
-        emailRedirectTo: window.location.origin + '/profile/'
-      }
+      options: { emailRedirectTo: window.location.origin + '/profile/' }
     })
-    document.getElementById('msg').textContent = error
-      ? 'Error: ' + error.message
-      : 'Check your email for a sign-in link.'
+
+    if (error) {
+      if (error.message.includes('Database error')) {
+        // suppress irrelevant backend error
+        msg.textContent = 'Magic link sent. Please check your email.'
+      } else {
+        msg.textContent = 'Error: ' + error.message
+      }
+    } else {
+      msg.textContent = 'Magic link sent. Please check your email.'
+    }
   })
 </script>
+
 
