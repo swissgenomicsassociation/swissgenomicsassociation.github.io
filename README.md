@@ -62,8 +62,6 @@ It supports Jekyll 4.x, additional plugins, and ensures consistent builds betwee
 
 ---
 
-
-
 ## Database structure
 
 User info 
@@ -112,134 +110,87 @@ The Supabase project backing this site defines two public tables:
 
 Both are fully managed client-side through the Supabase JavaScript client using the anonymous key.
 
-#### 1. `profiles` table
+--- 
+## Account deletion requests
 
-Stores all public and private member information.
-Each profile row corresponds one-to-one with a Supabase Auth user (`auth.users.id`).
+0. Sanity dump all identifiable user data across auth and public tables (non sensitive)
+``` sql
+select
+  au.id as user_id,
+  au.email as auth_email,
+  au.created_at as auth_created,
+  au.last_sign_in_at,
+  p.*
+from auth.users au
+left join public.profiles p on p.id = au.id
+order by au.created_at desc;
+```
 
-```sql
-create table public.profiles (
-  id uuid primary key references auth.users (id),
-  name text,
-  credentials text,
-  biotext text,
-  contact_email text,
-  orcid_id text,
-  updated_at timestamp with time zone default now(),
-  title text,
-  email_public boolean default false
+1. create a minimal table to track deletions (run once)
+``` sql
+create table if not exists public.account_deletions (
+  user_id uuid primary key,
+  deleted_at timestamptz not null
 );
 ```
 
-**Notes**
-
-* `email_public` defaults to `false`, so user email addresses are hidden unless explicitly made public.
-* The authenticated user’s `id` acts as the primary key and foreign key to `auth.users`.
-* The `contact_email` field mirrors the verified Supabase Auth email and is read-only in the client interface.
-
-#### 2. `deletion_requests` table
-
-Logs user-initiated requests for account removal.
-These are created client-side and manually processed by an administrator.
-
-```sql
-create table public.deletion_requests (
-  id bigint generated always as identity primary key,
-  user_id uuid not null,
-  email text not null,
-  requested_at timestamp with time zone default now(),
-  processed boolean default false
-);
-```
-
-**Notes**
-
-* A record is inserted whenever a signed-in user submits a deletion request.
-* `processed` remains `false` until an administrator confirms deletion.
-* No automatic deletion is executed client-side.
-
-#### 3. Inspecting the schema
-
-To view all tables:
-
-```sql
-select table_name
-from information_schema.tables
-where table_schema = 'public'
-order by table_name;
-```
-
-To list all columns for verification:
-
-```sql
-select table_schema,
-       table_name,
-       column_name,
-       data_type,
-       is_nullable,
-       column_default
-from information_schema.columns
-where table_schema = 'public'
-order by table_name, ordinal_position;
-```
-
-**Expected output**
-
-| table_name        | purpose                               |
-| ----------------- | ------------------------------------- |
-| profiles          | Stores all member profile information |
-| deletion_requests | Logs account deletion submissions     |
-
----
-
-This schema represents the complete and current Supabase configuration used by the live Swiss Genomics Association website.
-
-## Account deletion
-
-To list all recorded deletion requests (for admin review or verification), you can run:
-
-```sql
+2. sanity check: show all live user data before deletion
+``` sql
 select
-  id,
-  user_id,
-  email,
-  requested_at,
-  processed
-from public.deletion_requests
-order by requested_at desc;
+  au.id as user_id,
+  au.email as auth_email,
+  au.created_at,
+  au.last_sign_in_at,
+  p.*
+from auth.users au
+left join public.profiles p on p.id = au.id
+order by au.created_at desc;
 ```
 
-If you only want to see pending (unprocessed) requests:
+3. full deletion script (run any time)
+``` sql
+begin;
 
-```sql
-select
-  id,
-  user_id,
-  email,
-  requested_at
+-- store minimal deletion proof
+insert into public.account_deletions (user_id, deleted_at)
+select user_id, now()
 from public.deletion_requests
 where processed = false
-order by requested_at desc;
-```
+on conflict (user_id) do nothing;
 
-And to quickly count how many are still pending:
+-- delete personal data
+delete from public.profiles
+where id in (select user_id from public.deletion_requests where processed = false);
 
-```sql
-select count(*) as pending_requests
-from public.deletion_requests
+delete from auth.users
+where id in (select user_id from public.deletion_requests where processed = false);
+
+-- mark deletion request handled (do not touch email column)
+update public.deletion_requests
+set processed = true
 where processed = false;
+
+commit;
 ```
 
-To validate the count of all legally valid users
-
-```sql
-select count(*) as active_accounts
-from public.profiles
-where id not in (
-  select user_id from public.deletion_requests
-);
+4. Sanity - No deleted user should still exist:
+``` sql
+select d.user_id, p.id as profile, a.id as auth
+from public.account_deletions d
+left join public.profiles p on p.id = d.user_id
+left join auth.users a on a.id = d.user_id
+where p.id is not null or a.id is not null;
 ```
 
+5. Sanity - Pending requests should be zero:
+``` sql
+select count(*) from public.deletion_requests where processed = false;
+```
+
+6. Sanity - Deletion log should contain only uuid + time:
+``` sql
+select * from public.account_deletions order by deleted_at desc;
+```
 ---
 
 ### Custom email domain handling
