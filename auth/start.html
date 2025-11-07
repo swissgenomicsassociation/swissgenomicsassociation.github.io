@@ -3,43 +3,139 @@
 <head>
   <meta charset="UTF-8">
   <title>Confirm sign-in | Swiss Genomics Association</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; text-align: center; background:#f8f9fa; margin-top: 6rem; color:#222; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; text-align: center; background:#f8f9fa; margin: 0; color:#222; }
+    .wrap { max-width: 660px; margin: 6rem auto; padding: 0 1rem; }
     button { background:#1a73e8; border:0; color:#fff; padding:0.8rem 1.6rem; border-radius:6px; font-size:1rem; cursor:pointer; }
     button:hover { background:#1669d3; }
-    .warn { color:#555; font-size:0.9rem; margin-top:1rem; }
+    .muted { color:#666; font-size:0.95rem; margin-top:0.8rem; }
+    .debug { text-align: left; margin: 1.2rem auto 0; background:#fff; border:1px solid #e3e3e3; border-radius:8px; padding:1rem; max-width: 660px; }
+    .debug h3 { margin:0 0 0.6rem 0; font-size:1rem; }
+    .row { display:flex; gap:0.6rem; align-items:center; margin-top:0.8rem; justify-content:center; }
+    code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; font-size: 0.9rem; }
+    pre { background:#f3f4f6; padding:0.8rem; border-radius:6px; overflow:auto; }
+    .warn { color:#b00020; font-weight:600; margin-top:0.8rem; }
+    .good { color:#0a7f2e; font-weight:600; margin-top:0.8rem; }
+    .btn-secondary { background:#444; }
+    .btn-secondary:hover { background:#333; }
+    .kv { display:grid; grid-template-columns: 140px 1fr; gap: 0.4rem 0.8rem; }
+    .kv div { overflow-wrap:anywhere; }
   </style>
 </head>
 <body>
-  <h2>Confirm your sign-in</h2>
-  <p>Click below to finish signing in to the Swiss Genomics Association.</p>
-  <button id="confirm">Continue sign-in</button>
-  <p class="warn" id="status"></p>
-  <noscript>Please enable JavaScript to continue.</noscript>
+  <div class="wrap">
+    <h2>Confirm your sign-in</h2>
+    <p>Click below to finish signing in to the Swiss Genomics Association.</p>
+
+    <div class="row">
+      <button id="confirm">Continue sign-in</button>
+      <button id="copy" class="btn-secondary">Copy confirm URL</button>
+    </div>
+
+    <p id="status" class="muted"></p>
+
+    <details class="debug" id="debugBox">
+      <summary><h3 style="display:inline;">Debug details</h3></summary>
+      <div class="kv">
+        <div><strong>Found confirm URL</strong></div><div id="dbg-confirm-url">(none)</div>
+        <div><strong>Token</strong></div><div id="dbg-token">(none)</div>
+        <div><strong>Type</strong></div><div id="dbg-type">(none)</div>
+        <div><strong>Redirect to</strong></div><div id="dbg-redirect">(none)</div>
+      </div>
+      <h3 style="margin-top:1rem;">Raw fragment</h3>
+      <pre id="dbg-frag"></pre>
+      <h3>Parsed URL</h3>
+      <pre id="dbg-url"></pre>
+    </details>
+
+    <p class="muted" style="margin-top:1.2rem;">
+      If this page shows an error, request a new sign-in link from the login page.
+    </p>
+  </div>
 
   <script>
     const statusEl = document.getElementById('status');
+    const dbg = {
+      frag: document.getElementById('dbg-frag'),
+      url: document.getElementById('dbg-url'),
+      confirmUrl: document.getElementById('dbg-confirm-url'),
+      token: document.getElementById('dbg-token'),
+      type: document.getElementById('dbg-type'),
+      redirect: document.getElementById('dbg-redirect'),
+    };
 
-    function getConfirmFromLocation() {
-      // Prefer hash param to avoid URL encoding issues, fall back to query if needed
-      const hashParams = new URLSearchParams(location.hash.replace(/^#/, ''));
-      const qsParams = new URLSearchParams(location.search);
-      return hashParams.get('confirm') || qsParams.get('confirm') || null;
+    function getConfirmURL() {
+      const hash = String(location.hash || '');
+      dbg.frag.textContent = hash || '(empty)';
+      // Accept formats:
+      //   #confirm=<encoded or raw URL>
+      //   #<encoded or raw URL>   (fallback)
+      let confirmPart = null;
+      if (hash.startsWith('#confirm=')) {
+        confirmPart = hash.slice('#confirm='.length + 1); // remove leading '#' plus 'confirm='
+      } else if (hash.startsWith('#')) {
+        confirmPart = hash.slice(1);
+      }
+      if (!confirmPart) return null;
+      try {
+        // decode once. If already plain, decodeURIComponent will leave it as is unless it contains escapes.
+        return decodeURIComponent(confirmPart);
+      } catch {
+        return confirmPart; // as last resort
+      }
     }
 
-    const confirmUrl = getConfirmFromLocation();
+    const confirmUrl = getConfirmURL();
 
-    if (!confirmUrl) {
-      statusEl.textContent = 'Invalid or missing link.';
+    function populateDebug() {
+      dbg.confirmUrl.textContent = confirmUrl || '(none)';
+      try {
+        const u = confirmUrl ? new URL(confirmUrl) : null;
+        dbg.url.textContent = u ? u.toString() : '(none)';
+        const token = u ? u.searchParams.get('token') : null;
+        const type = u ? u.searchParams.get('type') : null;
+        const redirectTo = u ? u.searchParams.get('redirect_to') : null;
+        dbg.token.textContent = token || '(none)';
+        dbg.type.textContent = type || '(none)';
+        dbg.redirect.textContent = redirectTo || '(none)';
+        if (!confirmUrl) {
+          statusEl.className = 'warn';
+          statusEl.textContent = 'Missing confirmation URL. The email client may have stripped the fragment. Please request a new link.';
+        } else if (!type) {
+          statusEl.className = 'warn';
+          statusEl.textContent = 'Verification type missing. The link may be malformed. Request a new link.';
+        } else {
+          statusEl.className = 'good';
+          statusEl.textContent = 'Ready to verify. Click Continue sign-in.';
+        }
+      } catch (e) {
+        dbg.url.textContent = '(parse error)';
+        statusEl.className = 'warn';
+        statusEl.textContent = 'Invalid confirmation URL. Please request a new link.';
+      }
     }
+
+    populateDebug();
 
     document.getElementById('confirm').addEventListener('click', () => {
       if (!confirmUrl) {
-        alert('Invalid link.');
+        alert('Invalid link. Please request a new one.');
         return;
       }
       // Only follow the real Supabase confirmation URL after a human click
       location.href = confirmUrl;
+    });
+
+    document.getElementById('copy').addEventListener('click', async () => {
+      if (!confirmUrl) { alert('Nothing to copy'); return; }
+      try {
+        await navigator.clipboard.writeText(confirmUrl);
+        statusEl.className = 'good';
+        statusEl.textContent = 'Confirmation URL copied to clipboard.';
+      } catch {
+        alert('Copy failed. Please select and copy the URL from Debug details.');
+      }
     });
   </script>
 </body>
