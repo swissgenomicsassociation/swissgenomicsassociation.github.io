@@ -4,46 +4,43 @@
   <meta charset="UTF-8">
   <title>Confirm sign-in | Swiss Genomics Association</title>
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      text-align: center;
-      background-color: #f8f9fa;
-      margin-top: 6rem;
-      color: #222;
-    }
-    button {
-      background: #1a73e8;
-      border: none;
-      color: #fff;
-      padding: 0.8rem 1.6rem;
-      border-radius: 6px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #1669d3;
-    }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; text-align: center; background:#f8f9fa; margin-top: 6rem; color:#222; }
+    button { background:#1a73e8; border:0; color:#fff; padding:0.8rem 1.6rem; border-radius:6px; font-size:1rem; cursor:pointer; }
+    button:hover { background:#1669d3; }
+    .warn { color:#555; font-size:0.9rem; margin-top:1rem; }
   </style>
 </head>
 <body>
   <h2>Confirm your sign-in</h2>
   <p>Click below to finish signing in to the Swiss Genomics Association.</p>
   <button id="confirm">Continue sign-in</button>
+  <p class="warn" id="status"></p>
+  <noscript>Please enable JavaScript to continue.</noscript>
 
   <script>
+    const statusEl = document.getElementById('status');
+
+    function getConfirmFromLocation() {
+      // Prefer hash param to avoid URL encoding issues, fall back to query if needed
+      const hashParams = new URLSearchParams(location.hash.replace(/^#/, ''));
+      const qsParams = new URLSearchParams(location.search);
+      return hashParams.get('confirm') || qsParams.get('confirm') || null;
+    }
+
+    const confirmUrl = getConfirmFromLocation();
+
+    if (!confirmUrl) {
+      statusEl.textContent = 'Invalid or missing link.';
+    }
+
     document.getElementById('confirm').addEventListener('click', () => {
-      const urlParams = new URLSearchParams(window.location.search)
-      const token = urlParams.get('token')
-      const type = urlParams.get('type') || 'magiclink'
-      const redirectTo = urlParams.get('redirect_to') || '/'
-      if (!token) {
-        alert('Invalid or missing link.')
-        return
+      if (!confirmUrl) {
+        alert('Invalid link.');
+        return;
       }
-      // Only redirect once the user clicks the button
-      const verifyUrl = `https://pjslulmnfxtfihdtzrbu.supabase.co/auth/v1/verify?token=${encodeURIComponent(token)}&type=${encodeURIComponent(type)}&redirect_to=${encodeURIComponent(redirectTo)}`
-      window.location.href = verifyUrl
-    })
+      // Only follow the real Supabase confirmation URL after a human click
+      location.href = confirmUrl;
+    });
   </script>
 </body>
 </html>
