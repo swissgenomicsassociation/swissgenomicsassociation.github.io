@@ -193,12 +193,13 @@ button#save:hover {
 
 
 
-      <div>
-        <label for="contact_email">Contact email <small>(Auto-filled by our system)</small></label>
-        <small style="color:#666;">
-Your account security is linked to your login email, which cannot be changed here. To use a different email address, please contact the administrator or delete your account and create a new one. Automated email change functionality is under development.
-        </small>
-      </div>
+<div>
+  <label for="contact_email">Contact email <small>(Auto-filled by our system)</small></label>
+  <input id="contact_email" disabled>
+  <small style="color:#666;">
+    Your account security is linked to your login email, which cannot be changed here. To use a different email address, please contact the administrator or delete your account and create a new one. Automated email change functionality is under development.
+  </small>
+</div>
 
     <div>
       <label for="orcid_id">
@@ -245,31 +246,32 @@ Your account security is linked to your login email, which cannot be changed her
     window.location.href = '/login/'
   }
 
-  await supabase.auth.onAuthStateChange(async (event, session) => {
+  await supabase.auth.onAuthStateChange(async (event) => {
     if (event === 'SIGNED_IN') loadProfile()
   })
 
   const { data: { session } } = await supabase.auth.getSession()
-  if (session) {
-    loadProfile()
-  } else {
-    document.getElementById('msg').textContent = 'Please log in first.'
-  }
+  if (session) loadProfile()
+  else document.getElementById('msg').textContent = 'Please log in first.'
 
   async function loadProfile() {
     document.getElementById('msg').style.display = 'none'
-    document.getElementById('profile-wrapper').style.display = 'flex'
+    document.getElementById('profile-wrapper').style.display = 'block'
 
     const { data: { user } } = await supabase.auth.getUser()
-    
-    // Always show the Supabase-authenticated email (not editable)
-    const ownEmailEl = document.getElementById('v-contact_email')
-    if (ownEmailEl) {
-      ownEmailEl.innerHTML = `<a href="mailto:${user.email}">${user.email}</a>`
-    }
-    document.getElementById('contact_email').value = user.email
+    const ownEmail = user?.email || ''
 
-    
+    // show authenticated email in both places
+    const vEmail = document.getElementById('v-contact_email')
+    const iEmail = document.getElementById('contact_email')
+    if (iEmail) iEmail.value = ownEmail
+    if (vEmail) {
+      vEmail.innerHTML = ownEmail
+        ? `<a href="mailto:${ownEmail}">${ownEmail}</a> <small style="color:#666">(visible only to you unless you enable public display)</small>`
+        : `<span class="not-public">Your email will appear here automatically once you are signed in.</span>`
+    }
+
+    // fetch or seed profile
     let { data, error } = await supabase
       .from('profiles')
       .select('*')
@@ -277,35 +279,39 @@ Your account security is linked to your login email, which cannot be changed her
       .single()
 
     if (error && error.code === 'PGRST116') {
-      await supabase.from('profiles').insert({ id: user.id, name: '' })
-      data = { name: '', title: '', credentials: '', biotext: '', contact_email: '', orcid_id: '', email_public: true }
+      const seed = { id: user.id, name: '', contact_email: ownEmail, email_public: false }
+      await supabase.from('profiles').insert(seed)
+      data = seed
     }
 
     const elName = document.getElementById('name')
     const elTitle = document.getElementById('title')
     const elCred = document.getElementById('credentials')
     const elBio  = document.getElementById('biotext')
-    const elMail = document.getElementById('contact_email')
     const elOrc  = document.getElementById('orcid_id')
     const elEmailPublic = document.getElementById('email_public')
 
-    const fields = { name: elName, title: elTitle, credentials: elCred, biotext: elBio, contact_email: elMail, orcid_id: elOrc }
+    // only editable fields here
+    const fields = { name: elName, title: elTitle, credentials: elCred, biotext: elBio, orcid_id: elOrc }
 
     for (const key in fields) {
       const val = data?.[key] || ''
-      fields[key].value = val
+      if (fields[key]) fields[key].value = val
       const vEl = document.getElementById('v-' + key)
       if (vEl) {
         if (key === 'orcid_id' && val) {
-          vEl.innerHTML = `<a href="${val}" target="_blank">${val}</a>`
+          const href = val.startsWith('http') ? val : 'https://orcid.org/' + val
+          vEl.innerHTML = `<a href="${href}" target="_blank" rel="noopener">${href}</a>`
         } else {
           vEl.textContent = val
         }
       }
     }
 
-    elEmailPublic.checked = data?.email_public ?? true
-    document.getElementById('v-email_public').textContent = elEmailPublic.checked ? 'Public' : 'Hidden'
+    const isPublic = data?.email_public ?? false
+    if (elEmailPublic) elEmailPublic.checked = isPublic
+    const vEmailPublic = document.getElementById('v-email_public')
+    if (vEmailPublic) vEmailPublic.textContent = isPublic ? 'Public' : 'Hidden'
 
     document.getElementById('save').onclick = async () => {
       const fullName = elName.value.trim()
@@ -330,77 +336,67 @@ Your account security is linked to your login email, which cannot be changed her
         title: elTitle.value.trim() || null,
         credentials: elCred.value.trim() || null,
         biotext: elBio.value.trim() || null,
-        contact_email: user.email,
+        contact_email: ownEmail,
         orcid_id: orcid || null,
         email_public: elEmailPublic.checked
       }
 
       const { error } = await supabase.from('profiles').upsert(profile, { onConflict: 'id' })
-      if (error) {
-        alert('Error: ' + error.message)
-        return
-      }
+      if (error) { alert('Error: ' + error.message); return }
 
       alert('Profile saved')
 
-      for (const k in profile) {
-        const vEl = document.getElementById('v-' + k)
-        if (vEl) {
-          if (k === 'orcid_id' && profile[k]) {
-            vEl.innerHTML = `<a href="${profile[k]}" target="_blank">${profile[k]}</a>`
-          } else if (k === 'email_public') {
-            vEl.textContent = profile[k] ? 'Public' : 'Hidden'
-          } else {
-            vEl.textContent = profile[k] || ''
-          }
-        }
+      // update view
+      const vOrcid = document.getElementById('v-orcid_id')
+      if (vOrcid) {
+        vOrcid.innerHTML = profile.orcid_id
+          ? `<a href="${profile.orcid_id}" target="_blank" rel="noopener">${profile.orcid_id}</a>`
+          : ''
+      }
+      const vName = document.getElementById('v-name')
+      if (vName) vName.textContent = profile.name || ''
+      const vTitle = document.getElementById('v-title')
+      if (vTitle) vTitle.textContent = profile.title || ''
+      const vCred = document.getElementById('v-credentials')
+      if (vCred) vCred.textContent = profile.credentials || ''
+      const vBio = document.getElementById('v-biotext')
+      if (vBio) vBio.textContent = profile.biotext || ''
+      const vPub = document.getElementById('v-email_public')
+      if (vPub) vPub.textContent = profile.email_public ? 'Public' : 'Hidden'
+      const vEmailNote = document.getElementById('v-contact_email')
+      if (vEmailNote) {
+        const note = profile.email_public
+          ? '<small style="color:#666">(public on your member page)</small>'
+          : '<small style="color:#666">(visible only to you unless you enable public display)</small>'
+        vEmailNote.innerHTML = `<a href="mailto:${ownEmail}">${ownEmail}</a> ${note}`
       }
     }
   }
 
-
-// Handle deletion request
-document.getElementById('delete-account').onclick = async () => {
-  const confirmDelete = confirm(
-    'Are you sure you want to permanently delete your account and all associated profile data? This action cannot be undone.'
-  )
-  if (!confirmDelete) return
-
-  const { data: { user } } = await supabase.auth.getUser()
-  if (!user) {
-    alert('Please log in first.')
-    return
+  document.getElementById('delete-account').onclick = async () => {
+    const confirmDelete = confirm(
+      'Are you sure you want to permanently delete your account and all associated profile data? This action cannot be undone.'
+    )
+    if (!confirmDelete) return
+    const { data: { user } } = await supabase.auth.getUser()
+    if (!user) { alert('Please log in first.'); return }
+    const inputEmail = prompt('Please confirm your email address to proceed:')
+    if (!inputEmail || inputEmail.trim().toLowerCase() !== user.email.toLowerCase()) {
+      alert('Email confirmation does not match your account. Deletion cancelled.')
+      return
+    }
+    const { error } = await supabase.from('deletion_requests').insert({
+      user_id: user.id,
+      email: user.email,
+      requested_at: new Date().toISOString()
+    })
+    if (error) { alert('Error submitting deletion request: ' + error.message); return }
+    alert('Your account deletion request has been received. For your security, the deletion will be reviewed and processed by an administrator.')
+    await supabase.auth.signOut()
+    window.location.href = '/'
   }
-
-  // Ask the user to re-enter their email to confirm
-  const inputEmail = prompt('Please confirm your email address to proceed:')
-  if (!inputEmail || inputEmail.trim().toLowerCase() !== user.email.toLowerCase()) {
-    alert('Email confirmation does not match your account. Deletion cancelled.')
-    return
-  }
-
-  // Log the deletion request in Supabase
-  const { error } = await supabase.from('deletion_requests').insert({
-    user_id: user.id,
-    email: user.email,
-    requested_at: new Date().toISOString()
-  })
-
-  if (error) {
-    alert('Error submitting deletion request: ' + error.message)
-    return
-  }
-
-  alert(
-    'Your account deletion request has been received. For your security, the deletion will be reviewed and processed by an administrator.'
-  )
-
-  // Optionally sign the user out
-  await supabase.auth.signOut()
-  window.location.href = '/'
-}
-
 </script>
+
 
 <div style="margin-top:2rem; padding-top:1rem; border-top:1px solid #ccc;">
   <button type="button" id="delete-account" style="background:#b33;color:#fff;padding:0.6rem 1rem;border:none;border-radius:6px;">
