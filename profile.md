@@ -11,12 +11,20 @@ permalink: /profile/
 <button id="logout">Log out</button>
 
 <style>
-  .profile-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-top: 1rem;
-  }
+/* Force single-column layout regardless of theme or media queries */
+#profile-wrapper {
+  display: block !important;
+}
+
+#profile-wrapper .profile-section {
+  width: 100% !important;
+  margin-bottom: 2rem !important;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
   .profile-section {
     flex: 1 1 300px;
     padding: 1rem;
@@ -256,8 +264,12 @@ Your account security is linked to your login email, which cannot be changed her
     const { data: { user } } = await supabase.auth.getUser()
     
     // Always show the Supabase-authenticated email (not editable)
-    document.getElementById('v-contact_email').textContent = user.email
+    const ownEmailEl = document.getElementById('v-contact_email')
+    if (ownEmailEl) {
+      ownEmailEl.innerHTML = `<a href="mailto:${user.email}">${user.email}</a>`
+    }
     document.getElementById('contact_email').value = user.email
+
     
     let { data, error } = await supabase
       .from('profiles')
@@ -297,6 +309,12 @@ Your account security is linked to your login email, which cannot be changed her
     document.getElementById('v-email_public').textContent = elEmailPublic.checked ? 'Public' : 'Hidden'
 
     document.getElementById('save').onclick = async () => {
+      const fullName = elName.value.trim()
+      if (!fullName || fullName.split(/\s+/).length < 2 || fullName.length < 4) {
+        alert('Please enter your full name (first and last name).')
+        return
+      }
+
       let orcid = elOrc.value.trim()
       const orcidPattern = /^(https:\/\/orcid\.org\/)?\d{4}-\d{4}-\d{4}-\d{3}[\dX]$/
       if (orcid && !orcidPattern.test(orcid)) {
@@ -309,10 +327,11 @@ Your account security is linked to your login email, which cannot be changed her
 
       const profile = {
         id: user.id,
-        name: elName.value.trim() || null,
+        name: fullName,
         title: elTitle.value.trim() || null,
         credentials: elCred.value.trim() || null,
         biotext: elBio.value.trim() || null,
+        contact_email: user.email,
         orcid_id: orcid || null,
         email_public: elEmailPublic.checked
       }
