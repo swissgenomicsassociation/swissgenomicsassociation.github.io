@@ -2,9 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Confirm sign-in</title>
+  <title>Confirm sign-in | Swiss Genomics Association</title>
   <style>
-    body { font-family: system-ui, sans-serif; text-align: center; margin-top: 6rem; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      text-align: center;
+      background-color: #f8f9fa;
+      margin-top: 6rem;
+      color: #222;
+    }
     button {
       background: #1a73e8;
       border: none;
@@ -13,6 +19,9 @@
       border-radius: 6px;
       font-size: 1rem;
       cursor: pointer;
+    }
+    button:hover {
+      background: #1669d3;
     }
   </style>
 </head>
@@ -25,13 +34,14 @@
     document.getElementById('confirm').addEventListener('click', () => {
       const urlParams = new URLSearchParams(window.location.search)
       const token = urlParams.get('token')
+      const type = urlParams.get('type') || 'magiclink'
       const redirectTo = urlParams.get('redirect_to') || '/'
       if (!token) {
-        alert('Invalid link.')
+        alert('Invalid or missing link.')
         return
       }
-      // Only redirect when the user actually clicks
-      const verifyUrl = `https://pjslulmnfxtfihdtzrbu.supabase.co/auth/v1/verify?token=${encodeURIComponent(token)}&type=magiclink&redirect_to=${encodeURIComponent(redirectTo)}`
+      // Only redirect once the user clicks the button
+      const verifyUrl = `https://pjslulmnfxtfihdtzrbu.supabase.co/auth/v1/verify?token=${encodeURIComponent(token)}&type=${encodeURIComponent(type)}&redirect_to=${encodeURIComponent(redirectTo)}`
       window.location.href = verifyUrl
     })
   </script>
