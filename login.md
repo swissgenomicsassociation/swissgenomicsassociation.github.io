@@ -34,7 +34,8 @@ intro_image_hide_on_mobile: false
     const email = document.getElementById('email').value.trim()
     const { error } = await supabase.auth.signInWithOtp({
       email,
-      options: { emailRedirectTo: window.location.origin + '/profile/' }
+      options: { emailRedirectTo: window.location.origin + '/auth/callback.html' }
+
     })
 
     if (error) {

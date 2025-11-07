@@ -1,0 +1,48 @@
+---
+layout: none
+permalink: /auth/callback.html
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Signing you in…</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      text-align: center;
+      padding: 4rem;
+      colour: #333;
+    }
+  </style>
+</head>
+<body>
+  <p>Verifying your login, please wait…</p>
+
+  <script type="module">
+    import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+
+    const supabase = createClient(
+      'https://pjslulmnfxtfihdtzrbu.supabase.co',
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBqc2x1bG1uZnh0ZmloZHR6cmJ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIyNjEzODUsImV4cCI6MjA3NzgzNzM4NX0.7fPGKu7rbziVGl4X5T2qVoqu0Yt0enR4lisYq3sdnMY'
+    )
+
+    const params = new URLSearchParams(window.location.hash.replace('#', '?'))
+    const access_token = params.get('access_token')
+    const refresh_token = params.get('refresh_token')
+
+    if (access_token && refresh_token) {
+      const { error } = await supabase.auth.setSession({ access_token, refresh_token })
+      if (error) {
+        document.body.textContent = 'Login failed: ' + error.message
+      } else {
+        window.location.href = '/profile/'
+      }
+    } else {
+      document.body.textContent = 'Invalid or expired link.'
+    }
+  </script>
+</body>
+</html>
+
