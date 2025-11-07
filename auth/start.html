@@ -55,89 +55,79 @@
   </div>
 
   <script>
-    const statusEl = document.getElementById('status');
-    const dbg = {
-      frag: document.getElementById('dbg-frag'),
-      url: document.getElementById('dbg-url'),
-      confirmUrl: document.getElementById('dbg-confirm-url'),
-      token: document.getElementById('dbg-token'),
-      type: document.getElementById('dbg-type'),
-      redirect: document.getElementById('dbg-redirect'),
-    };
+  const statusEl = document.getElementById('status');
+  const dbg = {
+    frag: document.getElementById('dbg-frag'),
+    url: document.getElementById('dbg-url'),
+    confirmUrl: document.getElementById('dbg-confirm-url'),
+    token: document.getElementById('dbg-token'),
+    type: document.getElementById('dbg-type'),
+    redirect: document.getElementById('dbg-redirect'),
+  };
 
-    function getConfirmURL() {
-      const hash = String(location.hash || '');
-      dbg.frag.textContent = hash || '(empty)';
-      // Accept formats:
-      //   #confirm=<encoded or raw URL>
-      //   #<encoded or raw URL>   (fallback)
-      let confirmPart = null;
-      if (hash.startsWith('#confirm=')) {
-        confirmPart = hash.slice('#confirm='.length + 1); // remove leading '#' plus 'confirm='
-      } else if (hash.startsWith('#')) {
-        confirmPart = hash.slice(1);
-      }
-      if (!confirmPart) return null;
-      try {
-        // decode once. If already plain, decodeURIComponent will leave it as is unless it contains escapes.
-        return decodeURIComponent(confirmPart);
-      } catch {
-        return confirmPart; // as last resort
-      }
-    }
+  function getConfirmURL() {
+    const hash = String(location.hash || '');
+    dbg.frag.textContent = hash || '(empty)';
 
-    const confirmUrl = getConfirmURL();
+    // Normalise: strip leading '#'
+    const frag = hash.startsWith('#') ? hash.slice(1) : hash;
 
-    function populateDebug() {
-      dbg.confirmUrl.textContent = confirmUrl || '(none)';
-      try {
-        const u = confirmUrl ? new URL(confirmUrl) : null;
-        dbg.url.textContent = u ? u.toString() : '(none)';
-        const token = u ? u.searchParams.get('token') : null;
-        const type = u ? u.searchParams.get('type') : null;
-        const redirectTo = u ? u.searchParams.get('redirect_to') : null;
-        dbg.token.textContent = token || '(none)';
-        dbg.type.textContent = type || '(none)';
-        dbg.redirect.textContent = redirectTo || '(none)';
-        if (!confirmUrl) {
-          statusEl.className = 'warn';
-          statusEl.textContent = 'Missing confirmation URL. The email client may have stripped the fragment. Please request a new link.';
-        } else if (!type) {
-          statusEl.className = 'warn';
-          statusEl.textContent = 'Verification type missing. The link may be malformed. Request a new link.';
-        } else {
-          statusEl.className = 'good';
-          statusEl.textContent = 'Ready to verify. Click Continue sign-in.';
-        }
-      } catch (e) {
-        dbg.url.textContent = '(parse error)';
-        statusEl.className = 'warn';
-        statusEl.textContent = 'Invalid confirmation URL. Please request a new link.';
-      }
-    }
+    // Expect 'confirm=<URL>' or just '<URL>' as fallback
+    const value = frag.startsWith('confirm=') ? frag.slice('confirm='.length) : frag;
+    if (!value) return null;
 
-    populateDebug();
+    try { return decodeURIComponent(value); } catch { return value; }
+  }
 
-    document.getElementById('confirm').addEventListener('click', () => {
+  const confirmUrl = getConfirmURL();
+
+  function populateDebug() {
+    dbg.confirmUrl.textContent = confirmUrl || '(none)';
+    try {
+      const u = confirmUrl ? new URL(confirmUrl) : null;
+      dbg.url.textContent = u ? u.toString() : '(none)';
+      const token = u ? u.searchParams.get('token') : null;
+      const type = u ? u.searchParams.get('type') : null;
+      const redirectTo = u ? u.searchParams.get('redirect_to') : null;
+      dbg.token.textContent = token || '(none)';
+      dbg.type.textContent = type || '(none)';
+      dbg.redirect.textContent = redirectTo || '(none)';
       if (!confirmUrl) {
-        alert('Invalid link. Please request a new one.');
-        return;
-      }
-      // Only follow the real Supabase confirmation URL after a human click
-      location.href = confirmUrl;
-    });
-
-    document.getElementById('copy').addEventListener('click', async () => {
-      if (!confirmUrl) { alert('Nothing to copy'); return; }
-      try {
-        await navigator.clipboard.writeText(confirmUrl);
+        statusEl.className = 'warn';
+        statusEl.textContent = 'Missing confirmation URL. Please request a new link.';
+      } else if (!type) {
+        statusEl.className = 'warn';
+        statusEl.textContent = 'Verification type missing. Please request a new link.';
+      } else {
         statusEl.className = 'good';
-        statusEl.textContent = 'Confirmation URL copied to clipboard.';
-      } catch {
-        alert('Copy failed. Please select and copy the URL from Debug details.');
+        statusEl.textContent = 'Ready to verify. Click Continue sign-in.';
       }
-    });
-  </script>
+    } catch {
+      dbg.url.textContent = '(parse error)';
+      statusEl.className = 'warn';
+      statusEl.textContent = 'Invalid confirmation URL. Please request a new link.';
+    }
+  }
+
+  populateDebug();
+
+  document.getElementById('confirm').addEventListener('click', () => {
+    if (!confirmUrl) { alert('Invalid link. Please request a new one.'); return; }
+    location.href = confirmUrl;
+  });
+
+  document.getElementById('copy').addEventListener('click', async () => {
+    if (!confirmUrl) { alert('Nothing to copy'); return; }
+    try {
+      await navigator.clipboard.writeText(confirmUrl);
+      statusEl.className = 'good';
+      statusEl.textContent = 'Confirmation URL copied to clipboard.';
+    } catch {
+      alert('Copy failed. Please copy from Debug details.');
+    }
+  });
+</script>
+
 </body>
 </html>
 
