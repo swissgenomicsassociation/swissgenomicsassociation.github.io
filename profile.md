@@ -194,8 +194,8 @@ button#save:hover {
 
 
       <div>
-        <label for="contact_email">Contact email</label>
-        <input id="contact_email" disabled>
+        <label for="contact_email">Contact email <small>(Auto-filled by our system)</small></label>
+        <!-- <input id="contact_email" disabled> -->
         <small style="color:#666;">
 Your account security is linked to your login email, which cannot be changed here. To use a different email address, please contact the administrator or delete your account and create a new one. Automated email change functionality is under development.
         </small>
