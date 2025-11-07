@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Redirecting...</title>
+  <meta charset="UTF-8">
+  <title>Confirm sign-in</title>
+  <style>
+    body { font-family: system-ui, sans-serif; text-align: center; margin-top: 6rem; }
+    button {
+      background: #1a73e8;
+      border: none;
+      color: #fff;
+      padding: 0.8rem 1.6rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-<script type="module">
-  // extract token + redirect manually
-  const params = new URLSearchParams(window.location.search);
-  const token = params.get('token');
-  const type = params.get('type');
-  const redirect = params.get('redirect_to') || '/auth/callback.html';
+  <h2>Confirm your sign-in</h2>
+  <p>Click below to finish signing in to the Swiss Genomics Association.</p>
+  <button id="confirm">Continue sign-in</button>
 
-  if (token && type) {
-    // forward only when user clicks (scanners won’t trigger this)
-    window.location.href = `https://pjslulmnfxtfihdtzrbu.supabase.co/auth/v1/verify?token=${token}&type=${type}&redirect_to=${redirect}`;
-  } else {
-    document.body.textContent = 'Invalid link.';
-  }
-</script>
+  <script>
+    document.getElementById('confirm').addEventListener('click', () => {
+      const urlParams = new URLSearchParams(window.location.search)
+      const token = urlParams.get('token')
+      const redirectTo = urlParams.get('redirect_to') || '/'
+      if (!token) {
+        alert('Invalid link.')
+        return
+      }
+      // Only redirect when the user actually clicks
+      const verifyUrl = `https://pjslulmnfxtfihdtzrbu.supabase.co/auth/v1/verify?token=${encodeURIComponent(token)}&type=magiclink&redirect_to=${encodeURIComponent(redirectTo)}`
+      window.location.href = verifyUrl
+    })
+  </script>
 </body>
 </html>
 
