@@ -16,11 +16,6 @@ intro_image_hide_on_mobile: false
 
 ## Related release from external partners
 
-<!-- * **Quant calc 000**: Minimal prototype showcasing core Bayesian engine, public data, and open-source code.\ -->
-<!-- [DOI](https://doi.org/10.1101/2025.03.25.25324607) |  -->
-<!-- [PDF](https://www.medrxiv.org/content/10.1101/2025.03.25.25324607v5.full.pdf) |  -->
-<!-- [Video](https://player.vimeo.com/video/1103512246)   -->
-
 * **Qualifying variant (QV)**: The QV database offers an open, shareable, and reproducible framework for genomic interpretation.\
 [DOI](https://doi.org/10.1101/2025.05.09.25324975) | 
 [PDF](https://www.medrxiv.org/content/10.1101/2025.05.09.25324975v2.full.pdf) | 
@@ -45,13 +40,4 @@ intro_image_hide_on_mobile: false
 [Database](https://iei-genetics.github.io/assets/iusis_iei_table_2025.html) | 
 [Repository](https://github.com/DylanLawless/iei_genetics)  
 
-<!-- ## Media -->
-<!-- <ul> -->
-<!--   {% assign releases = site.release | sort: 'date' | reverse %} -->
-<!--   {% for item in releases %} -->
-<!--     <li> -->
-<!--       <a href="{{ item.url }}">{{ item.title }}</a> — {{ item.date | date: "%Y-%m-%d" }} -->
-<!--     </li> -->
-<!--   {% endfor %} -->
-<!-- </ul> -->
 

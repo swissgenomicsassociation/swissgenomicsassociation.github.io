@@ -11,25 +11,3 @@ Each meeting involves review of relevant scientific literature, including studie
 
 We exist to ensure that genomics in Switzerland remains coordinated, credible, and of public value.
 
-<!-- ## Mailing list -->
-
-<!-- Get occasional updates on our blog and breakthroughs. No spam, ever. -->
-
-<!-- <div class="submission-message"> -->
-<!-- <style> -->
-<!-- .button-link { -->
-<!--   display: inline-block; -->
-<!--   padding: 12px 20px; -->
-<!--   background-color: #6A64F1; -->
-<!--   color: #fff; -->
-<!--   text-decoration: none; -->
-<!--   border-radius: 5px; -->
-<!--   font-size: 16px; -->
-<!-- } -->
-<!-- .button-link:hover { -->
-<!--   background-color: #5a54d1; -->
-<!-- } -->
-<!-- </style> -->
-
-<!-- <p><a href="/assets/submission_mailing_list" class="button-link">Notify me »</a></p> -->
-
