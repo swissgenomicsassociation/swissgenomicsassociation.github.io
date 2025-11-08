@@ -1,11 +1,13 @@
-
-# Mitgliederverzeichnis
+<h1>Mitgliederverzeichnis</h1>
 
 <p>
 <a href="/login/" class="button-link">Registrieren »</a>
 <a href="/profile/" class="button-link">Ihr Profil »</a>
+</p>
+
 
 Die Swiss Genomics Association verbindet Menschen aus allen Bereichen der Genomik, um die Lücke zwischen Forschung, klinischer Praxis und Industrie zu schliessen. Echter Fortschritt in der Präzisionsmedizin entsteht durch gemeinsame Anstrengungen, bei denen jede Perspektive zu besseren nationalen Ergebnissen beiträgt.
+Entdecken Sie unsere <a href="/de/member_cloud/">schwerpunkte im netzwerk »</a>.
 
 Die Mitgliedschaft steht allen offen, die eine verantwortungsvolle, evidenzbasierte Genomik in der Schweiz unterstützen. Aktuelle Mitglieder stammen aus unterschiedlichen Bereichen, darunter:
 

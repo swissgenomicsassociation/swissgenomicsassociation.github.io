@@ -33,30 +33,58 @@
 <body class='page page-basic'>
   <div id="main-menu-mobile" class="main-menu-mobile">
   
-  <ul>
     
-    <li class="active">
-      <a href="/members/">Members</a>
-    </li>
-    
-    <li class="">
-      <a href="/releases/">Releases</a>
-    </li>
-    
-    <li class="">
-      <a href="/partnerships/">Partners</a>
-    </li>
-    
-    <li class="">
-      <a href="/about/">About</a>
-    </li>
-    
-    <li class="">
-      <a href="/contact/">Contact</a>
-    </li>
-    
-  </ul>
+    <ul>
+      
+        
+        
+
+        <li class="active">
+          <a href="/members//" >
+            Members
+          </a>
+        </li>
+      
+        
+        
+
+        <li class="">
+          <a href="/releases//" >
+            Releases
+          </a>
+        </li>
+      
+        
+        
+
+        <li class="">
+          <a href="/partnerships//" >
+            Partners
+          </a>
+        </li>
+      
+        
+        
+
+        <li class="">
+          <a href="/about//" >
+            About
+          </a>
+        </li>
+      
+        
+        
+
+        <li class="">
+          <a href="/contact//" >
+            Contact
+          </a>
+        </li>
+      
+    </ul>
+  
 </div>
+
 
   <div id="wrapper" class="wrapper">
     <!-- <a href="/"> -->
@@ -77,35 +105,66 @@
     </div>
     <div id="main-menu" class="main-menu">
   
-  <ul>
     
-    <li class="active">
-      <a href="/members/">Members</a>
-    </li>
-    
-    <li class="">
-      <a href="/releases/">Releases</a>
-    </li>
-    
-    <li class="">
-      <a href="/partnerships/">Partners</a>
-    </li>
-    
-    <li class="">
-      <a href="/about/">About</a>
-    </li>
-    
-    <li class="">
-      <a href="/contact/">Contact</a>
-    </li>
-    
-  </ul>
+    <ul>
+      
+        
+        
+
+        <li class="active">
+          <a href="/members//" >
+            Members
+          </a>
+        </li>
+      
+        
+        
+
+        <li class="">
+          <a href="/releases//" >
+            Releases
+          </a>
+        </li>
+      
+        
+        
+
+        <li class="">
+          <a href="/partnerships//" >
+            Partners
+          </a>
+        </li>
+      
+        
+        
+
+        <li class="">
+          <a href="/about//" >
+            About
+          </a>
+        </li>
+      
+        
+        
+
+        <li class="">
+          <a href="/contact//" >
+            Contact
+          </a>
+        </li>
+      
+    </ul>
+  
 </div>
 
 
-    <div class="language-switch"><a href="/de/members/">DE</a>
-      <a href="/fr/members/">FR</a>
-      <a href="/it/members/">IT</a></div>
+
+    <div class="language-switch"><a href="/members/">EN</a>
+    <a href="/de/members/">DE</a>
+    <a href="/fr/members/">FR</a>
+    <a href="/it/members/">IT</a></div>
+
+
 
 
 
@@ -116,6 +175,7 @@
 </button>
   </div>
 </div>
+
 
 
 
@@ -148,7 +208,8 @@
 <a href="/profile/" class="button-link">Your profile »</a>
 </p>
 
-<p>The Swiss Genomics Association connects people across genomics to bridge the gap between research, clinical practice, and industry. Real progress in precision medicine depends on shared effort, where every perspective contributes to better national outcomes.</p>
+<p>The Swiss Genomics Association connects people across genomics to bridge the gap between research, clinical practice, and industry. Real progress in precision medicine depends on shared effort, where every perspective contributes to better national outcomes.
+View our areas of <a href="/member_cloud/">shared focus here »</a>.</p>
 
 <p>Membership is open to anyone supporting responsible, evidence-based genomics in Switzerland. Current members include people from a wide range of backgrounds, such as:</p>
 
@@ -193,6 +254,8 @@
   const { data, error } = await supabase
     .from('profiles')
     .select('id, name, credentials, title, orcid_id')
+    .not('name', 'is', null)
+    .neq('name', '')
     .order('name')
 
   if (error) {
@@ -274,7 +337,8 @@
 <a href="/profile/" class="button-link">Your profile »</a>
 </p>
 
-<p>The Swiss Genomics Association connects people across genomics to bridge the gap between research, clinical practice, and industry. Real progress in precision medicine depends on shared effort, where every perspective contributes to better national outcomes.</p>
+<p>The Swiss Genomics Association connects people across genomics to bridge the gap between research, clinical practice, and industry. Real progress in precision medicine depends on shared effort, where every perspective contributes to better national outcomes.
+View our areas of <a href="/member_cloud/">shared focus here »</a>.</p>
 
 <p>Membership is open to anyone supporting responsible, evidence-based genomics in Switzerland. Current members include people from a wide range of backgrounds, such as:</p>
 
@@ -319,6 +383,8 @@
   const { data, error } = await supabase
     .from('profiles')
     .select('id, name, credentials, title, orcid_id')
+    .not('name', 'is', null)
+    .neq('name', '')
     .order('name')
 
   if (error) {
@@ -364,33 +430,48 @@
     <div class="row">
       <div class="col-12">
         <div class="footer-inner">
-          <!-- <h2 class="footer-title">Swiss Genomics Association</h2> -->
+          <p class="footer-title">Science-backed guidelines.</p>
 
-		  <!-- requires clearing to update config -->
-		  <!-- bundle exec jekyll clean -->
-		  <!-- bundle exec jekyll serve -->
-		  <p class="footer-title">Science-backed guidelines.</p>
-          <ul>
+          
             
-            
-            <li class="">
-              <a href="/">Home</a>
-            </li>
-            
-            <li class="">
-              <a href="/contact/">Contact</a>
-            </li>
-            
-            <li class="">
-              <a href="/links/">Links</a>
-            </li>
-            
-          </ul>
+            <ul>
+              
+                
+                
+
+                <li class="">
+                  <a href="/" >
+                    Home
+                  </a>
+                </li>
+              
+                
+                
+
+                <li class="">
+                  <a href="/contact//" >
+                    Contact
+                  </a>
+                </li>
+              
+                
+                
+
+                <li class="">
+                  <a href="/links//" >
+                    Links
+                  </a>
+                </li>
+              
+            </ul>
+          
+
         </div>
       </div>
     </div>
   </div>
 </div>
+
 
   <div class="sub-footer">
   <div class="container">

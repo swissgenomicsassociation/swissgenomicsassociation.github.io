@@ -33,30 +33,58 @@
 <body class='page page-basic'>
   <div id="main-menu-mobile" class="main-menu-mobile">
   
-  <ul>
     
-    <li class="active">
-      <a href="/members/">Members</a>
-    </li>
-    
-    <li class="">
-      <a href="/releases/">Releases</a>
-    </li>
-    
-    <li class="">
-      <a href="/partnerships/">Partners</a>
-    </li>
-    
-    <li class="">
-      <a href="/about/">About</a>
-    </li>
-    
-    <li class="">
-      <a href="/contact/">Contact</a>
-    </li>
-    
-  </ul>
+    <ul>
+      
+        
+        
+
+        <li class="active">
+          <a href="//fr/fr/members//" >
+            Membres
+          </a>
+        </li>
+      
+        
+        
+
+        <li class="">
+          <a href="//fr/fr/releases//" >
+            Publications
+          </a>
+        </li>
+      
+        
+        
+
+        <li class="">
+          <a href="//fr/fr/partnerships//" >
+            Partenaires
+          </a>
+        </li>
+      
+        
+        
+
+        <li class="">
+          <a href="//fr/fr/about//" >
+            À propos
+          </a>
+        </li>
+      
+        
+        
+
+        <li class="">
+          <a href="//fr/fr/contact//" >
+            Contact
+          </a>
+        </li>
+      
+    </ul>
+  
 </div>
+
 
   <div id="wrapper" class="wrapper">
     <!-- <a href="//fr"> -->
@@ -77,35 +105,66 @@
     </div>
     <div id="main-menu" class="main-menu">
   
-  <ul>
     
-    <li class="active">
-      <a href="/members/">Members</a>
-    </li>
-    
-    <li class="">
-      <a href="/releases/">Releases</a>
-    </li>
-    
-    <li class="">
-      <a href="/partnerships/">Partners</a>
-    </li>
-    
-    <li class="">
-      <a href="/about/">About</a>
-    </li>
-    
-    <li class="">
-      <a href="/contact/">Contact</a>
-    </li>
-    
-  </ul>
+    <ul>
+      
+        
+        
+
+        <li class="active">
+          <a href="//fr/fr/members//" >
+            Membres
+          </a>
+        </li>
+      
+        
+        
+
+        <li class="">
+          <a href="//fr/fr/releases//" >
+            Publications
+          </a>
+        </li>
+      
+        
+        
+
+        <li class="">
+          <a href="//fr/fr/partnerships//" >
+            Partenaires
+          </a>
+        </li>
+      
+        
+        
+
+        <li class="">
+          <a href="//fr/fr/about//" >
+            À propos
+          </a>
+        </li>
+      
+        
+        
+
+        <li class="">
+          <a href="//fr/fr/contact//" >
+            Contact
+          </a>
+        </li>
+      
+    </ul>
+  
 </div>
 
 
+
     <div class="language-switch"><a href="/members/">EN</a>
-      <a href="/de/members/">DE</a>
-      <a href="/it/members/">IT</a></div>
+    <a href="/de/members/">DE</a>
+    <a href="/fr/members/">FR</a>
+    <a href="/it/members/">IT</a></div>
+
+
 
 
 
@@ -116,6 +175,7 @@
 </button>
   </div>
 </div>
+
 
 
 
@@ -141,14 +201,15 @@
       <div class="col-12 col-md-9 col-lg-8">
         <div class="content-block">
           <h1 class="title"></h1>
-          <div class="content"><h1 id="annuaire-des-membres">Annuaire des membres</h1>
+          <div class="content"><h1>Annuaire des membres</h1>
 
 <p>
 <a href="/login/" class="button-link">S’inscrire »</a>
 <a href="/profile/" class="button-link">Votre profil »</a>
 </p>
 
-<p>L’Association Suisse de Génomique réunit des personnes issues de tous les domaines de la génomique afin de combler le fossé entre la recherche, la pratique clinique et l’industrie. Le progrès réel en médecine de précision repose sur un effort collectif où chaque point de vue contribue à de meilleurs résultats nationaux.</p>
+<p>L’Association Suisse de Génomique réunit des personnes issues de tous les domaines de la génomique afin de combler le fossé entre la recherche, la pratique clinique et l’industrie. Le progrès réel en médecine de précision repose sur un effort collectif où chaque point de vue contribue à de meilleurs résultats nationaux.
+Découvrez nos <a href="/fr/member_cloud/">axes d’intérêt partagés »</a>.</p>
 
 <p>L’adhésion est ouverte à toute personne soutenant une approche responsable et fondée sur les preuves de la génomique en Suisse. Les membres actuels viennent d’horizons variés, tels que :</p>
 
@@ -193,6 +254,8 @@
   const { data, error } = await supabase
     .from('profiles')
     .select('id, name, credentials, title, orcid_id')
+    .not('name', 'is', null)
+    .neq('name', '')
     .order('name')
 
   if (error) {
@@ -267,14 +330,15 @@
 <!--         <div class="col-12 col-md-8"> -->
 <!--             <div class="tech tech-single"> -->
 <!--                 <h1 class="title"></h1> -->
-<!--                 <div class="content"><h1 id="annuaire-des-membres">Annuaire des membres</h1>
+<!--                 <div class="content"><h1>Annuaire des membres</h1>
 
 <p>
 <a href="/login/" class="button-link">S’inscrire »</a>
 <a href="/profile/" class="button-link">Votre profil »</a>
 </p>
 
-<p>L’Association Suisse de Génomique réunit des personnes issues de tous les domaines de la génomique afin de combler le fossé entre la recherche, la pratique clinique et l’industrie. Le progrès réel en médecine de précision repose sur un effort collectif où chaque point de vue contribue à de meilleurs résultats nationaux.</p>
+<p>L’Association Suisse de Génomique réunit des personnes issues de tous les domaines de la génomique afin de combler le fossé entre la recherche, la pratique clinique et l’industrie. Le progrès réel en médecine de précision repose sur un effort collectif où chaque point de vue contribue à de meilleurs résultats nationaux.
+Découvrez nos <a href="/fr/member_cloud/">axes d’intérêt partagés »</a>.</p>
 
 <p>L’adhésion est ouverte à toute personne soutenant une approche responsable et fondée sur les preuves de la génomique en Suisse. Les membres actuels viennent d’horizons variés, tels que :</p>
 
@@ -319,6 +383,8 @@
   const { data, error } = await supabase
     .from('profiles')
     .select('id, name, credentials, title, orcid_id')
+    .not('name', 'is', null)
+    .neq('name', '')
     .order('name')
 
   if (error) {
@@ -364,33 +430,48 @@
     <div class="row">
       <div class="col-12">
         <div class="footer-inner">
-          <!-- <h2 class="footer-title">Swiss Genomics Association</h2> -->
+          <p class="footer-title">Science-backed guidelines.</p>
 
-		  <!-- requires clearing to update config -->
-		  <!-- bundle exec jekyll clean -->
-		  <!-- bundle exec jekyll serve -->
-		  <p class="footer-title">Science-backed guidelines.</p>
-          <ul>
+          
             
-            
-            <li class="">
-              <a href="/">Home</a>
-            </li>
-            
-            <li class="">
-              <a href="/contact/">Contact</a>
-            </li>
-            
-            <li class="">
-              <a href="/links/">Links</a>
-            </li>
-            
-          </ul>
+            <ul>
+              
+                
+                
+
+                <li class="">
+                  <a href="/fr/" >
+                    Accueil
+                  </a>
+                </li>
+              
+                
+                
+
+                <li class="">
+                  <a href="//fr/fr/contact//" >
+                    Contact
+                  </a>
+                </li>
+              
+                
+                
+
+                <li class="">
+                  <a href="//fr/fr/links//" >
+                    Liens
+                  </a>
+                </li>
+              
+            </ul>
+          
+
         </div>
       </div>
     </div>
   </div>
 </div>
+
 
   <div class="sub-footer">
   <div class="container">

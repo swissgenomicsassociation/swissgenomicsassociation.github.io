@@ -1,10 +1,30 @@
 <div id="main-menu" class="main-menu">
-  {% assign mainmenu = site.data.menus.main | sort: 'weight'  %}
-  <ul>
-    {% for item in mainmenu %}
-    <li class="{% if item.url == page.url %}active{% endif %}">
-      <a href="{{ item.url | relative_url }}">{{ item.name }}</a>
-    </li>
-    {% endfor %}
-  </ul>
+  {% if site.data.menus and site.data.menus.main %}
+    {% assign mainmenu = site.data.menus.main | sort: "weight" %}
+    <ul>
+      {% for item in mainmenu %}
+        {% assign base = item.url | remove_first: '/' %}
+        {% if base == '' %}
+          {% if site.lang == 'en' %}
+            {% assign href = '/' %}
+          {% else %}
+            {% assign href = '/' | append: site.lang | append: '/' %}
+          {% endif %}
+        {% else %}
+          {% if site.lang == 'en' %}
+            {% assign href = '/' | append: base | append: '/' %}
+          {% else %}
+            {% assign href = '/' | append: site.lang | append: '/' | append: base | append: '/' %}
+          {% endif %}
+        {% endif %}
+
+        <li class="{% if item.url == page.url %}active{% endif %}">
+          <a href="{{ href | relative_url }}" {% if item.target %}target="{{ item.target }}"{% endif %}>
+            {{ item.name[site.lang] | default: item.name.en }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
 </div>
+

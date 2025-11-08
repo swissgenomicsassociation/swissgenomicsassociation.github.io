@@ -33,30 +33,58 @@
 <body class='page page-basic'>
   <div id="main-menu-mobile" class="main-menu-mobile">
   
-  <ul>
     
-    <li class="active">
-      <a href="/members/">Members</a>
-    </li>
-    
-    <li class="">
-      <a href="/releases/">Releases</a>
-    </li>
-    
-    <li class="">
-      <a href="/partnerships/">Partners</a>
-    </li>
-    
-    <li class="">
-      <a href="/about/">About</a>
-    </li>
-    
-    <li class="">
-      <a href="/contact/">Contact</a>
-    </li>
-    
-  </ul>
+    <ul>
+      
+        
+        
+
+        <li class="active">
+          <a href="//it/it/members//" >
+            Membri
+          </a>
+        </li>
+      
+        
+        
+
+        <li class="">
+          <a href="//it/it/releases//" >
+            Rilasci
+          </a>
+        </li>
+      
+        
+        
+
+        <li class="">
+          <a href="//it/it/partnerships//" >
+            Partner
+          </a>
+        </li>
+      
+        
+        
+
+        <li class="">
+          <a href="//it/it/about//" >
+            Chi siamo
+          </a>
+        </li>
+      
+        
+        
+
+        <li class="">
+          <a href="//it/it/contact//" >
+            Contatto
+          </a>
+        </li>
+      
+    </ul>
+  
 </div>
+
 
   <div id="wrapper" class="wrapper">
     <!-- <a href="//it"> -->
@@ -77,35 +105,66 @@
     </div>
     <div id="main-menu" class="main-menu">
   
-  <ul>
     
-    <li class="active">
-      <a href="/members/">Members</a>
-    </li>
-    
-    <li class="">
-      <a href="/releases/">Releases</a>
-    </li>
-    
-    <li class="">
-      <a href="/partnerships/">Partners</a>
-    </li>
-    
-    <li class="">
-      <a href="/about/">About</a>
-    </li>
-    
-    <li class="">
-      <a href="/contact/">Contact</a>
-    </li>
-    
-  </ul>
+    <ul>
+      
+        
+        
+
+        <li class="active">
+          <a href="//it/it/members//" >
+            Membri
+          </a>
+        </li>
+      
+        
+        
+
+        <li class="">
+          <a href="//it/it/releases//" >
+            Rilasci
+          </a>
+        </li>
+      
+        
+        
+
+        <li class="">
+          <a href="//it/it/partnerships//" >
+            Partner
+          </a>
+        </li>
+      
+        
+        
+
+        <li class="">
+          <a href="//it/it/about//" >
+            Chi siamo
+          </a>
+        </li>
+      
+        
+        
+
+        <li class="">
+          <a href="//it/it/contact//" >
+            Contatto
+          </a>
+        </li>
+      
+    </ul>
+  
 </div>
 
 
+
     <div class="language-switch"><a href="/members/">EN</a>
-      <a href="/de/members/">DE</a>
-      <a href="/fr/members/">FR</a></div>
+    <a href="/de/members/">DE</a>
+    <a href="/fr/members/">FR</a>
+    <a href="/it/members/">IT</a></div>
+
+
 
 
 
@@ -116,6 +175,7 @@
 </button>
   </div>
 </div>
+
 
 
 
@@ -141,13 +201,15 @@
       <div class="col-12 col-md-9 col-lg-8">
         <div class="content-block">
           <h1 class="title"></h1>
-          <div class="content"><h1 id="elenco-dei-membri">Elenco dei membri</h1>
+          <div class="content"><h1>Elenco dei membri</h1>
+
 <p>
 <a href="/login/" class="button-link">Registrati »</a>
 <a href="/profile/" class="button-link">Il tuo profilo »</a>
 </p>
 
-<p>La Swiss Genomics Association riunisce persone provenienti da tutti gli ambiti della genomica per colmare il divario tra ricerca, pratica clinica e industria. Il vero progresso nella medicina di precisione dipende da uno sforzo condiviso, in cui ogni prospettiva contribuisce a risultati migliori a livello nazionale.</p>
+<p>La Swiss Genomics Association riunisce persone provenienti da tutti gli ambiti della genomica per colmare il divario tra ricerca, pratica clinica e industria. Il vero progresso nella medicina di precisione dipende da uno sforzo condiviso, in cui ogni prospettiva contribuisce a risultati migliori a livello nazionale.
+Scopri le <a href="/it/member_cloud/">aree di interesse condivise »</a>.</p>
 
 <p>L’iscrizione è aperta a chiunque sostenga una genomica responsabile e basata sull’evidenza in Svizzera. I membri attuali provengono da diversi settori, tra cui:</p>
 
@@ -192,6 +254,8 @@
   const { data, error } = await supabase
     .from('profiles')
     .select('id, name, credentials, title, orcid_id')
+    .not('name', 'is', null)
+    .neq('name', '')
     .order('name')
 
   if (error) {
@@ -266,13 +330,15 @@
 <!--         <div class="col-12 col-md-8"> -->
 <!--             <div class="tech tech-single"> -->
 <!--                 <h1 class="title"></h1> -->
-<!--                 <div class="content"><h1 id="elenco-dei-membri">Elenco dei membri</h1>
+<!--                 <div class="content"><h1>Elenco dei membri</h1>
+
 <p>
 <a href="/login/" class="button-link">Registrati »</a>
 <a href="/profile/" class="button-link">Il tuo profilo »</a>
 </p>
 
-<p>La Swiss Genomics Association riunisce persone provenienti da tutti gli ambiti della genomica per colmare il divario tra ricerca, pratica clinica e industria. Il vero progresso nella medicina di precisione dipende da uno sforzo condiviso, in cui ogni prospettiva contribuisce a risultati migliori a livello nazionale.</p>
+<p>La Swiss Genomics Association riunisce persone provenienti da tutti gli ambiti della genomica per colmare il divario tra ricerca, pratica clinica e industria. Il vero progresso nella medicina di precisione dipende da uno sforzo condiviso, in cui ogni prospettiva contribuisce a risultati migliori a livello nazionale.
+Scopri le <a href="/it/member_cloud/">aree di interesse condivise »</a>.</p>
 
 <p>L’iscrizione è aperta a chiunque sostenga una genomica responsabile e basata sull’evidenza in Svizzera. I membri attuali provengono da diversi settori, tra cui:</p>
 
@@ -317,6 +383,8 @@
   const { data, error } = await supabase
     .from('profiles')
     .select('id, name, credentials, title, orcid_id')
+    .not('name', 'is', null)
+    .neq('name', '')
     .order('name')
 
   if (error) {
@@ -362,33 +430,48 @@
     <div class="row">
       <div class="col-12">
         <div class="footer-inner">
-          <!-- <h2 class="footer-title">Swiss Genomics Association</h2> -->
+          <p class="footer-title">Science-backed guidelines.</p>
 
-		  <!-- requires clearing to update config -->
-		  <!-- bundle exec jekyll clean -->
-		  <!-- bundle exec jekyll serve -->
-		  <p class="footer-title">Science-backed guidelines.</p>
-          <ul>
+          
             
-            
-            <li class="">
-              <a href="/">Home</a>
-            </li>
-            
-            <li class="">
-              <a href="/contact/">Contact</a>
-            </li>
-            
-            <li class="">
-              <a href="/links/">Links</a>
-            </li>
-            
-          </ul>
+            <ul>
+              
+                
+                
+
+                <li class="">
+                  <a href="/it/" >
+                    Home
+                  </a>
+                </li>
+              
+                
+                
+
+                <li class="">
+                  <a href="//it/it/contact//" >
+                    Contatto
+                  </a>
+                </li>
+              
+                
+                
+
+                <li class="">
+                  <a href="//it/it/links//" >
+                    Link
+                  </a>
+                </li>
+              
+            </ul>
+          
+
         </div>
       </div>
     </div>
   </div>
 </div>
+
 
   <div class="sub-footer">
   <div class="container">
