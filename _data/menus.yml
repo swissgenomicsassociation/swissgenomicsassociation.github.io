@@ -1,39 +1,75 @@
 main:
-  # - name: "Technologies"
-  #   url: "/technologies/"
-  #   weight: 2
-  # - name: "Team"
-  #   url: "/team/"
-  #   weight: 3
-  - name: "Members"
-    url: "/members/"
+  - key: "members"
     weight: 3
-  # - name: "Publication"
-  #   url: "/publications/"
-  #   weight: 4
-  - name: "Releases"
-    url: "/releases/"
+    url: "/members/"
+    name:
+      en: "Members"
+      de: "Mitglieder"
+      fr: "Membres"
+      it: "Membri"
+
+  - key: "releases"
     weight: 4
-  - name: "Partners"
-    url: "/partnerships/"
+    url: "/releases/"
+    name:
+      en: "Releases"
+      de: "Veröffentlichungen"
+      fr: "Publications"
+      it: "Rilasci"
+
+  - key: "partners"
     weight: 5
-  - name: "About"
-    url: "/about/"
+    url: "/partnerships/"
+    name:
+      en: "Partners"
+      de: "Partner"
+      fr: "Partenaires"
+      it: "Partner"
+
+  - key: "about"
     weight: 6
-  - name: "Contact"
-    url: "/contact/"
+    url: "/about/"
+    name:
+      en: "About"
+      de: "Über uns"
+      fr: "À propos"
+      it: "Chi siamo"
+
+  - key: "contact"
     weight: 7
+    url: "/contact/"
+    name:
+      en: "Contact"
+      de: "Kontakt"
+      fr: "Contact"
+      it: "Contatto"
+
 
 footer:
-  - name: "Home"
-    url: "/"
+  - key: "home"
     weight: 1
-  - name: "Contact"
-    url: "/contact/"
+    url: "/"
+    name:
+      en: "Home"
+      de: "Startseite"
+      fr: "Accueil"
+      it: "Home"
+
+  - key: "contact"
     weight: 2
-  - name: "Links"
-    url: "links/"
+    url: "/contact/"
+    name:
+      en: "Contact"
+      de: "Kontakt"
+      fr: "Contact"
+      it: "Contatto"
+
+  - key: "links"
     weight: 3
-  # - name: "Docs"
-  #   url: "https://docs.switzerlandomics.ch"
-  #   weight: 3
+    url: "/links/"
+    name:
+      en: "Links"
+      de: "Links"
+      fr: "Liens"
+      it: "Link"
+

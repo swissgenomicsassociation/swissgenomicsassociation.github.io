@@ -1,0 +1,134 @@
+<!-- <a href="{{ site.baseurl }}"> -->
+
+<div class='header'>
+  <div class="container">
+    <div class="logo">
+      <a href="{{ '/' | relative_url }}">
+        <span><img width="{{ site.logo.desktop_width }}" height="{{ site.logo.desktop_height }}" alt="{{ site.title }}" src="{{ site.logo.desktop | relative_url }}" /></span>
+        <span class="logo-text">Swiss Genomics Association</span>
+      </a>
+    </div>
+    <div class="logo-mobile">
+      <a href="{{ '/' | relative_url }}">
+        <span><img width="{{ site.logo.mobile_width }}" height="{{ site.logo.mobile_height }}" alt="{{ site.title }}" src="{{ site.logo.mobile | relative_url }}" /></span>
+        <span class="logo-text">Swiss Genomics Association</span>
+      </a>
+    </div>
+    {% include main-menu.html %}
+
+    <div class="language-switch">
+  {%- assign p = page.url -%}
+  {%- assign p = p
+    | replace_first: '/en/', '/'
+    | replace_first: '/de/', '/'
+    | replace_first: '/fr/', '/'
+    | replace_first: '/it/', '/' -%}
+  {%- if p == '/en' or p == '/de' or p == '/fr' or p == '/it' -%}
+    {% assign p = '/' %}
+  {%- endif -%}
+
+  {%- if p contains '/member/' or p == '/member/' -%}
+  {%- comment -%}Hide language switch on dynamic member profile pages{%- endcomment -%}
+  <!-- no language links shown -->
+
+  {%- elsif p == '/login/' -%}
+    {%- if site.lang == "en" -%}
+      <a href="/de/login/">DE</a>
+      <a href="/fr/login/">FR</a>
+      <a href="/it/login/">IT</a>
+    {%- elsif site.lang == "de" -%}
+      <!-- workaround: fixes language link bug where /login/ incorrectly resolves to /de/login/ in English -->
+      <a href="/login/">EN</a>
+      <a href="/fr/login/">FR</a>
+      <a href="/it/login/">IT</a>
+    {%- elsif site.lang == "fr" -%}
+      <a href="/login/">EN</a>
+      <a href="/de/login/">DE</a>
+      <a href="/it/login/">IT</a>
+    {%- elsif site.lang == "it" -%}
+      <a href="/login/">EN</a>
+      <a href="/de/login/">DE</a>
+      <a href="/fr/login/">FR</a>
+    {%- endif -%}
+
+  
+    {%- elsif p == '/links/' -%}
+    {%- if site.lang == "en" -%}
+      <a href="/de/links/">DE</a>
+      <a href="/fr/links/">FR</a>
+      <a href="/it/links/">IT</a>
+    {%- elsif site.lang == "de" -%}
+      <!-- workaround: fixes language link bug where /login/ incorrectly resolves to /de/login/ in English -->
+      <a href="/links/">EN</a>
+      <a href="/fr/links/">FR</a>
+      <a href="/it/links/">IT</a>
+    {%- elsif site.lang == "fr" -%}
+      <a href="/links/">EN</a>
+      <a href="/de/links/">DE</a>
+      <a href="/it/links/">IT</a>
+    {%- elsif site.lang == "it" -%}
+      <a href="/links/">EN</a>
+      <a href="/de/links/">DE</a>
+      <a href="/fr/links/">FR</a>
+    {%- endif -%}
+    
+{%- elsif p == '/404.html' -%}
+  {%- if site.lang == "en" -%}
+    <a href="/de/404.html">DE</a>
+    <a href="/fr/404.html">FR</a>
+    <a href="/it/404.html">IT</a>
+  {%- elsif site.lang == "de" -%}
+    <a href="/404.html">EN</a>
+    <a href="/fr/404.html">FR</a>
+    <a href="/it/404.html">IT</a>
+  {%- elsif site.lang == "fr" -%}
+    <a href="/404.html">EN</a>
+    <a href="/de/404.html">DE</a>
+    <a href="/it/404.html">IT</a>
+  {%- elsif site.lang == "it" -%}
+    <a href="/404.html">EN</a>
+    <a href="/de/404.html">DE</a>
+    <a href="/fr/404.html">FR</a>
+  {%- endif -%}
+
+
+
+  {%- else -%}
+    {%- if site.lang == "en" -%}
+      <a href="{{ '/de' | append: p | relative_url }}">DE</a>
+      <a href="{{ '/fr' | append: p | relative_url }}">FR</a>
+      <a href="{{ '/it' | append: p | relative_url }}">IT</a>
+    {%- elsif site.lang == "de" -%}
+      <a href="{{ p | relative_url }}">EN</a>
+      <a href="{{ '/fr' | append: p | relative_url }}">FR</a>
+      <a href="{{ '/it' | append: p | relative_url }}">IT</a>
+    {%- elsif site.lang == "fr" -%}
+      <a href="{{ p | relative_url }}">EN</a>
+      <a href="{{ '/de' | append: p | relative_url }}">DE</a>
+      <a href="{{ '/it' | append: p | relative_url }}">IT</a>
+    {%- elsif site.lang == "it" -%}
+      <a href="{{ p | relative_url }}">EN</a>
+      <a href="{{ '/de' | append: p | relative_url }}">DE</a>
+      <a href="{{ '/fr' | append: p | relative_url }}">FR</a>
+    {%- else -%}
+      <a href="{{ '/de' | append: p | relative_url }}">DE</a>
+      <a href="{{ '/fr' | append: p | relative_url }}">FR</a>
+      <a href="{{ '/it' | append: p | relative_url }}">IT</a>
+    {%- endif -%}
+  {%- endif -%}
+</div>
+
+
+
+    {% include hamburger.html %}
+  </div>
+</div>
+
+{% assign math = page.math | default: layout.math | default: site.math %}
+
+{% case math %}
+  {% when "mathjax" %}
+    {% include mathjax.html %}
+{% endcase %}
+
+

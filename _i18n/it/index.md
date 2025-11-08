@@ -3,9 +3,9 @@
 ## Esperti provenienti da tutta la Svizzera collaborano per definire linee guida aperte e basate sull’evidenza per la genomica nella salute, nella ricerca e nella pratica nazionale.
 
 * **Deutsch:** *Schweizerische Genomik-Vereinigung*  
-* * **Français:** *Association Suisse de Génomique*  
-* * **Italiano:** *Associazione Svizzera di Genomica*  
-* * **English:** *Swiss Genomics Association*
+* **Français:** *Association Suisse de Génomique*  
+* **Italiano:** *Associazione Svizzera di Genomica*  
+* **English:** *Swiss Genomics Association*
 
 <br>
 

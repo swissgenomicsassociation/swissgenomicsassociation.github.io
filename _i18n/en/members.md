@@ -6,6 +6,7 @@
 </p>
 
 The Swiss Genomics Association connects people across genomics to bridge the gap between research, clinical practice, and industry. Real progress in precision medicine depends on shared effort, where every perspective contributes to better national outcomes.
+View our areas of <a href="/member_cloud/">shared focus here »</a>.
 
 Membership is open to anyone supporting responsible, evidence-based genomics in Switzerland. Current members include people from a wide range of backgrounds, such as:
 
@@ -16,3 +17,5 @@ Membership is open to anyone supporting responsible, evidence-based genomics in 
 - Patients, parents, and public representatives  
 
 Your email address is used only to notify you of new guideline initiatives. Never for spam.
+
+

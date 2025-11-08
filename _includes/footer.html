@@ -3,22 +3,39 @@
     <div class="row">
       <div class="col-12">
         <div class="footer-inner">
-          <!-- <h2 class="footer-title">{{site.title}}</h2> -->
+          <p class="footer-title">{{ site.motto }}</p>
 
-		  <!-- requires clearing to update config -->
-		  <!-- bundle exec jekyll clean -->
-		  <!-- bundle exec jekyll serve -->
-		  <p class="footer-title">{{ site.motto }}</p>
-          <ul>
-            {% assign footermenu = site.data.menus.footer | sort: 'weight'  %}
-            {% for item in footermenu %}
-            <li class="{% if item.url == page.url %}active{% endif %}">
-              <a href="{{ item.url | relative_url }}">{{ item.name }}</a>
-            </li>
-            {% endfor %}
-          </ul>
+          {% if site.data.menus and site.data.menus.footer %}
+            {% assign footermenu = site.data.menus.footer | sort: "weight" %}
+            <ul>
+              {% for item in footermenu %}
+                {% assign base = item.url | remove_first: '/' %}
+                {% if base == '' %}
+                  {% if site.lang == 'en' %}
+                    {% assign href = '/' %}
+                  {% else %}
+                    {% assign href = '/' | append: site.lang | append: '/' %}
+                  {% endif %}
+                {% else %}
+                  {% if site.lang == 'en' %}
+                    {% assign href = '/' | append: base | append: '/' %}
+                  {% else %}
+                    {% assign href = '/' | append: site.lang | append: '/' | append: base | append: '/' %}
+                  {% endif %}
+                {% endif %}
+
+                <li class="{% if item.url == page.url %}active{% endif %}">
+                  <a href="{{ href | relative_url }}" {% if item.target %}target="{{ item.target }}"{% endif %}>
+                    {{ item.name[site.lang] | default: item.name.en }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+
         </div>
       </div>
     </div>
   </div>
 </div>
+

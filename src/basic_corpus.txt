@@ -1,0 +1,107 @@
+
+1. data science lead
+Leads statistical model development for scalable genomic interpretation, specialising in probabilistic evidence aggregation, phenotypic embeddings and uncertainty modelling. Drives quantitative frameworks that integrate population context, inheritance logic and mechanism fit into reproducible pipelines. Contributes to national standards for auditable, computable variant reasoning that move beyond categorical labels toward evidence-weighted inference.
+
+2. genomic data engineer
+Architects distributed pipelines for high-throughput sequence processing, harmonisation of VCF, BAM/CRAM and metadata provenance, and infrastructure for federated evidence exchange. Builds automation layers that preserve sample quality metrics, versioned traceability and interoperability with GA4GH schemas. Prioritises engineering systems that keep clinical nuance intact while scaling across institutions.
+
+3. clinical data manager
+Oversees data governance, curation, auditability and regulatory alignment across research and healthcare genomics. Ensures that variant evidence, phenotype records and consent frameworks maintain longitudinal integrity, structured provenance and national interoperability. Coordinates harmonisation of heterogeneous clinical sources into shared, computable evidence substrates.
+
+4. federal science advisory specialist
+Bridges genomic science, policy and public infrastructure planning. Advises on national strategy for interoperable standards, data sovereignty, clinical applicability and alignment between research, diagnostics and industrial innovation. Advocates for transparent evidence frameworks that support safe AI integration and avoid ungrounded algorithmic conclusions in genomic medicine.
+
+5. bioinformatics research lead
+Develops algorithmic methods for variant normalisation, representation, annotation and phenotype-aware prioritisation using GA4GH VRS/VA, HPO, ORDO and Beacon-compatible federation. Focuses on mechanistic plausibility, zygosity validation and cross-database evidence synthesis to support biologically sound, exchange-ready variant interpretation.
+
+6. statistical genomics principal
+Designs quantitative inference frameworks to resolve conflicting evidence, measure posterior support for pathogenicity and formalise evidence uncertainty. Champions the shift from heuristic pathogenicity assignment to full evidence accounting, including allele frequency reconciliation, segregation analysis, penetrance reasoning and contradiction-aware inference.
+
+7. public representative for genomics
+Advocates for clear, respectful and accurate communication in clinical genomics, ensuring patient and public perspectives inform national standards. Supports transparency in how genomic conclusions are reached, especially when uncertainty, incomplete evidence or algorithmic inference are involved. Contributes to guidelines on trust, consent and interpretive accountability.
+
+8. biotech chief executive officer
+Leads development of industrial-scale genomic platforms with a focus on interoperability over vendor lock-in. Supports standards that make multi-modal evidence computable, auditable and portable across laboratories, healthcare systems and AI-assisted workflows. Invests in shared infrastructure that strengthens rather than fragments national genomic capability.
+
+9. rare disease clinical scientist
+Interprets complex genomic findings in diagnostic settings, emphasising inheritance verification, phenotype concordance, disease mechanism alignment and contradictory evidence resolution. Integrates structured clinical reasoning with computational evidence models to ensure conclusions remain defensible, reproducible and clinically meaningful.
+
+10. national standards co-ordinator
+ Leads consensus development for shared evidence schemas, alignment with GA4GH specifications and harmonisation across healthcare, research and industry partners. Works to ensure that all variant assertions retain provenance, traceable justification, computable structure and explicit uncertainty, enabling national-scale reuse without loss of meaning.
+
+
+1. ethics and legal specialist
+Guides governance on consent, data portability, privacy-preserving computation, cross-border data flows, and ethical implementation of federated genomic analysis. Ensures that evidence sharing frameworks balance clinical utility with proportionate safeguards and public expectation.
+
+2. regulatory affairs lead
+Aligns genomic evidence standards with medical device, diagnostics and software-as-medical-intended-use requirements. Maps technical specifications to compliance frameworks and ensures that shared standards remain compatible with evolving regulatory obligations.
+
+3. clinical geneticist
+Provides expert oversight for disease mechanisms, inheritance models, diagnostic thresholds and clinical reporting norms. Validates that structured evidence models reflect real-world decision pathways in clinical genetics and do not over-simplify complex case reasoning.
+
+4. laboratory quality and accreditation specialist
+Ensures proposed standards align with certified laboratory practice, validation requirements and proficiency benchmarks. Advises on evidential thresholds, reproducibility requirements and traceability expectations in accredited diagnostic environments.
+
+5. health informatics integration lead
+Connects genomic evidence specifications to hospital information systems, national health records, test ordering workflows and structured clinical phenotype capture. Ensures compatibility with existing health data architecture and semantic models.
+
+6. secure computing and privacy engineering expert
+Designs federated analysis, encryption models, access control, audit logging and privacy-preserving computation strategies that support evidence sharing without centralising raw genomic data.
+
+7. patient advocacy and rare disease organisation representative
+Ensures priorities of affected families guide standard development, particularly around reanalysis expectations, clinical transparency, meaningful communication of uncertainty and equitable access to genomic advances.
+
+8. pharmacogenomics and precision therapeutics lead
+Integrates genomic evidence frameworks with drug response, contraindications, dosing guidance and clinical decision support systems, ensuring interoperability with prescribing and safety systems.
+
+9. standards liaison officer (international alignment)
+Maintains active alignment with GA4GH workstreams, ELIXIR, ClinGen, ISO/CEN activities, diagnostic consortia and international harmonisation efforts to prevent divergence and ensure exchange readiness.
+
+10. implementation and adoption strategist
+Drives uptake across hospitals, laboratories, research groups, startups and national programmes. Focuses on usability, incentives, integration pathways, tooling support and translation from specification to practice.
+
+11. economic and health impact analyst
+Models long-term health system benefit, diagnostic yield, cost avoidance, workforce impact and infrastructure investment outcomes to support national funding and sustainability planning.
+
+12. education and workforce development lead
+Designs training programmes for clinicians, analysts, researchers and laboratory teams on structured evidence, provenance-aware interpretation, and reproducible genomic reasoning.
+
+13. communication and public engagement lead
+Supports transparent national communication, manages public expectations of genomic evidence, explains limitations of automated interpretation, and builds trust through clear, non-technical public guidance.
+
+14. software interoperability testing co-ordinator
+Builds reference implementations, cross-platform test harnesses, compliance suites and synthetic benchmark cases to verify that evidence formats behave consistently across tools and vendors.
+
+15. clinical trial and translational research representative
+Ensures standards support genomic evidence re-use in clinical research, patient stratification, variant-driven enrollment and the generation of regulatory-grade evidence from clinical cohorts.
+
+1. industry partnerships and innovation lead
+Builds cross-sector collaborations between genomics providers, biotech companies, healthcare systems and scientific networks. Focuses on co-development of technologies, validation studies and commercial pathways that strengthen national competitiveness and accelerate responsible adoption.
+2. customer impact and solutions director
+Guides the translation of genomic tools into products that serve hospitals, laboratories, industry clients and individuals. Prioritises usability, service reliability, customer outcomes and measurable value, ensuring solutions integrate smoothly into real-world workflows.
+3. health economies and market strategy specialist
+Assesses national and international market needs, cost drivers and scaling opportunities for genomic services. Supports strategies that balance sustainable economic growth, clinical benefit and long-term public value.
+4. international collaboration and global networks lead
+Develops partnerships across countries, research consortia, industry alliances and public genomic initiatives. Ensures Swiss involvement in multinational programmes, knowledge exchange and shared infrastructure for global health impact.
+5. genomic services delivery manager
+Oversees operational delivery of sequencing, interpretation and reporting services to clinical, research and commercial clients. Focuses on turnaround time, quality assurance, customer support pathways and service performance metrics.
+6. precision health product manager
+Leads the design and launch of genomic products that address clear clinical, research or customer needs. Balances scientific fidelity, regulatory requirements, market fit and long-term utility.
+7. bioindustry commercialisation strategist
+Supports translation of scientific advances into scalable offerings, investment pathways, product validation plans and deployment models that contribute to national and international economic development.
+8. customer insights and user research lead
+Develops evidence on user needs across clinicians, researchers, patients and industry clients to shape product design, service models and communication strategies that improve adoption and satisfaction.
+9. economic development and national competitiveness adviser
+Contributes analysis on workforce needs, innovation capacity, infrastructure investment and industry growth mapping to ensure national genomic capability also drives economic resilience.
+10. service quality and client success specialist
+Ensures high-quality client experience through service evaluation, continuous improvement frameworks, support models, service-level indicators and outcome tracking across diverse user groups.
+11. cross-border data collaboration architect
+Designs frameworks for compliant international data collaboration, aligning legal, infrastructure and interoperability requirements to support multinational studies and commercial partnerships.
+12. public-private programme co-ordinator
+Manages initiatives where government, universities, hospitals and industry share objectives, investment or infrastructure to strengthen national capacity in precision medicine.
+13. innovation ecosystem connector
+Links startups, established industry, academia, hospitals, investors and public initiatives to build a cohesive innovation landscape, with shared goals and reduced structural barriers.
+14. genomic customer education and engagement lead
+Creates training, onboarding and communication pathways to help customers, partners and institutions confidently integrate genomic tools into clinical, scientific or operational use.
+15. industry standards and interoperability partner
+Advances alignment between commercial genomic platforms, national priorities and international standards, ensuring industrial contributions remain interoperable, accountable and exchange-ready.

@@ -39,6 +39,8 @@ intro_image: "images/freepik_vectorjuice/distance-working.jpg"
   const { data, error } = await supabase
     .from('profiles')
     .select('id, name, credentials, title, orcid_id')
+    .not('name', 'is', null)
+    .neq('name', '')
     .order('name')
 
   if (error) {
