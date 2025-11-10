@@ -1,4 +1,4 @@
-## Partnerschaften
+<h1>Partnerschaften</h1>
 
 Wir definieren Standards. Sie bauen darauf auf.
 

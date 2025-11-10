@@ -2,6 +2,7 @@ baseurl: '/'
 permalink: pretty
 title: 'Swiss Genomics Association'
 motto: 'Science-backed guidelines.'
+url: 'https://swissgenomicsassociation.ch'
 
 logo:
   mobile: "images/logo/logo_v2.svg"
@@ -58,6 +59,7 @@ sass:
 plugins:
   - jekyll-environment-variables
   - jekyll-multiple-languages-plugin
+  - jekyll-sitemap
 
 # language support
 languages: ["en", "de", "fr", "it"]  # choose the languages you want
