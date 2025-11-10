@@ -1,5 +1,5 @@
 
-## Partnerships
+<h1>Partnerships</h1>
 
 We define standards. You build upon them.
 

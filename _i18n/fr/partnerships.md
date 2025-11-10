@@ -1,4 +1,4 @@
-## Partenariats
+<h1>Partenariats</h1>
 
 Nous définissons les standards. Vous construisez à partir d’eux.
 

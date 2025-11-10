@@ -1,5 +1,4 @@
 ---
-title: Partnerships
 layout: page
 description: Strategic collaborations for rigorous, scalable genomics
 intro_image_absolute: true
