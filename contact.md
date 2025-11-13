@@ -1,22 +1,9 @@
 ---
-title: Contact
-layout: contact
+layout: page
 description: Contact
+intro_image_absolute: true
+intro_image_hide_on_mobile: false
 ---
 
-**We are currently focused on building**.
+{% translate_file contact.md %}
 
-1. Stay in the loop by joining as a member. No spam, ever:\\
-**[Members →](/members)**
-
-2. Contact us via the current chair, Dylan Lawless: [dylan@switzerlandomics.ch](mailto:dylan@switzerlandomics.ch).
-
-<!-- | Day       | Opening Hours   | -->
-<!-- | --------- | --------------- | -->
-<!-- | Monday    | 8:30am - 5:00pm | -->
-<!-- | Tuesday   | 8:30am - 5:00pm | -->
-<!-- | Wednesday | 8:30am - 5:00pm | -->
-<!-- | Thursday  | 8:30am - 5:00pm | -->
-<!-- | Friday    | 8:30am - 5:00pm | -->
-<!-- | Saturday  | Closed          | -->
-<!-- | Saturday  | Closed          | -->

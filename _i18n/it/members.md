@@ -5,7 +5,8 @@
 <a href="/profile/" class="button-link">Il tuo profilo »</a>
 </p>
 
-La Swiss Genomics Association riunisce persone provenienti da tutti gli ambiti della genomica per colmare il divario tra ricerca, pratica clinica e industria. Il vero progresso nella medicina di precisione dipende da uno sforzo condiviso, in cui ogni prospettiva contribuisce a risultati migliori a livello nazionale.
+L’Associazione Svizzera di Genomica riunisce persone provenienti da tutti gli ambiti della genomica per colmare il divario tra ricerca, pratica clinica e industria.
+Il vero progresso nella medicina di precisione dipende da uno sforzo condiviso, in cui ogni prospettiva contribuisce a risultati migliori a livello nazionale.
 Scopri le <a href="/it/member_cloud/">aree di interesse condivise »</a>.
 
 L’iscrizione è aperta a chiunque sostenga una genomica responsabile e basata sull’evidenza in Svizzera. I membri attuali provengono da diversi settori, tra cui:
