@@ -2,9 +2,12 @@
 
 ## Bozze in corso
 
-* **Linee guida**: Linee guida di consenso della Swiss Genomics Association per l’interpretazione basata sulle evidenze delle varianti genomiche nelle malattie mendeliane.\
+* **Linee guida**: Linee guida di consenso dell’Associazione Svizzera di Genomica per l’interpretazione basata sulle evidenze delle varianti genomiche nelle malattie mendeliane.\
 [PDF (EN)]({{ '/assets/release/mendelian_disease_interpretation/latest/mendelian_disease_interpretation_v1.pdf' | relative_url }}){:target="_blank"} |
 [Repository](https://github.com/swissgenomicsassociation/mendelian_disease_interpretation)
+* **Linea guida**: Linea guida di consenso dell’Associazione Svizzera di Genomica per un’infrastruttura decisionale genomica verificabile.\
+[PDF (EN)]({{ '/assets/release/verifiable_infrastructure_pillars/latest/verifiable_infrastructure_pillars.pdf' | relative_url }}){:target="_blank"} |
+[Repository](https://github.com/swissgenomicsassociation/verifiable_infrastructure_pillars)
 
 ## Pubblicazioni precedenti
 

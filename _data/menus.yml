@@ -73,3 +73,11 @@ footer:
       fr: "Liens"
       it: "Link"
 
+  - key: "ceopage"
+    weight: 3
+    url: "/ceopage/"
+    name:
+      en: "For CEOs"
+      de: "Für CEOs"
+      fr: "Dirigeants"
+      it: "Per i CEO"

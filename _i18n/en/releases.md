@@ -9,6 +9,7 @@
 * **Guideline**: Swiss Genomics Association consensus guideline for verifiable genomic decision infrastructure.\
 [PDF (EN)]({{ '/assets/release/verifiable_infrastructure_pillars/latest/verifiable_infrastructure_pillars.pdf' | relative_url }}){:target="_blank"} |
 [Repository](https://github.com/swissgenomicsassociation/verifiable_infrastructure_pillars)
+
 ## Past releases
 
 * **Founding charter**: Defining the shared foundation for responsible, collaborative, and resilient genomics in the public interest.\
