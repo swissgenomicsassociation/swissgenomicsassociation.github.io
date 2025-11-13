@@ -2,9 +2,12 @@
 
 ## Versions préliminaires en cours
 
-* **Directive** : Directive de consensus de la Swiss Genomics Association pour l’interprétation fondée sur les preuves des variants génomiques dans les maladies mendéliennes.\
+* **Directive** : Directive de consensus de l’Association Suisse de Génomique pour l’interprétation fondée sur les preuves des variants génomiques dans les maladies mendéliennes.\
 [PDF (EN)]({{ '/assets/release/mendelian_disease_interpretation/latest/mendelian_disease_interpretation_v1.pdf' | relative_url }}){:target="_blank"} |
 [Repository](https://github.com/swissgenomicsassociation/mendelian_disease_interpretation)
+* **Directive**: Directive de consensus de l’Association Suisse de Génomique pour une infrastructure décisionnelle génomique vérifiable.\
+[PDF (EN)]({{ '/assets/release/verifiable_infrastructure_pillars/latest/verifiable_infrastructure_pillars.pdf' | relative_url }}){:target="_blank"} |
+[Repository](https://github.com/swissgenomicsassociation/verifiable_infrastructure_pillars)
 
 ## Publications précédentes
 

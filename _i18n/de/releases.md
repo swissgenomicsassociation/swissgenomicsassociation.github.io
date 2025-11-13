@@ -2,9 +2,12 @@
 
 ## Entwürfe in Bearbeitung
 
-* **Leitlinie**: Konsensleitlinie der Swiss Genomics Association zur evidenzbasierten Interpretation genomischer Varianten bei mendelischen Erkrankungen.\
+* **Leitlinie**: Konsensleitlinie der Schweizerischen Genomik-Vereinigung zur evidenzbasierten Interpretation genomischer Varianten bei mendelischen Erkrankungen.\
 [PDF (EN)]({{ '/assets/release/mendelian_disease_interpretation/latest/mendelian_disease_interpretation_v1.pdf' | relative_url }}){:target="_blank"} |
 [Repository](https://github.com/swissgenomicsassociation/mendelian_disease_interpretation)
+* **Leitlinie**: Konsensleitlinie der Schweizerischen Genomik-Vereinigung für überprüfbare genomische Entscheidungsstrukturen.\
+[PDF (EN)]({{ '/assets/release/verifiable_infrastructure_pillars/latest/verifiable_infrastructure_pillars.pdf' | relative_url }}){:target="_blank"} |
+[Repository](https://github.com/swissgenomicsassociation/verifiable_infrastructure_pillars)
 
 ## Frühere Veröffentlichungen
 
