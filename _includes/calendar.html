@@ -1,0 +1,44 @@
+<p>
+Each meeting introduces a focused topic in a simple, accessible way so everyone can contribute, whatever their background. We explore what the topic means, why it may matter in practice, and what it would take to make it work at national scale. The discussion is open and exploratory: members share their views, uncertainties, and experience, and this collective input is then shaped into scientific guidelines and priority areas for Switzerland. Your perspective is genuinely needed, wherever you sit in our shared network. 
+</p>
+
+<p>
+Meetings are 30-60 minutes. Simple background information will be shared ahead of time so that you can participate comfortably or simply listen in. Notes are taken but no recording is made.
+</p>
+
+<div class="divider"></div>
+
+
+<div class="events-container">
+<ul class="event-list">
+{% for e in site.data.events %}
+  {% assign event_time = e.datetime | date: "%s" %}
+  {% assign now_time = "now" | date: "%s" %}
+  {% if event_time < now_time %}
+    {% assign status = "Ended" %}
+    {% assign colour = "#888" %}
+  {% else %}
+    {% assign status = "Upcoming" %}
+    {% assign colour = "green" %}
+  {% endif %}
+
+  <li class="event-card">
+    <div class="event-date">
+      {{ e.datetime | date: "%Y-%m-%d %H:%M" }} Zürich CET (UTC+1)
+      <span style="color: {{ colour }};">({{ status }})</span>
+    </div>
+
+    <div class="event-title">{{ e.title }}</div>
+    <div class="event-topic">{{ e.topic }}</div>
+
+    {% if status == "Upcoming" %}
+      <div class="event-link">
+        <a href="{{ e.link }}">Request link to join</a>
+      </div>
+    {% endif %}
+  </li>
+{% endfor %}
+</ul>
+</div>
+
+
