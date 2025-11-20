@@ -73,8 +73,17 @@ footer:
       fr: "Liens"
       it: "Link"
 
-  - key: "ceopage"
+  - key: "calendar"
     weight: 3
+    url: "/calendar/"
+    name:
+      en: "Calendar"
+      de: "Kalender"
+      fr: "Calendrier"
+      it: "Calendario"
+
+  - key: "ceopage"
+    weight: 4
     url: "/ceopage/"
     name:
       en: "For CEOs"

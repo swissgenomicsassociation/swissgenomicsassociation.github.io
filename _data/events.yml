@@ -1,0 +1,21 @@
+- title: Zoom meeting
+  topic: Focus on the consensus variant interpretation guideline, reviewing the QV flag set used across clinical, research, and commercial workflows. Examples include population frequency checks, inheritance logic, protein feature mapping, phenotype matching, transcript relevance, splicing support, read-level quality, and conflict detection. The aim is to agree a shared, minimal evidence rule set that all pipelines can reuse.
+  datetime: "2025-12-01 17:00"
+  link: "mailto:admin@switzerlandomics.ch"
+
+- title: Zoom meeting
+  topic: Draft SGA guidelines for variant interpretation and genomic decision infrastructure, including the full QV specification, clinical bioinformatics recommendations, GA4GH aligned evidence structures, a three pillar architecture, and practical examples of how these standards can be applied.
+  datetime: "2025-09-01 17:00"
+  link: "mailto:admin@switzerlandomics.ch"
+
+- title: Zoom meeting
+  topic: Core scientific questions in variant interpretation, including population data, inheritance, and phenotype matching, with an introduction to the QV approach and to national genomic provenance and data flow, and how shared formats can benefit both clinical and commercial sectors.
+  datetime: "2025-06-02 17:00"
+  link: "mailto:admin@switzerlandomics.ch"
+
+- title: Zoom meeting
+  topic: How Switzerland can adopt shared national standards for genomics, with an introduction to treating variant interpretation as a data science and reproducibility problem rather than a purely manual clinical genetics task.
+  datetime: "2025-03-03 17:00"
+  link: "mailto:admin@switzerlandomics.ch"
+  
+

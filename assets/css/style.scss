@@ -174,3 +174,45 @@ html {
   white-space:nowrap;
 }
 
+// events calenader
+.events-container {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.event-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.event-card {
+  padding: 1rem 0;
+  border-bottom: 1px solid $steel;
+}
+
+.event-card:last-child {
+  border-bottom: none;
+}
+
+.event-date {
+  font-size: 0.9rem;
+}
+
+.event-title {
+  font-weight: 600;
+  margin-top: 0.2rem;
+}
+
+.event-topic {
+  margin-top: 0.2rem;
+}
+
+.event-link {
+  margin-top: 0.4rem;
+}
+
+.divider {
+  border-top: 1px solid $steel;
+  margin: 2rem 0;
+}
