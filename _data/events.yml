@@ -1,6 +1,6 @@
 - title: Zoom meeting
-  topic: Focus on the consensus variant interpretation guideline, reviewing the QV flag set used across clinical, research, and commercial workflows. Examples include population frequency checks, inheritance logic, protein feature mapping, phenotype matching, transcript relevance, splicing support, read-level quality, and conflict detection. The aim is to agree a shared, minimal evidence rule set that all pipelines can reuse.
-  datetime: "2025-12-01 17:00"
+  topic: Review the consensus evidence model in the SGA guideline (<a href="https://www.swissgenomicsassociation.ch/assets/release/mendelian_disease_interpretation/latest/mendelian_disease_interpretation_v1.pdf">link</a>). The aim is to agree a shared minimum evidence rule set that all service providers can satisfy. Using reverse reasoning and a common set of flags, any pipeline or platform can demonstrate that its outputs meet the national evidence format. This creates a uniform baseline across clinical, research, and commercial genomics and reduces the fragmentation that limits trust and interoperability.
+  datetime: "2026-01-05 17:00"
   link: "mailto:admin@switzerlandomics.ch"
 
 - title: Zoom meeting
