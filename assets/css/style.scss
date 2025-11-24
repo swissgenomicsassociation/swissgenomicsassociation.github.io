@@ -216,3 +216,97 @@ html {
   border-top: 1px solid $steel;
   margin: 2rem 0;
 }
+
+
+
+// Notices
+  .draft-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    border-radius: 0.75rem;
+    border: 1px solid rgba(17, 24, 39, 0.1);
+    background: radial-gradient(circle at top left, rgba(59, 130, 246, 0.06), transparent),
+                rgba(249, 250, 251, 0.98);
+    color: #111827;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+    box-shadow:
+      0 12px 30px rgba(15, 23, 42, 0.08),
+      0 1px 2px rgba(15, 23, 42, 0.06);
+    margin: 1.5rem 0;
+  }
+
+  .draft-notice-icon {
+    flex: 0 0 auto;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #2563eb, #4f46e5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: 0.05em;
+    box-shadow:
+      0 10px 20px rgba(37, 99, 235, 0.35),
+      0 0 0 1px rgba(255, 255, 255, 0.6);
+  }
+
+  .draft-notice-content {
+    flex: 1 1 auto;
+  }
+
+  .draft-notice-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #1d4ed8;
+    margin-bottom: 0.25rem;
+  }
+
+  .draft-notice p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #374151;
+  }
+
+.contrib-note {
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(17, 24, 39, 0.1);
+  background: radial-gradient(circle at top left, rgba(16, 185, 129, 0.06), transparent),
+              rgba(249, 250, 251, 0.98);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+  box-shadow:
+    0 12px 30px rgba(15, 23, 42, 0.08),
+    0 1px 2px rgba(15, 23, 42, 0.06);
+  margin: 2rem 0;
+  colour: #111827;
+}
+
+.contrib-note-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  colour: #047857;
+  margin-bottom: 0.25rem;
+}
+
+.contrib-note a {
+  colour: #047857;
+  text-decoration: underline;
+}
+
+.contrib-note p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  colour: #374151;
+}
+

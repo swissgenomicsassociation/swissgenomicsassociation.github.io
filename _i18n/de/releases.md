@@ -1,13 +1,15 @@
 # Veröffentlichungen
-
-## Entwürfe in Bearbeitung
-
-* **Leitlinie**: Konsensleitlinie der Schweizerischen Genomik-Vereinigung zur evidenzbasierten Interpretation genomischer Varianten bei mendelischen Erkrankungen.\
-[PDF (EN)]({{ '/assets/release/mendelian_disease_interpretation/latest/mendelian_disease_interpretation_v1.pdf' | relative_url }}){:target="_blank"} |
-[Repository](https://github.com/swissgenomicsassociation/mendelian_disease_interpretation)
-* **Leitlinie**: Konsensleitlinie der Schweizerischen Genomik-Vereinigung für überprüfbare genomische Entscheidungsstrukturen.\
-[PDF (EN)]({{ '/assets/release/verifiable_infrastructure_pillars/latest/verifiable_infrastructure_pillars.pdf' | relative_url }}){:target="_blank"} |
-[Repository](https://github.com/swissgenomicsassociation/verifiable_infrastructure_pillars)
+<div class="contrib-note">
+  <div class="contrib-note-content">
+<div class="contrib-note-title">Mitmachen und zusammenarbeiten</div>
+<p>
+  Hinweise und Informationen zur Zusammenarbeit finden Beitragende auf
+  <a href="https://github.com/swissgenomicsassociation/#contribute-and-collaborate" target="_blank">
+    der Beitragsseite</a>.
+  Wir senden die Leitlinienartikel in zwei Schritten an unsere Mitglieder: zuerst zur Einladung von Beiträgen und später, sobald die Artikel abgeschlossen sind.
+</p>
+</div>
+</div>
 
 ## Frühere Veröffentlichungen
 
@@ -15,29 +17,31 @@
 [PDF (EN)]({{ '/assets/release/founding_charter/latest/founding_charter.pdf' | relative_url }}){: target="_blank"} |
 [Repository](https://github.com/swissgenomicsassociation/founding_charter)
 
-## Verwandte Veröffentlichungen externer Partner
+## Entwürfe in Bearbeitung
 
-* **Qualifying Variant (QV)**: Die QV-Datenbank bietet ein offenes, teilbares und reproduzierbares Rahmenwerk für die genomische Interpretation.\
-[DOI](https://doi.org/10.1101/2025.05.09.25324975) | 
-[PDF](https://www.medrxiv.org/content/10.1101/2025.05.09.25324975v2.full.pdf) | 
-[Video](https://player.vimeo.com/video/1083533047) | 
-[Database](https://switzerlandomics.ch/technologies/qv_database/)  
+* **Leitlinie**: Konsensleitlinie der Schweizerischen Genomik-Vereinigung zur evidenzbasierten Interpretation genomischer Varianten bei mendelischen Erkrankungen.\
+[PDF (EN)]({{ '/assets/release/mendelian_disease_interpretation/latest/mendelian_disease_interpretation_v1.pdf' | relative_url }}){:target="_blank"} |
+[Repository](https://github.com/swissgenomicsassociation/mendelian_disease_interpretation)
+    * Aufruf zur Mitarbeit: <span style="color: green;">angekündigt im Dezember</span>.
+    * Endgültige Veröffentlichung: <span style="color: green;">angekündigt im Februar</span>.
 
-* **Archipelago**: R-Paket zur Zusammenfassung und Interpretation von Assoziationstest-Statistiken von Variantensätzen (GitHub).\
-[DOI](https://doi.org/10.1101/2025.03.17.25324111) | 
-[PDF](https://www.medrxiv.org/content/10.1101/2025.03.17.25324111v2.full.pdf) | 
-[Repository](https://github.com/DylanLawless/archipelago)  
+* **Leitlinie**: Konsensleitlinie der Schweizerischen Genomik-Vereinigung für überprüfbare genomische Entscheidungsstrukturen.\
+[PDF (EN)]({{ '/assets/release/verifiable_infrastructure_pillars/latest/verifiable_infrastructure_pillars.pdf' | relative_url }}){:target="_blank"} |
+[Repository](https://github.com/swissgenomicsassociation/verifiable_infrastructure_pillars)
+    * Aufruf zur Mitarbeit: <span style="color: green;">angekündigt im Januar</span>.
+    * Endgültige Veröffentlichung: <span style="color: green;">angekündigt im März</span>.
 
-* **PanelAppRex basic**: R-Setup und Daten zum Aufbau eines Open-Source-Basismodells (GitHub und Zenodo).\
-[DOI](https://doi.org/10.1101/2025.03.20.25324319) | 
-[PDF](https://www.medrxiv.org/content/10.1101/2025.03.20.25324319v3.full.pdf) | 
-[Repository](https://github.com/DylanLawless/PanelAppRex) |
-[Video](https://player.vimeo.com/video/1099451293) | 
-[Application](https://switzerlandomics.ch/technologies/panelAppRexAi/) | 
-[Dataset](https://doi.org/10.5281/zenodo.15736688)  
 
-* **Genetische Diagnose von inborn errors of immunity (IEI)**: Open-Source, weltweit führende Datenbank der IEI-Genetik, bereitgestellt als Teilmenge von PanelAppRex für die Gemeinschaft.\
-[Homepage](https://iei-genetics.github.io) | 
-[Database](https://iei-genetics.github.io/assets/iusis_iei_table_2025.html) | 
-[Repository](https://github.com/DylanLawless/iei_genetics)  
+<div class="draft-notice">
+  <div class="draft-notice-content">
+    <div class="draft-notice-title">ENTWURF · NICHT FINAL</div>
+    <p>
+      Dieses Dokument ist ein öffentlich zugänglicher Arbeitsentwurf und stellt keine abgeschlossene oder offiziell freigegebene Version dar.
+      Alle Aussagen, Analysen und Meinungen stammen von den Autorinnen und Autoren und wurden noch keiner gemeinsamen Gremienprüfung
+      oder externen Begutachtung unterzogen. Die Inhalte werden zur Transparenz und gemeinsamen Weiterentwicklung bereitgestellt
+      und können vor der Veröffentlichung wesentlich geändert werden.
+    </p>
+  </div>
+</div>
+
 

@@ -1,14 +1,15 @@
 # Releases
-
-## Drafts in progress
-
-* **Guideline**: Swiss Genomics Association consensus guideline for evidence-based genomic variant interpretation in Mendelian disease.\
-[PDF (EN)]({{ '/assets/release/mendelian_disease_interpretation/latest/mendelian_disease_interpretation_v1.pdf' | relative_url }}){:target="_blank"} |
-[Repository](https://github.com/swissgenomicsassociation/mendelian_disease_interpretation)
-
-* **Guideline**: Swiss Genomics Association consensus guideline for verifiable genomic decision infrastructure.\
-[PDF (EN)]({{ '/assets/release/verifiable_infrastructure_pillars/latest/verifiable_infrastructure_pillars.pdf' | relative_url }}){:target="_blank"} |
-[Repository](https://github.com/swissgenomicsassociation/verifiable_infrastructure_pillars)
+<div class="contrib-note">
+  <div class="contrib-note-content">
+<div class="contrib-note-title">Contribute and collaborate</div>
+<p>
+  Contributors can find guidance and collaboration details at
+  <a href="https://github.com/swissgenomicsassociation/#contribute-and-collaborate" target="_blank">
+    the contribution page</a>.
+  We will email the guideline articles to our members in two stages: first to invite contributions, and later once the articles are completed.
+</p>
+</div>
+</div>
 
 ## Past releases
 
@@ -16,31 +17,29 @@
 [PDF (EN)]({{ '/assets/release/founding_charter/latest/founding_charter.pdf' | relative_url }}){: target="_blank"} |
 [Repository](https://github.com/swissgenomicsassociation/founding_charter)
 
+## Drafts in progress
 
+* **Guideline**: Swiss Genomics Association consensus guideline for evidence-based genomic variant interpretation in Mendelian disease.\
+[PDF (EN)]({{ '/assets/release/mendelian_disease_interpretation/latest/mendelian_disease_interpretation_v1.pdf' | relative_url }}){:target="_blank"} |
+[Repository](https://github.com/swissgenomicsassociation/mendelian_disease_interpretation)
+    * Call for collaboration: <span style="color: green ;">announced in December</span>.
+    * Final publication: <span style="color: green; ">announced in February</span>.
 
-## Related release from external partners
+* **Guideline**: Swiss Genomics Association consensus guideline for verifiable genomic decision infrastructure.\
+[PDF (EN)]({{ '/assets/release/verifiable_infrastructure_pillars/latest/verifiable_infrastructure_pillars.pdf' | relative_url }}){:target="_blank"} |
+[Repository](https://github.com/swissgenomicsassociation/verifiable_infrastructure_pillars)
+    * Call for collaboration: <span style="color: green ;">announced in January</span>.
+    * Final publication: <span style="color: green; ">announced in March</span>.
 
-* **Qualifying variant (QV)**: The QV database offers an open, shareable, and reproducible framework for genomic interpretation.\
-[DOI](https://doi.org/10.1101/2025.05.09.25324975) | 
-[PDF](https://www.medrxiv.org/content/10.1101/2025.05.09.25324975v2.full.pdf) | 
-[Video](https://player.vimeo.com/video/1083533047) | 
-[Database](https://switzerlandomics.ch/technologies/qv_database/)  
-
-* **Archipelago**: R package for summary and interpretation of variant set association test statistics (GitHub).\
-[DOI](https://doi.org/10.1101/2025.03.17.25324111) | 
-[PDF](https://www.medrxiv.org/content/10.1101/2025.03.17.25324111v2.full.pdf) | 
-[Repository](https://github.com/DylanLawless/archipelago)  
-
-* **PanelAppRex basic**: R setup and data for building an open-source base model (GitHub and Zenodo).\
-[DOI](https://doi.org/10.1101/2025.03.20.25324319) | 
-[PDF](https://www.medrxiv.org/content/10.1101/2025.03.20.25324319v3.full.pdf) | 
-[Repository](https://github.com/DylanLawless/PanelAppRex) |
-[Video](https://player.vimeo.com/video/1099451293) | 
-[Application](https://switzerlandomics.ch/technologies/panelAppRexAi/) | 
-[Dataset](https://doi.org/10.5281/zenodo.15736688)  
-
-* **Genetic diagnosis of inborn-errors of immunity (IEI)**: open-source, world-leading database of IEI genetics provided as a subset of PanelAppRex for the community.\
-[Homepage](https://iei-genetics.github.io) | 
-[Database](https://iei-genetics.github.io/assets/iusis_iei_table_2025.html) | 
-[Repository](https://github.com/DylanLawless/iei_genetics)  
+<div class="draft-notice">
+  <div class="draft-notice-content">
+    <div class="draft-notice-title">DRAFT – NOT FINAL</div>
+    <p>
+      This document is a live public working draft and does not represent a completed or officially endorsed release.
+      All statements, analyses, and opinions are those of the authors and have not yet undergone joint committee review
+      or external peer review. Content is provided for transparency and collaborative development and may be revised
+      substantially prior to publication.
+    </p>
+  </div>
+</div>
 
