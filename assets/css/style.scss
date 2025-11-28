@@ -310,3 +310,25 @@ html {
   colour: #374151;
 }
 
+// button style
+// .button-link {
+//   display: inline-block;
+//   padding: 12px 20px;
+//   background-color: $primary;
+//   color: #fff;
+//   text-decoration: none;
+//   border-radius: 5px;
+//   font-size: 16px;
+// }
+// .button-link:hover {
+//   background-color: #secondary;
+// }
+
+
+// overwrite 
+.intro {
+    padding-bottom: 1.5rem !important;
+    margin-bottom: 0 !important;
+    padding-top: 3rem !important;
+    margin-top: 0 !important;
+    }

@@ -20,6 +20,7 @@
 ## Entwürfe in Bearbeitung
 
 * **Leitlinie**: Konsensleitlinie der Schweizerischen Genomik-Vereinigung zur evidenzbasierten Interpretation genomischer Varianten bei mendelischen Erkrankungen.\
+[Über](/pages/design_project_qv_evidence_flag) | 
 [PDF (EN)]({{ '/assets/release/mendelian_disease_interpretation/latest/mendelian_disease_interpretation_v1.pdf' | relative_url }}){:target="_blank"} |
 [Repository](https://github.com/swissgenomicsassociation/mendelian_disease_interpretation)
     * Aufruf zur Mitarbeit: <span style="color: green;">angekündigt im Dezember</span>.

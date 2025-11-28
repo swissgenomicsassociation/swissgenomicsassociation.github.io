@@ -21,6 +21,7 @@
 ## Bozze in corso
 
 * **Linee guida**: Linee guida di consenso dell’Associazione Svizzera di Genomica per l’interpretazione basata sulle evidenze delle varianti genomiche nelle malattie mendeliane.\
+[Informazioni](/pages/design_project_qv_evidence_flag) | 
 [PDF (EN)]({{ '/assets/release/mendelian_disease_interpretation/latest/mendelian_disease_interpretation_v1.pdf' | relative_url }}){:target="_blank"} |
 [Repository](https://github.com/swissgenomicsassociation/mendelian_disease_interpretation)
     * Invito alla collaborazione: <span style="color: green;">annunciato a dicembre</span>.

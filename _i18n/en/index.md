@@ -10,21 +10,7 @@
   
 <br>
 
-<div class="submission-message">
-<style>
-.button-link {
-  display: inline-block;
-  padding: 12px 20px;
-  background-color: $primary;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 16px;
-}
-.button-link:hover {
-  background-color: #secondary;
-}
-</style>
-
 <p><a href="/members" class="button-link">Members / sign-up</a></p>
 <p><a href="/releases" class="button-link">Latest releases</a></p>
+
+
