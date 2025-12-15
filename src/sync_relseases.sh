@@ -1,5 +1,6 @@
 #!/bin/bash
 
+set -e
 echo "syncing release from working repo to website assets"
 rsync -avz -P \
   ~/so/web/swissgenomicsassociation/mendelian_disease_interpretation/latex/mendelian_disease_interpretation_v1.pdf \
@@ -13,3 +14,10 @@ rsync -avz -P \
   ~/so/web/swissgenomicsassociation/founding_charter/latex/founding_charter.pdf \
     assets/release/founding_charter/latest/
 
+rsync -avz -P \
+  ~/so/web/swissgenomicsassociation/sga_qem/latex/sga_qem_1.0.pdf \
+    assets/release/sga_qem/latest/
+
+rsync -avz -P \
+  ~/so/web/swissgenomicsassociation/sga_qem/html/sga_qem_1.0.md \
+    assets/release/sga_qem/latest/

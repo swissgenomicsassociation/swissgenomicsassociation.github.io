@@ -14,6 +14,11 @@
 
 ## Pubblicazioni precedenti
 
+* **Standard Qualifying Evidence Matrix (QEM) per evidenze verificabili**: Uno standard normativo che definisce una rappresentazione minima e interoperabile di evidenze verificabili derivate da valutazioni basate su regole.\
+[Informazioni](/pages/sga_qem) |
+[PDF (IT)]({{ '/assets/release/sga_qem/latest/sga_qem_1.0.pdf' }}){: target="_blank"} |
+[HTML (EN)]({{ '/assets/release/sga_qem/latest/sga_qem_1.0' }}){: target="_blank"}
+
 * **Carta fondativa**: Definizione delle basi condivise per una genomica responsabile, collaborativa e resiliente nell’interesse pubblico.\
 [PDF (EN)]({{ '/assets/release/founding_charter/latest/founding_charter.pdf' | relative_url }}){: target="_blank"} |
 [Repository](https://github.com/swissgenomicsassociation/founding_charter)

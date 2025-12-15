@@ -14,6 +14,11 @@
 
 ## Publications précédentes
 
+* **Norme Qualifying Evidence Matrix (QEM) pour les preuves vérifiables**: Une norme normative définissant une représentation minimale et interopérable des preuves vérifiables issues d’évaluations fondées sur des règles.\
+[À propos](/pages/sga_qem) |
+[PDF (FR)]({{ '/assets/release/sga_qem/latest/sga_qem_1.0.pdf' }}){: target="_blank"} |
+[HTML (EN)]({{ '/assets/release/sga_qem/latest/sga_qem_1.0' }}){: target="_blank"}
+
 * **Charte fondatrice** : Définition des bases communes pour une génomique responsable, collaborative et résiliente au service de l’intérêt public.\
 [PDF (EN)]({{ '/assets/release/founding_charter/latest/founding_charter.pdf' | relative_url }}){: target="_blank"} |
 [Repository](https://github.com/swissgenomicsassociation/founding_charter)
