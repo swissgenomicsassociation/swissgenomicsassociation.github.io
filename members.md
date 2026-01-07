@@ -3,7 +3,6 @@ layout: page
 description: Members
 intro_image_absolute: true
 intro_image_hide_on_mobile: false
-intro_image: "images/freepik_vectorjuice/distance-working.jpg"
 ---
 
 {% translate_file members.md %}
