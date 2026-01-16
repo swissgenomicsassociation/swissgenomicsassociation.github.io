@@ -21,6 +21,15 @@ English: Swiss Genomics Association
 
 ---
 
+## Writing and syncing releases
+
+All Swiss Genomics Association projects are developed in separate repositories under the organisation domain (<https://github.com/swissgenomicsassociation>), each producing versioned outputs such as manuscripts, datasets, or configuration files. The main website (`swissgenomicsassociation.github.io`) hosts the latest public releases from these projects and gets directed to <https://www.swissgenomicsassociation.ch>. During the site build, the `sync_releases.sh` script automatically copies current release files from their respective repositories into the website `assets/release/` directory, making them directly accessible for viewing or download, for example:
+`https://swissgenomicsassociation.github.io/assets/release/mendelian_disease_interpretation/latest/mendelian_disease_interpretation_v1.pdf`.
+
+Thus to write new release content, the main article will be developed in the organisation repo - not in the actual website repo, release page, or assets directory. For instance see <https://github.com/swissgenomicsassociation/sga_qem> which is then synced to the release page via latest assets. Only pages with supporting "about" information and website content are developed directly in the website repository by the web admin.
+
+---
+
 ## Security
 
 This site uses Supabase for member authentication and profile storage. The public repository includes the **Supabase anon key**, which is safe to expose. This key only allows limited, policy-controlled access defined by Supabase Row Level Security (RLS). All edits and updates to member profiles require a verified user session obtained through Supabase’s email-based magic link login. Public pages, such as the member directory, can read selected non-sensitive fields (e.g. name, credentials, ORCID) under a read-only policy. No service or administrative keys are stored in this repository. All member data is intentionally public, and the database exists solely to allow users to edit and maintain their own public profile information. No service or administrative keys are stored in this repository.
@@ -209,12 +218,6 @@ Magic links will send from your trusted domain (e.g. `auth@swissgenomicsassociat
 
 ---
 
-## Release sync
-
-All Swiss Genomics Association projects are developed in separate repositories under the organisation domain, each producing versioned outputs such as manuscripts, datasets, or configuration files. The main website (`swissgenomicsassociation.github.io`) hosts the latest public releases from these projects. During the site build, the `sync_releases.sh` script automatically copies current release files from their respective repositories into the `assets/release/` directory, making them directly accessible for viewing or download, for example:
-`https://swissgenomicsassociation.github.io/assets/release/mendelian_disease_interpretation/latest/mendelian_disease_interpretation_v1.pdf`.
-
-
 ## Contributions
 
 This website is maintained by the Swiss Genomics Association.
@@ -226,5 +229,4 @@ External contributions are welcome through pull requests or issues submitted on 
 
 Website source code is released under the [MIT License](LICENSE).
 All content © Swiss Genomics Association. All rights reserved.
-
 

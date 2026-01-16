@@ -13,6 +13,11 @@
 
 ## Past releases
 
+* **Evidence Ratio Reporting Standard (ERRS)**: A normative reporting standard defining a minimal, coherent schema for reporting likelihood based statistical evidence across heterogeneous analyses.  
+[About](/pages/sga_errs) | 
+[PDF (EN)]({{ '/assets/release/sga_errs/latest/sga_errs_1.0.pdf' }}){: target="_blank"} | 
+[HTML (EN)]({{ '/assets/release/sga_errs/latest/sga_errs_1.0' }}){: target="_blank"}
+
 * **Qualifying Evidence Matrix (QEM) standard for verifiable evidence**: A normative standard defining a minimal, interoperable representation of verifiable evidence derived from rule-based evaluations.\
 [About](/pages/sga_qem) |
 [PDF (EN)]({{ '/assets/release/sga_qem/latest/sga_qem_1.0.pdf' }}){: target="_blank"} |

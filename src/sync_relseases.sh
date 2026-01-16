@@ -19,5 +19,13 @@ rsync -avz -P \
     assets/release/sga_qem/latest/
 
 rsync -avz -P \
+  ~/so/web/swissgenomicsassociation/sga_errs/html/sga_errs_1.0.md \
+    assets/release/sga_errs/latest/
+
+rsync -avz -P \
+  ~/so/web/swissgenomicsassociation/sga_errs/latex/sga_errs_1.0.pdf \
+    assets/release/sga_errs/latest/
+
+rsync -avz -P \
   ~/so/web/swissgenomicsassociation/sga_qem/html/sga_qem_1.0.md \
     assets/release/sga_qem/latest/

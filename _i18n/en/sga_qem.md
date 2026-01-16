@@ -11,6 +11,8 @@ QEM is designed for situations where analysis results may be produced by proprie
 
 ## How to cite this standard
 
+Swiss Genomics Association. (2025). *Qualifying Evidence Matrix standard for verifiable evidence* (SGA-QEM-1.0). Zenodo. [https://doi.org/10.5281/zenodo.17936587](https://doi.org/10.5281/zenodo.17936587).
+
 {% raw %}
 ```bibtex
 @techreport{sga_qem_2025,
