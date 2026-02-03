@@ -1,0 +1,184 @@
+
+
+
+/* result flag mobile wrapping fix */
+
+@media (max-width: 720px) {
+
+  .result-header {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .result-flag {
+    margin-left: 0;
+    margin-top: 0.4rem;
+    white-space: normal;
+    line-height: 1.2;
+  }
+
+}
+
+/* reduce outer box padding for disclosure sections on mobile */
+
+@media (max-width: 720px) {
+
+  details.box {
+    margin: 0.8rem;
+    padding: 0;
+  }
+
+  details.box .disclosure-summary {
+    padding: 0.7rem 1rem;
+  }
+
+  details.box .disclosure-content {
+    padding: 0 1rem 1rem;
+  }
+
+}
+
+/* prevent gene pills and tables from overflowing parent on mobile */
+
+@media (max-width: 720px) {
+
+  /* ensure all disclosure content respects parent width */
+  .disclosure-content,
+  .disclosure-content * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* pills must be allowed to wrap */
+  .pill {
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  /* table rows already stacked, ensure no horizontal overflow */
+  details table,
+  details table tr {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* safety net: kill accidental horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
+
+}
+
+
+
+
+/* result flag mobile wrapping fix */
+@media (max-width: 720px) {
+
+  .result-header {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .result-flag {
+    margin-left: 0;
+    margin-top: 0.4rem;
+    white-space: normal;
+    line-height: 1.2;
+  }
+
+}
+
+
+/* reduce outer box padding for disclosure sections on mobile */
+@media (max-width: 720px) {
+
+  details.box {
+    margin: 0.8rem;
+    padding: 0;
+  }
+
+  details.box .disclosure-summary {
+    padding: 0.7rem 1rem;
+  }
+
+  details.box .disclosure-content {
+    padding: 0 1rem 1rem;
+  }
+
+}
+
+
+/* prevent gene pills and tables from overflowing parent on mobile */
+@media (max-width: 720px) {
+
+  .disclosure-content,
+  .disclosure-content * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .pill {
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  details table,
+  details table tr {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+}
+
+
+/* single, canonical mobile table stacking */
+@media (max-width: 720px) {
+
+  table {
+    border: 0;
+  }
+
+  table thead {
+    display: none;
+  }
+
+  table tbody,
+  table tr {
+    display: block;
+    width: 100%;
+  }
+
+  table tr {
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-default);
+    border-radius: 6px;
+    padding: 0.6rem 0.7rem;
+    background: var(--surface-base);
+  }
+
+  table td,
+  table th {
+    display: block;
+    width: 100%;
+    padding: 0.35rem 0;
+    border: none;
+    box-sizing: border-box;
+  }
+
+  table td::before,
+  table th::before {
+    content: none;
+  }
+
+  table th {
+    font-weight: 600;
+    color: var(--ink-primary);
+  }
+
+}
+
