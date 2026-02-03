@@ -560,3 +560,60 @@ details:not([open]) .disclosure-content {
 
 }
 
+
+
+
+.survey-frame {
+  margin: 3rem auto;
+  width: 100%;
+  max-width: 900px;
+}
+
+.survey-frame iframe {
+  width: 100%;
+  height: 1200px;
+  border: 0;
+}
+
+#limesurvey-wrapper {
+  isolation: isolate;
+}
+
+
+/* limesurvey breaks our css */
+/* harden section header titles against external CSS */
+.report .section-header h2 {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* harden report h3 headings */
+.report h3 {
+  color: var(--ink-primary);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.report .box h3,
+.report .result-header h3 {
+  color: var(--ink-primary);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+/* enforce white text in cover split boxes */
+.report .report-split-item,
+.report .report-split-item h3,
+.report .report-split-item p,
+.report .report-split-item span {
+  color: #ffffff;
+}
+
+
+/* ensure single-page scrolling for LimeSurvey embed */
+#limesurvey-container {
+  height: auto;
+  overflow: visible;
+}
