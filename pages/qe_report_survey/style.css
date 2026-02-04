@@ -617,3 +617,11 @@ details:not([open]) .disclosure-content {
   height: auto;
   overflow: visible;
 }
+
+
+/* visual separation between rule groups */
+tbody tr.rule-group-end td {
+  border-bottom-width: 3px;
+  border-bottom-color: var(--border-default);
+}
+

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Evidence interpretation rules</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<main class="report">
+
+  <h1>Evidence interpretation rules</h1>
+
+  <p>
+    This document defines the canonical rules used to translate observed genomic data flags
+    into binary evidence indicators under the Qualifying Evidence Matrix.
+    It applies to trio-based whole-genome sequencing for rare Mendelian disease analysis.
+  </p>
+
+  <div>
+    <div class="outcome-context-label">Technical information</div>
+    <ul>
+      <li>
+        <strong>Resource name:</strong>
+        Evidence interpretation rules for trio-based rare disease screening
+      </li>
+      <li>
+        <strong>File name:</strong>
+        evidence_interpretation_rules_e7af8e5dc03accac17b690d244995afa.html
+      </li>
+      <li>
+        <strong>Description:</strong>
+        Canonical rule set defining how verifiable evidence from parent–child trio whole-genome
+        sequencing is interpreted under the Qualifying Evidence Matrix.
+      </li>
+      <li>
+        <strong>Stable URL:</strong>
+        <a href="https://www.swissgenomicsassociation.ch/pages/qe_report_survey/evidence_interpretation_rules_e7af8e5dc03accac17b690d244995afa.html">
+Link via swissgenomicsassociation
+        </a>
+      </li>
+      <li>
+        <strong>MD5 checksum:</strong>
+        <code>e7af8e5dc03accac17b690d244995afa</code>
+      </li>
+      <li>
+        <strong>Intended scope:</strong>
+        Trio-based whole-genome sequencing for rare Mendelian disease screening
+      </li>
+    </ul>
+  </div>
+
+  <div class="outcome-context">
+    <div class="outcome-context-label">How to read this table</div>
+    <ul>
+      <li>
+        <strong>Rule name</strong>, <strong>Meaning</strong>, and <strong>Flag</strong>
+        describe how available genetic and family data are interpreted to assess support
+        for a proposed disease-causing variant.
+      </li>
+      <li>
+        Each rule can return one of three flag values: TRUE, FALSE, or NA.
+        Under the Qualifying Evidence Matrix standard, only FALSE outcomes contribute supporting evidence.
+      </li>
+      <li>
+        The <strong>Evidence</strong> column shows the final outcome of each rule.
+        A tick (✓) indicates confirmable supporting evidence is present.
+        A cross (✕) indicates contradictory or unavailable evidence.
+      </li>
+    </ul>
+  </div>
+
+  <div class="box technical-details evidence">
+
+    <table>
+      <thead>
+        <tr>
+          <th>Rule name</th>
+          <th>Meaning</th>
+          <th>Flag</th>
+          <th>Evidence</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr>
+          <td>parent gt unavailable</td>
+          <td>Parental genetic data are missing, so inheritance cannot be assessed</td>
+          <td><span class="pill">TRUE</span></td>
+          <td><span class="status status-no">✕ No</span></td>
+        </tr>
+
+        <tr>
+          <td>parent gt unavailable</td>
+          <td>Parental genetic data are available and inheritance can be evaluated</td>
+          <td><span class="pill">FALSE</span></td>
+          <td><span class="status status-yes">✓ Yes</span></td>
+        </tr>
+
+        <tr class="rule-group-end">
+          <td>parent gt unavailable</td>
+          <td>It is unknown whether parental genetic data are available</td>
+          <td><span class="pill">NA</span></td>
+          <td><span class="status status-no">✕ No</span></td>
+        </tr>
+
+        <tr>
+          <td>parent gt mechanistically inconsistent ar</td>
+          <td>Parental results rule out an autosomal recessive explanation</td>
+          <td><span class="pill">TRUE</span></td>
+          <td><span class="status status-no">✕ No</span></td>
+        </tr>
+
+        <tr>
+          <td>parent gt mechanistically inconsistent ar</td>
+          <td>Parental results are compatible with autosomal recessive inheritance</td>
+          <td><span class="pill">FALSE</span></td>
+          <td><span class="status status-yes">✓ Yes</span></td>
+        </tr>
+
+        <tr class="rule-group-end">
+          <td>parent gt mechanistically inconsistent ar</td>
+          <td>Parental genetic data are missing, so inheritance cannot be checked</td>
+          <td><span class="pill">NA</span></td>
+          <td><span class="status status-no">✕ No</span></td>
+        </tr>
+
+        <tr>
+          <td>compound het phase inconsistent</td>
+          <td>The two variants are arranged in a way that cannot explain disease together</td>
+          <td><span class="pill">TRUE</span></td>
+          <td><span class="status status-no">✕ No</span></td>
+        </tr>
+
+        <tr>
+          <td>compound het phase inconsistent</td>
+          <td>The two variants are arranged in a way that could explain disease together</td>
+          <td><span class="pill">FALSE</span></td>
+          <td><span class="status status-yes">✓ Yes</span></td>
+        </tr>
+
+        <tr class="rule-group-end">
+          <td>compound het phase inconsistent</td>
+          <td>Information on how the variants are arranged is unavailable</td>
+          <td><span class="pill">NA</span></td>
+          <td><span class="status status-no">✕ No</span></td>
+        </tr>
+
+        <tr>
+          <td>denovo mechanism not excluded</td>
+          <td>Family data rule out the variant being a new genetic change</td>
+          <td><span class="pill">TRUE</span></td>
+          <td><span class="status status-no">✕ No</span></td>
+        </tr>
+
+        <tr>
+          <td>denovo mechanism not excluded</td>
+          <td>Family data allow the variant to be a new genetic change</td>
+          <td><span class="pill">FALSE</span></td>
+          <td><span class="status status-yes">✓ Yes</span></td>
+        </tr>
+
+        <tr class="rule-group-end">
+          <td>denovo mechanism not excluded</td>
+          <td>Parental genetic data are missing, so this cannot be assessed</td>
+          <td><span class="pill">NA</span></td>
+          <td><span class="status status-no">✕ No</span></td>
+        </tr>
+
+        <tr>
+          <td>unaffected relative homozygous alt</td>
+          <td>An unaffected family member carries the same genetic change</td>
+          <td><span class="pill">TRUE</span></td>
+          <td><span class="status status-no">✕ No</span></td>
+        </tr>
+
+        <tr>
+          <td>unaffected relative homozygous alt</td>
+          <td>No unaffected family member is known to carry the same change</td>
+          <td><span class="pill">FALSE</span></td>
+          <td><span class="status status-yes">✓ Yes</span></td>
+        </tr>
+
+        <tr class="rule-group-end">
+          <td>unaffected relative homozygous alt</td>
+          <td>Family health or genetic information is insufficient to assess this</td>
+          <td><span class="pill">NA</span></td>
+          <td><span class="status status-no">✕ No</span></td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+
+</main>
+
+</body>
+</html>
+
