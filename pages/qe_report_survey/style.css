@@ -274,11 +274,24 @@ a {
   margin: 2rem 0 1.5rem;
 }
 
-.report-split-item {
-  padding: 1.0rem 1.7rem  0rem;
+/* .report-split-item { */
+/*   padding: 1.0rem 1.7rem  0rem; */
+/*   border-radius: 12px; */
+/*   border: 2px solid #000000; */
+/*   color: #ffffff; */
+/* } */
+
+/* fix report-split top spacing artefact */
+.report .report-split-item {
+  padding: 1.25rem 1.7rem 1.25rem;
+  box-sizing: border-box;
   border-radius: 12px;
   border: 2px solid #000000;
-  color: #ffffff;
+}
+
+/* ensure no hidden margin above first heading */
+.report .report-split-item > h3:first-child {
+  margin-top: 0;
 }
 
 .report-split-item.genetic {
@@ -599,7 +612,7 @@ details:not([open]) .disclosure-content {
 .report .box h3,
 .report .result-header h3 {
   color: var(--ink-primary);
-  font-size: 1.05rem;
+  font-size: 1.25rem;
   font-weight: 600;
 }
 
