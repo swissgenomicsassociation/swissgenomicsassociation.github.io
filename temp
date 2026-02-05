@@ -46,6 +46,7 @@
 │   │   ├── members.md
 │   │   ├── partnerships.md
 │   │   ├── releases.md
+│   │   ├── sga_errs.md
 │   │   ├── sga_qem.md
 │   │   └── three_pillars.md
 │   ├── en.yml
@@ -318,6 +319,11 @@
 │   │   │   │   └── latest
 │   │   │   │       └── mendelian_disease_interpretation_v1.pdf
 │   │   │   ├── release_1.pdf
+│   │   │   ├── sga_errs
+│   │   │   │   └── latest
+│   │   │   │       ├── sga_errs_1.0
+│   │   │   │       │   └── index.html
+│   │   │   │       └── sga_errs_1.0.pdf
 │   │   │   ├── sga_qem
 │   │   │   │   └── latest
 │   │   │   │       ├── sga_qem.pdf
@@ -351,6 +357,10 @@
 │   │   │   ├── qv_submission
 │   │   │   │   └── index.html
 │   │   │   ├── release
+│   │   │   │   ├── sga_errs
+│   │   │   │   │   └── latest
+│   │   │   │   │       └── sga_errs_1.0
+│   │   │   │   │           └── index.html
 │   │   │   │   └── sga_qem
 │   │   │   │       └── latest
 │   │   │   │           └── sga_qem_1.0
@@ -367,6 +377,7 @@
 │   │   ├── contact
 │   │   │   └── index.html
 │   │   ├── design_and_marketing_handbook_writing.txt
+│   │   ├── design_sga_house_style.md
 │   │   ├── index.html
 │   │   ├── jek.sh
 │   │   ├── kill_serve.sh
@@ -383,7 +394,28 @@
 │   │   ├── pages
 │   │   │   ├── design_project_qv_evidence_flag
 │   │   │   │   └── index.html
+│   │   │   ├── qe_report_survey
+│   │   │   │   ├── README.md
+│   │   │   │   ├── evidence_interpretation_rules_e7af8e5dc03accac17b690d244995afa.html
+│   │   │   │   ├── index_1e3c4ac1ad057270ca1a9add596c2894.html
+│   │   │   │   ├── index_28aa19666729a64aeb8cbd39beefc70d.html
+│   │   │   │   ├── index_4d4ad1eab20b95b7c3f6197cd533fb1e.html
+│   │   │   │   ├── index_f930f16f53692b39808fd64d5973f10a.html
+│   │   │   │   ├── index_test.html
+│   │   │   │   ├── jotform_collection
+│   │   │   │   │   ├── index_1e3c4ac1ad057270ca1a9add596c2894.html
+│   │   │   │   │   ├── index_28aa19666729a64aeb8cbd39beefc70d.html
+│   │   │   │   │   ├── index_4d4ad1eab20b95b7c3f6197cd533fb1e.html
+│   │   │   │   │   ├── index_f930f16f53692b39808fd64d5973f10a.html
+│   │   │   │   │   └── index_test.html
+│   │   │   │   ├── power_calculation.R
+│   │   │   │   ├── questions.md
+│   │   │   │   ├── questions.txt
+│   │   │   │   ├── setup.sh
+│   │   │   │   └── style.css
 │   │   │   ├── qv_builder
+│   │   │   │   └── index.html
+│   │   │   ├── sga_errs
 │   │   │   │   └── index.html
 │   │   │   ├── sga_qem
 │   │   │   │   └── index.html
@@ -437,6 +469,7 @@
 │   │   │   └── wgs.md
 │   │   └── temp
 │   ├── design_and_marketing_handbook_writing.txt
+│   ├── design_sga_house_style.md
 │   ├── fr
 │   │   ├── 404.html
 │   │   ├── CNAME
@@ -450,6 +483,10 @@
 │   │   │   ├── qv_submission
 │   │   │   │   └── index.html
 │   │   │   ├── release
+│   │   │   │   ├── sga_errs
+│   │   │   │   │   └── latest
+│   │   │   │   │       └── sga_errs_1.0
+│   │   │   │   │           └── index.html
 │   │   │   │   └── sga_qem
 │   │   │   │       └── latest
 │   │   │   │           └── sga_qem_1.0
@@ -466,6 +503,7 @@
 │   │   ├── contact
 │   │   │   └── index.html
 │   │   ├── design_and_marketing_handbook_writing.txt
+│   │   ├── design_sga_house_style.md
 │   │   ├── index.html
 │   │   ├── jek.sh
 │   │   ├── kill_serve.sh
@@ -482,7 +520,28 @@
 │   │   ├── pages
 │   │   │   ├── design_project_qv_evidence_flag
 │   │   │   │   └── index.html
+│   │   │   ├── qe_report_survey
+│   │   │   │   ├── README.md
+│   │   │   │   ├── evidence_interpretation_rules_e7af8e5dc03accac17b690d244995afa.html
+│   │   │   │   ├── index_1e3c4ac1ad057270ca1a9add596c2894.html
+│   │   │   │   ├── index_28aa19666729a64aeb8cbd39beefc70d.html
+│   │   │   │   ├── index_4d4ad1eab20b95b7c3f6197cd533fb1e.html
+│   │   │   │   ├── index_f930f16f53692b39808fd64d5973f10a.html
+│   │   │   │   ├── index_test.html
+│   │   │   │   ├── jotform_collection
+│   │   │   │   │   ├── index_1e3c4ac1ad057270ca1a9add596c2894.html
+│   │   │   │   │   ├── index_28aa19666729a64aeb8cbd39beefc70d.html
+│   │   │   │   │   ├── index_4d4ad1eab20b95b7c3f6197cd533fb1e.html
+│   │   │   │   │   ├── index_f930f16f53692b39808fd64d5973f10a.html
+│   │   │   │   │   └── index_test.html
+│   │   │   │   ├── power_calculation.R
+│   │   │   │   ├── questions.md
+│   │   │   │   ├── questions.txt
+│   │   │   │   ├── setup.sh
+│   │   │   │   └── style.css
 │   │   │   ├── qv_builder
+│   │   │   │   └── index.html
+│   │   │   ├── sga_errs
 │   │   │   │   └── index.html
 │   │   │   ├── sga_qem
 │   │   │   │   └── index.html
@@ -581,6 +640,10 @@
 │   │   │   ├── qv_submission
 │   │   │   │   └── index.html
 │   │   │   ├── release
+│   │   │   │   ├── sga_errs
+│   │   │   │   │   └── latest
+│   │   │   │   │       └── sga_errs_1.0
+│   │   │   │   │           └── index.html
 │   │   │   │   └── sga_qem
 │   │   │   │       └── latest
 │   │   │   │           └── sga_qem_1.0
@@ -597,6 +660,7 @@
 │   │   ├── contact
 │   │   │   └── index.html
 │   │   ├── design_and_marketing_handbook_writing.txt
+│   │   ├── design_sga_house_style.md
 │   │   ├── index.html
 │   │   ├── jek.sh
 │   │   ├── kill_serve.sh
@@ -613,7 +677,28 @@
 │   │   ├── pages
 │   │   │   ├── design_project_qv_evidence_flag
 │   │   │   │   └── index.html
+│   │   │   ├── qe_report_survey
+│   │   │   │   ├── README.md
+│   │   │   │   ├── evidence_interpretation_rules_e7af8e5dc03accac17b690d244995afa.html
+│   │   │   │   ├── index_1e3c4ac1ad057270ca1a9add596c2894.html
+│   │   │   │   ├── index_28aa19666729a64aeb8cbd39beefc70d.html
+│   │   │   │   ├── index_4d4ad1eab20b95b7c3f6197cd533fb1e.html
+│   │   │   │   ├── index_f930f16f53692b39808fd64d5973f10a.html
+│   │   │   │   ├── index_test.html
+│   │   │   │   ├── jotform_collection
+│   │   │   │   │   ├── index_1e3c4ac1ad057270ca1a9add596c2894.html
+│   │   │   │   │   ├── index_28aa19666729a64aeb8cbd39beefc70d.html
+│   │   │   │   │   ├── index_4d4ad1eab20b95b7c3f6197cd533fb1e.html
+│   │   │   │   │   ├── index_f930f16f53692b39808fd64d5973f10a.html
+│   │   │   │   │   └── index_test.html
+│   │   │   │   ├── power_calculation.R
+│   │   │   │   ├── questions.md
+│   │   │   │   ├── questions.txt
+│   │   │   │   ├── setup.sh
+│   │   │   │   └── style.css
 │   │   │   ├── qv_builder
+│   │   │   │   └── index.html
+│   │   │   ├── sga_errs
 │   │   │   │   └── index.html
 │   │   │   ├── sga_qem
 │   │   │   │   └── index.html
@@ -681,7 +766,28 @@
 │   ├── pages
 │   │   ├── design_project_qv_evidence_flag
 │   │   │   └── index.html
+│   │   ├── qe_report_survey
+│   │   │   ├── README.md
+│   │   │   ├── evidence_interpretation_rules_e7af8e5dc03accac17b690d244995afa.html
+│   │   │   ├── index_1e3c4ac1ad057270ca1a9add596c2894.html
+│   │   │   ├── index_28aa19666729a64aeb8cbd39beefc70d.html
+│   │   │   ├── index_4d4ad1eab20b95b7c3f6197cd533fb1e.html
+│   │   │   ├── index_f930f16f53692b39808fd64d5973f10a.html
+│   │   │   ├── index_test.html
+│   │   │   ├── jotform_collection
+│   │   │   │   ├── index_1e3c4ac1ad057270ca1a9add596c2894.html
+│   │   │   │   ├── index_28aa19666729a64aeb8cbd39beefc70d.html
+│   │   │   │   ├── index_4d4ad1eab20b95b7c3f6197cd533fb1e.html
+│   │   │   │   ├── index_f930f16f53692b39808fd64d5973f10a.html
+│   │   │   │   └── index_test.html
+│   │   │   ├── power_calculation.R
+│   │   │   ├── questions.md
+│   │   │   ├── questions.txt
+│   │   │   ├── setup.sh
+│   │   │   └── style.css
 │   │   ├── qv_builder
+│   │   │   └── index.html
+│   │   ├── sga_errs
 │   │   │   └── index.html
 │   │   ├── sga_qem
 │   │   │   └── index.html
@@ -775,6 +881,10 @@
 │   │   │   │   └── mendelian_disease_interpretation_v1.pdf
 │   │   │   └── v1
 │   │   ├── release_1.pdf
+│   │   ├── sga_errs
+│   │   │   └── latest
+│   │   │       ├── sga_errs_1.0.md
+│   │   │       └── sga_errs_1.0.pdf
 │   │   ├── sga_qem
 │   │   │   └── latest
 │   │   │       ├── sga_qem.pdf
@@ -791,6 +901,7 @@
 ├── ceopage.md
 ├── contact.md
 ├── design_and_marketing_handbook_writing.txt
+├── design_sga_house_style.md
 ├── images
 │   ├── android-chrome-192x192.png
 │   ├── android-chrome-512x512.png
@@ -834,7 +945,27 @@
 ├── members.md
 ├── pages
 │   ├── design_project_qv_evidence_flag.md
+│   ├── qe_report_survey
+│   │   ├── README.md
+│   │   ├── evidence_interpretation_rules_e7af8e5dc03accac17b690d244995afa.html
+│   │   ├── index_1e3c4ac1ad057270ca1a9add596c2894.html
+│   │   ├── index_28aa19666729a64aeb8cbd39beefc70d.html
+│   │   ├── index_4d4ad1eab20b95b7c3f6197cd533fb1e.html
+│   │   ├── index_f930f16f53692b39808fd64d5973f10a.html
+│   │   ├── index_test.html
+│   │   ├── jotform_collection
+│   │   │   ├── index_1e3c4ac1ad057270ca1a9add596c2894.html
+│   │   │   ├── index_28aa19666729a64aeb8cbd39beefc70d.html
+│   │   │   ├── index_4d4ad1eab20b95b7c3f6197cd533fb1e.html
+│   │   │   ├── index_f930f16f53692b39808fd64d5973f10a.html
+│   │   │   └── index_test.html
+│   │   ├── power_calculation.R
+│   │   ├── questions.md
+│   │   ├── questions.txt
+│   │   ├── setup.sh
+│   │   └── style.css
 │   ├── qv_builder.md
+│   ├── sga_errs.md
 │   ├── sga_qem.md
 │   └── three_pillars.md
 ├── partnerships.md
@@ -856,4 +987,4 @@
 ├── technologies.md
 └── temp
 
-231 directories, 625 files
+259 directories, 728 files

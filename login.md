@@ -12,9 +12,11 @@ intro_image_hide_on_mobile: false
   <button type="submit">Send magic link</button>
 </form>
 <p id="msg"></p>
+ 
 
 <script type="module">
-  import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.94.1/+esm'
+
 
   const supabase = createClient(
     'https://pjslulmnfxtfihdtzrbu.supabase.co',

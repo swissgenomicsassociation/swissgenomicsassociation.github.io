@@ -24,9 +24,11 @@ intro_image_hide_on_mobile: false
 </style>
 
 <div id="members">Loading...</div>
+<p id="member-count"></p>
 
 <script type="module">
-  import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.94.1/+esm'
+
 
   const supabase = createClient(
     'https://pjslulmnfxtfihdtzrbu.supabase.co',
@@ -47,6 +49,7 @@ intro_image_hide_on_mobile: false
   } else if (!data || data.length === 0) {
     container.textContent = 'No members found.'
   } else {
+
     container.innerHTML = data.map(p => {
       const nameText = [p.name, p.credentials].filter(Boolean).join(', ') || '(Unnamed)'
       const nameHTML = `<a href="/member/?id=${p.id}" class="member-link">${nameText}</a>`
@@ -67,6 +70,9 @@ intro_image_hide_on_mobile: false
         </div>
       `
     }).join('')
+
+  document.getElementById('member-count').textContent =
+    `Public profile members: ${data.length}`
   }
 </script>
 

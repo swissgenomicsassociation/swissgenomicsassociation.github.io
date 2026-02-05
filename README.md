@@ -1,3 +1,27 @@
+
+## Temp - Edge Function issue fix 
+
+Edge Function issues when using supabase-js@2.95.0
+<https://status.supabase.com>
+
+Patch for supabase bug:
+```
+Old (broken)
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+New (stable)
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.94.1/+esm'
+```
+
+in all of: 
+```
+$ grep -r "ort { createClient } from 'http" ./* | grep -v "_site"
+./auth/callback.html:    import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+./login.md:  import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+./member/index.html:  import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+./members.md:  import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+./profile.md:  import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+```
+
 # Swiss Genomics Association Website
 
 This is the public website for the [Swiss Genomics Association](https://swissgenomicsassociation.github.io), a national collaboration of volunteer experts from leading academic, federal, and industry organisations.
