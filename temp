@@ -15,74 +15,12 @@
 │   └── social.json
 ├── _i18n
 │   ├── de
-│   │   ├── 404.md
-│   │   ├── about.md
-│   │   ├── ceopage.md
-│   │   ├── contact.md
-│   │   ├── design_project_qv_evidence_flag.md
-│   │   ├── example_goal.md
-│   │   ├── example_goal_qv_es.md
-│   │   ├── index.md
-│   │   ├── links.md
-│   │   ├── login.html
-│   │   ├── member_cloud.md
-│   │   ├── members.md
-│   │   ├── partnerships.md
-│   │   ├── releases.md
-│   │   └── three_pillars.md
 │   ├── de.yml
 │   ├── en
-│   │   ├── 404.md
-│   │   ├── about.md
-│   │   ├── ceopage.md
-│   │   ├── contact.md
-│   │   ├── design_project_qv_evidence_flag.md
-│   │   ├── example_goal.md
-│   │   ├── example_goal_qv_es.md
-│   │   ├── index.md
-│   │   ├── links.md
-│   │   ├── login.html
-│   │   ├── member_cloud.md
-│   │   ├── members.md
-│   │   ├── partnerships.md
-│   │   ├── releases.md
-│   │   ├── sga_errs.md
-│   │   ├── sga_qem.md
-│   │   └── three_pillars.md
 │   ├── en.yml
 │   ├── fr
-│   │   ├── 404.md
-│   │   ├── about.md
-│   │   ├── ceopage.md
-│   │   ├── contact.md
-│   │   ├── design_project_qv_evidence_flag.md
-│   │   ├── example_goal.md
-│   │   ├── example_goal_qv_es.md
-│   │   ├── index.md
-│   │   ├── links.md
-│   │   ├── login.html
-│   │   ├── member_cloud.md
-│   │   ├── members.md
-│   │   ├── partnerships.md
-│   │   ├── releases.md
-│   │   └── three_pillars.md
 │   ├── fr.yml
 │   ├── it
-│   │   ├── 404.md
-│   │   ├── about.md
-│   │   ├── ceopage.md
-│   │   ├── contact.md
-│   │   ├── design_project_qv_evidence_flag.md
-│   │   ├── example_goal.md
-│   │   ├── example_goal_qv_es.md
-│   │   ├── index.md
-│   │   ├── links.md
-│   │   ├── login.html
-│   │   ├── member_cloud.md
-│   │   ├── members.md
-│   │   ├── partnerships.md
-│   │   ├── releases.md
-│   │   └── three_pillars.md
 │   ├── it.yml
 │   └── related_content.md
 ├── _includes
@@ -119,780 +57,58 @@
 ├── _sass
 │   ├── _bootstrap-variables.scss
 │   ├── bootstrap
-│   │   ├── _accordion.scss
-│   │   ├── _alert.scss
-│   │   ├── _badge.scss
-│   │   ├── _breadcrumb.scss
-│   │   ├── _button-group.scss
-│   │   ├── _buttons.scss
-│   │   ├── _card.scss
-│   │   ├── _carousel.scss
-│   │   ├── _close.scss
-│   │   ├── _containers.scss
-│   │   ├── _dropdown.scss
-│   │   ├── _forms.scss
-│   │   ├── _functions.scss
-│   │   ├── _grid.scss
-│   │   ├── _helpers.scss
-│   │   ├── _images.scss
-│   │   ├── _list-group.scss
-│   │   ├── _maps.scss
-│   │   ├── _mixins.scss
-│   │   ├── _modal.scss
-│   │   ├── _nav.scss
-│   │   ├── _navbar.scss
-│   │   ├── _offcanvas.scss
-│   │   ├── _pagination.scss
-│   │   ├── _placeholders.scss
-│   │   ├── _popover.scss
-│   │   ├── _progress.scss
-│   │   ├── _reboot.scss
-│   │   ├── _root.scss
-│   │   ├── _spinners.scss
-│   │   ├── _tables.scss
-│   │   ├── _toasts.scss
-│   │   ├── _tooltip.scss
-│   │   ├── _transitions.scss
-│   │   ├── _type.scss
-│   │   ├── _utilities.scss
-│   │   ├── _variables-dark.scss
-│   │   ├── _variables.scss
-│   │   ├── bootstrap-grid.scss
-│   │   ├── bootstrap-reboot.scss
-│   │   ├── bootstrap-utilities.scss
-│   │   ├── bootstrap.scss
-│   │   ├── forms
-│   │   │   ├── _floating-labels.scss
-│   │   │   ├── _form-check.scss
-│   │   │   ├── _form-control.scss
-│   │   │   ├── _form-range.scss
-│   │   │   ├── _form-select.scss
-│   │   │   ├── _form-text.scss
-│   │   │   ├── _input-group.scss
-│   │   │   ├── _labels.scss
-│   │   │   └── _validation.scss
-│   │   ├── helpers
-│   │   │   ├── _clearfix.scss
-│   │   │   ├── _color-bg.scss
-│   │   │   ├── _colored-links.scss
-│   │   │   ├── _focus-ring.scss
-│   │   │   ├── _icon-link.scss
-│   │   │   ├── _position.scss
-│   │   │   ├── _ratio.scss
-│   │   │   ├── _stacks.scss
-│   │   │   ├── _stretched-link.scss
-│   │   │   ├── _text-truncation.scss
-│   │   │   ├── _visually-hidden.scss
-│   │   │   └── _vr.scss
-│   │   ├── mixins
-│   │   │   ├── _alert.scss
-│   │   │   ├── _backdrop.scss
-│   │   │   ├── _banner.scss
-│   │   │   ├── _border-radius.scss
-│   │   │   ├── _box-shadow.scss
-│   │   │   ├── _breakpoints.scss
-│   │   │   ├── _buttons.scss
-│   │   │   ├── _caret.scss
-│   │   │   ├── _clearfix.scss
-│   │   │   ├── _color-mode.scss
-│   │   │   ├── _color-scheme.scss
-│   │   │   ├── _container.scss
-│   │   │   ├── _deprecate.scss
-│   │   │   ├── _forms.scss
-│   │   │   ├── _gradients.scss
-│   │   │   ├── _grid.scss
-│   │   │   ├── _image.scss
-│   │   │   ├── _list-group.scss
-│   │   │   ├── _lists.scss
-│   │   │   ├── _pagination.scss
-│   │   │   ├── _reset-text.scss
-│   │   │   ├── _resize.scss
-│   │   │   ├── _table-variants.scss
-│   │   │   ├── _text-truncate.scss
-│   │   │   ├── _transition.scss
-│   │   │   ├── _utilities.scss
-│   │   │   └── _visually-hidden.scss
-│   │   ├── tests
-│   │   │   ├── jasmine.js
-│   │   │   ├── mixins
-│   │   │   │   ├── _color-modes.test.scss
-│   │   │   │   ├── _media-query-color-mode-full.test.scss
-│   │   │   │   └── _utilities.test.scss
-│   │   │   ├── sass-true
-│   │   │   │   ├── register.js
-│   │   │   │   └── runner.js
-│   │   │   └── utilities
-│   │   │       └── _api.test.scss
-│   │   ├── utilities
-│   │   │   └── _api.scss
-│   │   └── vendor
-│   │       └── _rfs.scss
 │   ├── components
-│   │   ├── _buttons.scss
-│   │   ├── _call.scss
-│   │   ├── _content.scss
-│   │   ├── _feature.scss
-│   │   ├── _fonts.scss
-│   │   ├── _footer.scss
-│   │   ├── _hamburger.scss
-│   │   ├── _header.scss
-│   │   ├── _intro-image.scss
-│   │   ├── _intro.scss
-│   │   ├── _logo.scss
-│   │   ├── _main-menu-mobile.scss
-│   │   ├── _main-menu.scss
-│   │   ├── _page.scss
-│   │   ├── _social.scss
-│   │   ├── _strip.scss
-│   │   ├── _sub-footer.scss
-│   │   ├── _title.scss
-│   │   └── _type.scss
 │   ├── libraries
-│   │   └── hamburgers
-│   │       ├── _base.scss
-│   │       ├── hamburgers.scss
-│   │       └── types
-│   │           ├── _3dx-r.scss
-│   │           ├── _3dx.scss
-│   │           ├── _3dxy-r.scss
-│   │           ├── _3dxy.scss
-│   │           ├── _3dy-r.scss
-│   │           ├── _3dy.scss
-│   │           ├── _arrow-r.scss
-│   │           ├── _arrow.scss
-│   │           ├── _arrowalt-r.scss
-│   │           ├── _arrowalt.scss
-│   │           ├── _arrowturn-r.scss
-│   │           ├── _arrowturn.scss
-│   │           ├── _boring.scss
-│   │           ├── _collapse-r.scss
-│   │           ├── _collapse.scss
-│   │           ├── _elastic-r.scss
-│   │           ├── _elastic.scss
-│   │           ├── _emphatic-r.scss
-│   │           ├── _emphatic.scss
-│   │           ├── _minus.scss
-│   │           ├── _slider-r.scss
-│   │           ├── _slider.scss
-│   │           ├── _spin-r.scss
-│   │           ├── _spin.scss
-│   │           ├── _spring-r.scss
-│   │           ├── _spring.scss
-│   │           ├── _squeeze.scss
-│   │           ├── _stand-r.scss
-│   │           ├── _stand.scss
-│   │           ├── _vortex-r.scss
-│   │           └── _vortex.scss
 │   └── pages
-│       ├── _page-home.scss
-│       ├── _page-teams.scss
-│       └── _page-tech.scss
 ├── _site
 │   ├── 404.html
 │   ├── CNAME
 │   ├── about
-│   │   └── index.html
 │   ├── account_delete.md
 │   ├── assets
-│   │   ├── css
-│   │   │   ├── custom.css
-│   │   │   ├── style.css
-│   │   │   └── style.css.map
-│   │   ├── fonts
-│   │   │   └── playfair-display.woff2
-│   │   ├── js
-│   │   │   ├── mathjax-script-type.js
-│   │   │   └── scripts.js
-│   │   ├── qv_database
-│   │   │   ├── generate_qv_database.sh
-│   │   │   ├── qv_acmg_sf_v3_3_20250828.yaml
-│   │   │   ├── qv_acmg_sf_v3_3_20250828_json.yaml
-│   │   │   ├── qv_acmg_sf_v3_3_prompt.txt
-│   │   │   └── qv_acmg_svnindel_criteria_20250225.yaml
-│   │   ├── qv_submission
-│   │   │   └── index.html
-│   │   ├── release
-│   │   │   ├── founding_charter
-│   │   │   │   └── latest
-│   │   │   │       └── founding_charter.pdf
-│   │   │   ├── mendelian_disease_interpretation
-│   │   │   │   └── latest
-│   │   │   │       └── mendelian_disease_interpretation_v1.pdf
-│   │   │   ├── release_1.pdf
-│   │   │   ├── sga_errs
-│   │   │   │   └── latest
-│   │   │   │       ├── sga_errs_1.0
-│   │   │   │       │   └── index.html
-│   │   │   │       └── sga_errs_1.0.pdf
-│   │   │   ├── sga_qem
-│   │   │   │   └── latest
-│   │   │   │       ├── sga_qem.pdf
-│   │   │   │       ├── sga_qem_1.0
-│   │   │   │       │   └── index.html
-│   │   │   │       └── sga_qem_1.0.pdf
-│   │   │   └── verifiable_infrastructure_pillars
-│   │   │       └── latest
-│   │   │           └── verifiable_infrastructure_pillars.pdf
-│   │   └── submission_mailing_list
-│   │       └── index.html
 │   ├── auth
-│   │   ├── callback.html
-│   │   └── start.html
 │   ├── calendar
-│   │   └── index.html
 │   ├── ceopage
-│   │   └── index.html
 │   ├── contact
-│   │   └── index.html
 │   ├── de
-│   │   ├── 404.html
-│   │   ├── CNAME
-│   │   ├── about
-│   │   │   └── index.html
-│   │   ├── account_delete.md
-│   │   ├── assets
-│   │   │   ├── css
-│   │   │   │   ├── style.css
-│   │   │   │   └── style.css.map
-│   │   │   ├── qv_submission
-│   │   │   │   └── index.html
-│   │   │   ├── release
-│   │   │   │   ├── sga_errs
-│   │   │   │   │   └── latest
-│   │   │   │   │       └── sga_errs_1.0
-│   │   │   │   │           └── index.html
-│   │   │   │   └── sga_qem
-│   │   │   │       └── latest
-│   │   │   │           └── sga_qem_1.0
-│   │   │   │               └── index.html
-│   │   │   └── submission_mailing_list
-│   │   │       └── index.html
-│   │   ├── auth
-│   │   │   ├── callback.html
-│   │   │   └── start.html
-│   │   ├── calendar
-│   │   │   └── index.html
-│   │   ├── ceopage
-│   │   │   └── index.html
-│   │   ├── contact
-│   │   │   └── index.html
-│   │   ├── design_and_marketing_handbook_writing.txt
-│   │   ├── design_sga_house_style.md
-│   │   ├── index.html
-│   │   ├── jek.sh
-│   │   ├── kill_serve.sh
-│   │   ├── links
-│   │   │   └── index.html
-│   │   ├── login
-│   │   │   └── index.html
-│   │   ├── member
-│   │   │   └── index.html
-│   │   ├── member_cloud
-│   │   │   └── index.html
-│   │   ├── members
-│   │   │   └── index.html
-│   │   ├── pages
-│   │   │   ├── design_project_qv_evidence_flag
-│   │   │   │   └── index.html
-│   │   │   ├── qe_report_survey
-│   │   │   │   ├── README.md
-│   │   │   │   ├── evidence_interpretation_rules_e7af8e5dc03accac17b690d244995afa.html
-│   │   │   │   ├── index_1e3c4ac1ad057270ca1a9add596c2894.html
-│   │   │   │   ├── index_28aa19666729a64aeb8cbd39beefc70d.html
-│   │   │   │   ├── index_4d4ad1eab20b95b7c3f6197cd533fb1e.html
-│   │   │   │   ├── index_f930f16f53692b39808fd64d5973f10a.html
-│   │   │   │   ├── index_test.html
-│   │   │   │   ├── jotform_collection
-│   │   │   │   │   ├── index_1e3c4ac1ad057270ca1a9add596c2894.html
-│   │   │   │   │   ├── index_28aa19666729a64aeb8cbd39beefc70d.html
-│   │   │   │   │   ├── index_4d4ad1eab20b95b7c3f6197cd533fb1e.html
-│   │   │   │   │   ├── index_f930f16f53692b39808fd64d5973f10a.html
-│   │   │   │   │   └── index_test.html
-│   │   │   │   ├── power_calculation.R
-│   │   │   │   ├── questions.md
-│   │   │   │   ├── questions.txt
-│   │   │   │   ├── setup.sh
-│   │   │   │   └── style.css
-│   │   │   ├── qv_builder
-│   │   │   │   └── index.html
-│   │   │   ├── sga_errs
-│   │   │   │   └── index.html
-│   │   │   ├── sga_qem
-│   │   │   │   └── index.html
-│   │   │   └── three_pillars
-│   │   │       └── index.html
-│   │   ├── partnerships
-│   │   │   └── index.html
-│   │   ├── profile
-│   │   │   └── index.html
-│   │   ├── publications
-│   │   │   └── index.html
-│   │   ├── release
-│   │   │   └── etherial-precision
-│   │   │       └── index.html
-│   │   ├── releases
-│   │   │   └── index.html
-│   │   ├── robots.txt
-│   │   ├── shareholder_letters
-│   │   │   └── 2025_letter_to_shareholders
-│   │   │       └── index.html
-│   │   ├── sitemap.xml
-│   │   ├── sql
-│   │   │   ├── Screenshot\ 2025-11-06\ at\ 16.22.04.png
-│   │   │   └── database_sql.txt
-│   │   ├── src
-│   │   │   ├── basic_corpus.txt
-│   │   │   ├── member_cloud.R
-│   │   │   ├── member_cloud.png
-│   │   │   ├── quick_dev.sh
-│   │   │   └── sync_relseases.sh
-│   │   ├── team
-│   │   │   ├── bill-mcdonald.md
-│   │   │   ├── dylan-lawless
-│   │   │   │   └── index.html
-│   │   │   └── index.html
-│   │   ├── technologies
-│   │   │   ├── agent.md
-│   │   │   ├── dante.md
-│   │   │   ├── guru.md
-│   │   │   ├── iei_genetics
-│   │   │   │   └── index.html
-│   │   │   ├── index.html
-│   │   │   ├── panelAppRexAi
-│   │   │   │   └── index.html
-│   │   │   ├── panelAppRexAi_shinyapp.md
-│   │   │   ├── quant
-│   │   │   │   └── index.html
-│   │   │   ├── qv_database
-│   │   │   │   └── index.html
-│   │   │   ├── statistical_genomics.md
-│   │   │   └── wgs.md
-│   │   └── temp
 │   ├── design_and_marketing_handbook_writing.txt
 │   ├── design_sga_house_style.md
 │   ├── fr
-│   │   ├── 404.html
-│   │   ├── CNAME
-│   │   ├── about
-│   │   │   └── index.html
-│   │   ├── account_delete.md
-│   │   ├── assets
-│   │   │   ├── css
-│   │   │   │   ├── style.css
-│   │   │   │   └── style.css.map
-│   │   │   ├── qv_submission
-│   │   │   │   └── index.html
-│   │   │   ├── release
-│   │   │   │   ├── sga_errs
-│   │   │   │   │   └── latest
-│   │   │   │   │       └── sga_errs_1.0
-│   │   │   │   │           └── index.html
-│   │   │   │   └── sga_qem
-│   │   │   │       └── latest
-│   │   │   │           └── sga_qem_1.0
-│   │   │   │               └── index.html
-│   │   │   └── submission_mailing_list
-│   │   │       └── index.html
-│   │   ├── auth
-│   │   │   ├── callback.html
-│   │   │   └── start.html
-│   │   ├── calendar
-│   │   │   └── index.html
-│   │   ├── ceopage
-│   │   │   └── index.html
-│   │   ├── contact
-│   │   │   └── index.html
-│   │   ├── design_and_marketing_handbook_writing.txt
-│   │   ├── design_sga_house_style.md
-│   │   ├── index.html
-│   │   ├── jek.sh
-│   │   ├── kill_serve.sh
-│   │   ├── links
-│   │   │   └── index.html
-│   │   ├── login
-│   │   │   └── index.html
-│   │   ├── member
-│   │   │   └── index.html
-│   │   ├── member_cloud
-│   │   │   └── index.html
-│   │   ├── members
-│   │   │   └── index.html
-│   │   ├── pages
-│   │   │   ├── design_project_qv_evidence_flag
-│   │   │   │   └── index.html
-│   │   │   ├── qe_report_survey
-│   │   │   │   ├── README.md
-│   │   │   │   ├── evidence_interpretation_rules_e7af8e5dc03accac17b690d244995afa.html
-│   │   │   │   ├── index_1e3c4ac1ad057270ca1a9add596c2894.html
-│   │   │   │   ├── index_28aa19666729a64aeb8cbd39beefc70d.html
-│   │   │   │   ├── index_4d4ad1eab20b95b7c3f6197cd533fb1e.html
-│   │   │   │   ├── index_f930f16f53692b39808fd64d5973f10a.html
-│   │   │   │   ├── index_test.html
-│   │   │   │   ├── jotform_collection
-│   │   │   │   │   ├── index_1e3c4ac1ad057270ca1a9add596c2894.html
-│   │   │   │   │   ├── index_28aa19666729a64aeb8cbd39beefc70d.html
-│   │   │   │   │   ├── index_4d4ad1eab20b95b7c3f6197cd533fb1e.html
-│   │   │   │   │   ├── index_f930f16f53692b39808fd64d5973f10a.html
-│   │   │   │   │   └── index_test.html
-│   │   │   │   ├── power_calculation.R
-│   │   │   │   ├── questions.md
-│   │   │   │   ├── questions.txt
-│   │   │   │   ├── setup.sh
-│   │   │   │   └── style.css
-│   │   │   ├── qv_builder
-│   │   │   │   └── index.html
-│   │   │   ├── sga_errs
-│   │   │   │   └── index.html
-│   │   │   ├── sga_qem
-│   │   │   │   └── index.html
-│   │   │   └── three_pillars
-│   │   │       └── index.html
-│   │   ├── partnerships
-│   │   │   └── index.html
-│   │   ├── profile
-│   │   │   └── index.html
-│   │   ├── publications
-│   │   │   └── index.html
-│   │   ├── release
-│   │   │   └── etherial-precision
-│   │   │       └── index.html
-│   │   ├── releases
-│   │   │   └── index.html
-│   │   ├── robots.txt
-│   │   ├── shareholder_letters
-│   │   │   └── 2025_letter_to_shareholders
-│   │   │       └── index.html
-│   │   ├── sitemap.xml
-│   │   ├── sql
-│   │   │   ├── Screenshot\ 2025-11-06\ at\ 16.22.04.png
-│   │   │   └── database_sql.txt
-│   │   ├── src
-│   │   │   ├── basic_corpus.txt
-│   │   │   ├── member_cloud.R
-│   │   │   ├── member_cloud.png
-│   │   │   ├── quick_dev.sh
-│   │   │   └── sync_relseases.sh
-│   │   ├── team
-│   │   │   ├── bill-mcdonald.md
-│   │   │   ├── dylan-lawless
-│   │   │   │   └── index.html
-│   │   │   └── index.html
-│   │   ├── technologies
-│   │   │   ├── agent.md
-│   │   │   ├── dante.md
-│   │   │   ├── guru.md
-│   │   │   ├── iei_genetics
-│   │   │   │   └── index.html
-│   │   │   ├── index.html
-│   │   │   ├── panelAppRexAi
-│   │   │   │   └── index.html
-│   │   │   ├── panelAppRexAi_shinyapp.md
-│   │   │   ├── quant
-│   │   │   │   └── index.html
-│   │   │   ├── qv_database
-│   │   │   │   └── index.html
-│   │   │   ├── statistical_genomics.md
-│   │   │   └── wgs.md
-│   │   └── temp
 │   ├── images
-│   │   ├── android-chrome-192x192.png
-│   │   ├── android-chrome-512x512.png
-│   │   ├── apple-touch-icon.png
-│   │   ├── favicon-16x16.png
-│   │   ├── favicon-32x32.png
-│   │   ├── favicon.ico
-│   │   ├── features
-│   │   │   ├── noun_3d\ modeling_1885342.svg
-│   │   │   ├── noun_The\ Process_1885341.svg
-│   │   │   └── noun_branding_1885335.svg
-│   │   ├── illustrations
-│   │   │   ├── pointing.svg
-│   │   │   └── reading.svg
-│   │   ├── logo
-│   │   │   ├── logo_v0.svg
-│   │   │   ├── logo_v1.svg
-│   │   │   ├── logo_v2.png
-│   │   │   └── logo_v2.svg
-│   │   ├── sga_landing_image_1_upscale_compressed.png
-│   │   ├── sga_landing_image_2_upscale_compressed_trim.png
-│   │   ├── sga_qv_es_A.png
-│   │   ├── site.webmanifest
-│   │   ├── social
-│   │   │   ├── discord.svg
-│   │   │   ├── email.svg
-│   │   │   ├── facebook.svg
-│   │   │   ├── github.svg
-│   │   │   ├── instagram.svg
-│   │   │   └── twitter.svg
-│   │   ├── swisspedhealth_pipedev.png
-│   │   └── three_pillars.png
 │   ├── index.html
 │   ├── it
-│   │   ├── 404.html
-│   │   ├── CNAME
-│   │   ├── about
-│   │   │   └── index.html
-│   │   ├── account_delete.md
-│   │   ├── assets
-│   │   │   ├── css
-│   │   │   │   ├── style.css
-│   │   │   │   └── style.css.map
-│   │   │   ├── qv_submission
-│   │   │   │   └── index.html
-│   │   │   ├── release
-│   │   │   │   ├── sga_errs
-│   │   │   │   │   └── latest
-│   │   │   │   │       └── sga_errs_1.0
-│   │   │   │   │           └── index.html
-│   │   │   │   └── sga_qem
-│   │   │   │       └── latest
-│   │   │   │           └── sga_qem_1.0
-│   │   │   │               └── index.html
-│   │   │   └── submission_mailing_list
-│   │   │       └── index.html
-│   │   ├── auth
-│   │   │   ├── callback.html
-│   │   │   └── start.html
-│   │   ├── calendar
-│   │   │   └── index.html
-│   │   ├── ceopage
-│   │   │   └── index.html
-│   │   ├── contact
-│   │   │   └── index.html
-│   │   ├── design_and_marketing_handbook_writing.txt
-│   │   ├── design_sga_house_style.md
-│   │   ├── index.html
-│   │   ├── jek.sh
-│   │   ├── kill_serve.sh
-│   │   ├── links
-│   │   │   └── index.html
-│   │   ├── login
-│   │   │   └── index.html
-│   │   ├── member
-│   │   │   └── index.html
-│   │   ├── member_cloud
-│   │   │   └── index.html
-│   │   ├── members
-│   │   │   └── index.html
-│   │   ├── pages
-│   │   │   ├── design_project_qv_evidence_flag
-│   │   │   │   └── index.html
-│   │   │   ├── qe_report_survey
-│   │   │   │   ├── README.md
-│   │   │   │   ├── evidence_interpretation_rules_e7af8e5dc03accac17b690d244995afa.html
-│   │   │   │   ├── index_1e3c4ac1ad057270ca1a9add596c2894.html
-│   │   │   │   ├── index_28aa19666729a64aeb8cbd39beefc70d.html
-│   │   │   │   ├── index_4d4ad1eab20b95b7c3f6197cd533fb1e.html
-│   │   │   │   ├── index_f930f16f53692b39808fd64d5973f10a.html
-│   │   │   │   ├── index_test.html
-│   │   │   │   ├── jotform_collection
-│   │   │   │   │   ├── index_1e3c4ac1ad057270ca1a9add596c2894.html
-│   │   │   │   │   ├── index_28aa19666729a64aeb8cbd39beefc70d.html
-│   │   │   │   │   ├── index_4d4ad1eab20b95b7c3f6197cd533fb1e.html
-│   │   │   │   │   ├── index_f930f16f53692b39808fd64d5973f10a.html
-│   │   │   │   │   └── index_test.html
-│   │   │   │   ├── power_calculation.R
-│   │   │   │   ├── questions.md
-│   │   │   │   ├── questions.txt
-│   │   │   │   ├── setup.sh
-│   │   │   │   └── style.css
-│   │   │   ├── qv_builder
-│   │   │   │   └── index.html
-│   │   │   ├── sga_errs
-│   │   │   │   └── index.html
-│   │   │   ├── sga_qem
-│   │   │   │   └── index.html
-│   │   │   └── three_pillars
-│   │   │       └── index.html
-│   │   ├── partnerships
-│   │   │   └── index.html
-│   │   ├── profile
-│   │   │   └── index.html
-│   │   ├── publications
-│   │   │   └── index.html
-│   │   ├── release
-│   │   │   └── etherial-precision
-│   │   │       └── index.html
-│   │   ├── releases
-│   │   │   └── index.html
-│   │   ├── robots.txt
-│   │   ├── shareholder_letters
-│   │   │   └── 2025_letter_to_shareholders
-│   │   │       └── index.html
-│   │   ├── sitemap.xml
-│   │   ├── sql
-│   │   │   ├── Screenshot\ 2025-11-06\ at\ 16.22.04.png
-│   │   │   └── database_sql.txt
-│   │   ├── src
-│   │   │   ├── basic_corpus.txt
-│   │   │   ├── member_cloud.R
-│   │   │   ├── member_cloud.png
-│   │   │   ├── quick_dev.sh
-│   │   │   └── sync_relseases.sh
-│   │   ├── team
-│   │   │   ├── bill-mcdonald.md
-│   │   │   ├── dylan-lawless
-│   │   │   │   └── index.html
-│   │   │   └── index.html
-│   │   ├── technologies
-│   │   │   ├── agent.md
-│   │   │   ├── dante.md
-│   │   │   ├── guru.md
-│   │   │   ├── iei_genetics
-│   │   │   │   └── index.html
-│   │   │   ├── index.html
-│   │   │   ├── panelAppRexAi
-│   │   │   │   └── index.html
-│   │   │   ├── panelAppRexAi_shinyapp.md
-│   │   │   ├── quant
-│   │   │   │   └── index.html
-│   │   │   ├── qv_database
-│   │   │   │   └── index.html
-│   │   │   ├── statistical_genomics.md
-│   │   │   └── wgs.md
-│   │   └── temp
 │   ├── jek.sh
 │   ├── kill_serve.sh
 │   ├── links
-│   │   └── index.html
 │   ├── login
-│   │   └── index.html
 │   ├── member
-│   │   └── index.html
 │   ├── member_cloud
-│   │   └── index.html
 │   ├── members
-│   │   └── index.html
 │   ├── pages
-│   │   ├── design_project_qv_evidence_flag
-│   │   │   └── index.html
-│   │   ├── qe_report_survey
-│   │   │   ├── README.md
-│   │   │   ├── evidence_interpretation_rules_e7af8e5dc03accac17b690d244995afa.html
-│   │   │   ├── index_1e3c4ac1ad057270ca1a9add596c2894.html
-│   │   │   ├── index_28aa19666729a64aeb8cbd39beefc70d.html
-│   │   │   ├── index_4d4ad1eab20b95b7c3f6197cd533fb1e.html
-│   │   │   ├── index_f930f16f53692b39808fd64d5973f10a.html
-│   │   │   ├── index_test.html
-│   │   │   ├── jotform_collection
-│   │   │   │   ├── index_1e3c4ac1ad057270ca1a9add596c2894.html
-│   │   │   │   ├── index_28aa19666729a64aeb8cbd39beefc70d.html
-│   │   │   │   ├── index_4d4ad1eab20b95b7c3f6197cd533fb1e.html
-│   │   │   │   ├── index_f930f16f53692b39808fd64d5973f10a.html
-│   │   │   │   └── index_test.html
-│   │   │   ├── power_calculation.R
-│   │   │   ├── questions.md
-│   │   │   ├── questions.txt
-│   │   │   ├── setup.sh
-│   │   │   └── style.css
-│   │   ├── qv_builder
-│   │   │   └── index.html
-│   │   ├── sga_errs
-│   │   │   └── index.html
-│   │   ├── sga_qem
-│   │   │   └── index.html
-│   │   └── three_pillars
-│   │       └── index.html
 │   ├── partnerships
-│   │   └── index.html
 │   ├── profile
-│   │   └── index.html
 │   ├── publications
-│   │   └── index.html
 │   ├── release
-│   │   └── etherial-precision
-│   │       └── index.html
 │   ├── releases
-│   │   └── index.html
 │   ├── robots.txt
 │   ├── shareholder_letters
-│   │   └── 2025_letter_to_shareholders
-│   │       └── index.html
 │   ├── sitemap.xml
 │   ├── sql
-│   │   ├── Screenshot\ 2025-11-06\ at\ 16.22.04.png
-│   │   └── database_sql.txt
 │   ├── src
-│   │   ├── basic_corpus.txt
-│   │   ├── member_cloud.R
-│   │   ├── member_cloud.png
-│   │   ├── quick_dev.sh
-│   │   └── sync_relseases.sh
 │   ├── team
-│   │   ├── bill-mcdonald.md
-│   │   ├── dylan-lawless
-│   │   │   └── index.html
-│   │   └── index.html
-│   ├── technologies
-│   │   ├── agent.md
-│   │   ├── dante.md
-│   │   ├── guru.md
-│   │   ├── iei_genetics
-│   │   │   └── index.html
-│   │   ├── index.html
-│   │   ├── panelAppRexAi
-│   │   │   └── index.html
-│   │   ├── panelAppRexAi_shinyapp.md
-│   │   ├── quant
-│   │   │   └── index.html
-│   │   ├── qv_database
-│   │   │   └── index.html
-│   │   ├── statistical_genomics.md
-│   │   └── wgs.md
 │   └── temp
 ├── _team
 │   ├── bill-mcdonald.md
 │   └── dylan-lawless.md
-├── _technologies
-│   ├── agent.md
-│   ├── dante.md
-│   ├── guru.md
-│   ├── iei_genetics.md
-│   ├── panelAppRexAi.md
-│   ├── panelAppRexAi_shinyapp.md
-│   ├── quant.md
-│   ├── qv_database.md
-│   ├── statistical_genomics.md
-│   └── wgs.md
 ├── about.md
 ├── account_delete.md
 ├── assets
 │   ├── css
-│   │   ├── custom.css
-│   │   └── style.scss
 │   ├── fonts
-│   │   └── playfair-display.woff2
 │   ├── js
-│   │   ├── mathjax-script-type.js
-│   │   └── scripts.js
 │   ├── qv_database
-│   │   ├── generate_qv_database.sh
-│   │   ├── qv_acmg_sf_v3_3_20250828.yaml
-│   │   ├── qv_acmg_sf_v3_3_20250828_json.yaml
-│   │   ├── qv_acmg_sf_v3_3_prompt.txt
-│   │   └── qv_acmg_svnindel_criteria_20250225.yaml
 │   ├── qv_submission.md
 │   ├── release
-│   │   ├── founding_charter
-│   │   │   └── latest
-│   │   │       └── founding_charter.pdf
-│   │   ├── mendelian_disease_interpretation
-│   │   │   ├── latest
-│   │   │   │   └── mendelian_disease_interpretation_v1.pdf
-│   │   │   └── v1
-│   │   ├── release_1.pdf
-│   │   ├── sga_errs
-│   │   │   └── latest
-│   │   │       ├── sga_errs_1.0.md
-│   │   │       └── sga_errs_1.0.pdf
-│   │   ├── sga_qem
-│   │   │   └── latest
-│   │   │       ├── sga_qem.pdf
-│   │   │       ├── sga_qem_1.0.md
-│   │   │       └── sga_qem_1.0.pdf
-│   │   └── verifiable_infrastructure_pillars
-│   │       └── latest
-│   │           └── verifiable_infrastructure_pillars.pdf
 │   └── submission_mailing_list.md
 ├── auth
 │   ├── callback.html
@@ -910,28 +126,13 @@
 │   ├── favicon-32x32.png
 │   ├── favicon.ico
 │   ├── features
-│   │   ├── noun_3d\ modeling_1885342.svg
-│   │   ├── noun_The\ Process_1885341.svg
-│   │   └── noun_branding_1885335.svg
 │   ├── illustrations
-│   │   ├── pointing.svg
-│   │   └── reading.svg
 │   ├── logo
-│   │   ├── logo_v0.svg
-│   │   ├── logo_v1.svg
-│   │   ├── logo_v2.png
-│   │   └── logo_v2.svg
 │   ├── sga_landing_image_1_upscale_compressed.png
 │   ├── sga_landing_image_2_upscale_compressed_trim.png
 │   ├── sga_qv_es_A.png
 │   ├── site.webmanifest
 │   ├── social
-│   │   ├── discord.svg
-│   │   ├── email.svg
-│   │   ├── facebook.svg
-│   │   ├── github.svg
-│   │   ├── instagram.svg
-│   │   └── twitter.svg
 │   ├── swisspedhealth_pipedev.png
 │   └── three_pillars.png
 ├── index.md
@@ -946,24 +147,6 @@
 ├── pages
 │   ├── design_project_qv_evidence_flag.md
 │   ├── qe_report_survey
-│   │   ├── README.md
-│   │   ├── evidence_interpretation_rules_e7af8e5dc03accac17b690d244995afa.html
-│   │   ├── index_1e3c4ac1ad057270ca1a9add596c2894.html
-│   │   ├── index_28aa19666729a64aeb8cbd39beefc70d.html
-│   │   ├── index_4d4ad1eab20b95b7c3f6197cd533fb1e.html
-│   │   ├── index_f930f16f53692b39808fd64d5973f10a.html
-│   │   ├── index_test.html
-│   │   ├── jotform_collection
-│   │   │   ├── index_1e3c4ac1ad057270ca1a9add596c2894.html
-│   │   │   ├── index_28aa19666729a64aeb8cbd39beefc70d.html
-│   │   │   ├── index_4d4ad1eab20b95b7c3f6197cd533fb1e.html
-│   │   │   ├── index_f930f16f53692b39808fd64d5973f10a.html
-│   │   │   └── index_test.html
-│   │   ├── power_calculation.R
-│   │   ├── questions.md
-│   │   ├── questions.txt
-│   │   ├── setup.sh
-│   │   └── style.css
 │   ├── qv_builder.md
 │   ├── sga_errs.md
 │   ├── sga_qem.md
@@ -984,7 +167,6 @@
 │   ├── quick_dev.sh
 │   └── sync_relseases.sh
 ├── team.md
-├── technologies.md
 └── temp
 
-259 directories, 728 files
+59 directories, 110 files
