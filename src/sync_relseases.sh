@@ -29,3 +29,11 @@ rsync -avz -P \
 rsync -avz -P \
   ~/so/web/swissgenomicsassociation/sga_qem/html/sga_qem_1.0.md \
     assets/release/sga_qem/latest/
+
+rsync -avz -P \
+  ~/so/web/swissgenomicsassociation/sga_qvss/latex/sga_qvss_1.0.pdf \
+    assets/release/sga_qvss/latest/
+
+rsync -avz -P \
+  ~/so/web/swissgenomicsassociation/sga_qvss/html/sga_qvss_1.0.md \
+    assets/release/sga_qvss/latest/

@@ -13,10 +13,20 @@
 
 ## Frühere Veröffentlichungen
 
+* **Qualifying Variant Set Standard (QVSS)**: Ein normativer Standard zur portablen, überprüfbaren und wiederverwendbaren Darstellung regelbasierter Kriterien für die Qualifikation von Datensätzen genetischer Variation.\
+[Über](/de/pages/sga_qvss) |
+[PDF]({{ '/assets/release/sga_qvss/latest/sga_qvss_1.0.pdf' }}){: target="_blank"} |
+[HTML]({{ '/assets/release/sga_qvss/latest/sga_qvss_1.0' }}){: target="_blank"}
+
 * **Qualifying Evidence Matrix (QEM) Standard für verifizierbare Evidenz**: Ein normativer Standard zur Definition einer minimalen, interoperablen Darstellung verifizierbarer Evidenz, abgeleitet aus regelbasierten Bewertungen.\
 [Über](/pages/sga_qem) |
 [PDF (EN)]({{ '/assets/release/sga_qem/latest/sga_qem_1.0.pdf' }}){: target="_blank"} |
 [HTML (EN)]({{ '/assets/release/sga_qem/latest/sga_qem_1.0' }}){: target="_blank"}
+
+* **Evidence Ratio Reporting Standard (ERRS)**: Ein normativer Berichtsstandard, der ein minimales und kohärentes Schema für die Berichterstattung wahrscheinlichkeitsbasierter statistischer Evidenz über heterogene Analysen hinweg definiert.\
+[Über](/de/pages/sga_errs) |
+[PDF (EN)]({{ '/assets/release/sga_errs/latest/sga_errs_1.0.pdf' }}){: target="_blank"} |
+[HTML (EN)]({{ '/assets/release/sga_errs/latest/sga_errs_1.0' }}){: target="_blank"}
 
 * **Gründungsurkunde**: Definition der gemeinsamen Grundlage für verantwortungsvolle, kollaborative und widerstandsfähige Genomik im öffentlichen Interesse.\
 [PDF (EN)]({{ '/assets/release/founding_charter/latest/founding_charter.pdf' | relative_url }}){: target="_blank"} |
