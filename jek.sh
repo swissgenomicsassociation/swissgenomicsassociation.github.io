@@ -2,6 +2,9 @@
 # bundle install
 
 sh src/sync_relseases.sh
+sh src/sync_events.sh
+sh src/sync_awards.sh
+
 bundle exec jekyll serve &
 sleep 3
 
