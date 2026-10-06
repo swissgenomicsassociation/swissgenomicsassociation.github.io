@@ -1,6 +1,28 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Jekyll
 _site/
 .jekyll-cache/
 .jekyll-metadata
 .sass-cache/
-.DS_Store
+
+# Bundler
+.bundle/
+vendor/bundle/
+
+# Temporary directories
+tmp/
+temp/
+**/tmp/
+**/temp/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
 node_modules/
