@@ -29,6 +29,7 @@
 │   │   ├── members.md
 │   │   ├── partnerships.md
 │   │   ├── releases.md
+│   │   ├── releases_draft.md
 │   │   ├── sga_qvss.md
 │   │   └── three_pillars.md
 │   ├── de.yml
@@ -47,6 +48,7 @@
 │   │   ├── members.md
 │   │   ├── partnerships.md
 │   │   ├── releases.md
+│   │   ├── releases_drafts.md
 │   │   ├── sga_errs.md
 │   │   ├── sga_qem.md
 │   │   ├── sga_qvss.md
@@ -67,6 +69,7 @@
 │   │   ├── members.md
 │   │   ├── partnerships.md
 │   │   ├── releases.md
+│   │   ├── releases_drafts.md
 │   │   ├── sga_qvss.md
 │   │   └── three_pillars.md
 │   ├── fr.yml
@@ -85,6 +88,7 @@
 │   │   ├── members.md
 │   │   ├── partnerships.md
 │   │   ├── releases.md
+│   │   ├── releases_drafts.md
 │   │   ├── sga_qvss.md
 │   │   └── three_pillars.md
 │   ├── it.yml
@@ -119,7 +123,6 @@
 │   ├── tech.html
 │   └── technologies.html
 ├── _release
-│   └── etherial_precision.md
 ├── _sass
 │   ├── _bootstrap-variables.scss
 │   ├── bootstrap
@@ -347,6 +350,10 @@
 │   ├── auth
 │   │   ├── callback.html
 │   │   └── start.html
+│   ├── awards
+│   │   └── 2027
+│   │       └── open-omics
+│   │           └── index.html
 │   ├── calendar
 │   │   └── index.html
 │   ├── ceopage
@@ -383,6 +390,10 @@
 │   │   ├── auth
 │   │   │   ├── callback.html
 │   │   │   └── start.html
+│   │   ├── awards
+│   │   │   └── 2027
+│   │   │       └── open-omics
+│   │   │           └── index.html
 │   │   ├── calendar
 │   │   │   └── index.html
 │   │   ├── ceopage
@@ -391,6 +402,10 @@
 │   │   │   └── index.html
 │   │   ├── design_and_marketing_handbook_writing.txt
 │   │   ├── design_sga_house_style.md
+│   │   ├── events
+│   │   │   └── 2027
+│   │   │       └── seminar-1
+│   │   │           └── index.html
 │   │   ├── index.html
 │   │   ├── jek.sh
 │   │   ├── kill_serve.sh
@@ -426,8 +441,6 @@
 │   │   │   │   ├── questions.txt
 │   │   │   │   ├── setup.sh
 │   │   │   │   └── style.css
-│   │   │   ├── qv_builder
-│   │   │   │   └── index.html
 │   │   │   ├── sga_errs
 │   │   │   │   └── index.html
 │   │   │   ├── sga_qem
@@ -442,9 +455,6 @@
 │   │   │   └── index.html
 │   │   ├── publications
 │   │   │   └── index.html
-│   │   ├── release
-│   │   │   └── etherial-precision
-│   │   │       └── index.html
 │   │   ├── releases
 │   │   │   └── index.html
 │   │   ├── robots.txt
@@ -457,6 +467,8 @@
 │   │   │   ├── member_cloud.R
 │   │   │   ├── member_cloud.png
 │   │   │   ├── quick_dev.sh
+│   │   │   ├── sync_awards.sh
+│   │   │   ├── sync_events.sh
 │   │   │   └── sync_relseases.sh
 │   │   ├── team
 │   │   │   ├── bill-mcdonald.md
@@ -466,6 +478,10 @@
 │   │   └── temp
 │   ├── design_and_marketing_handbook_writing.txt
 │   ├── design_sga_house_style.md
+│   ├── events
+│   │   └── 2027
+│   │       └── seminar-1
+│   │           └── index.html
 │   ├── fr
 │   │   ├── 404.html
 │   │   ├── CNAME
@@ -496,6 +512,10 @@
 │   │   ├── auth
 │   │   │   ├── callback.html
 │   │   │   └── start.html
+│   │   ├── awards
+│   │   │   └── 2027
+│   │   │       └── open-omics
+│   │   │           └── index.html
 │   │   ├── calendar
 │   │   │   └── index.html
 │   │   ├── ceopage
@@ -504,6 +524,10 @@
 │   │   │   └── index.html
 │   │   ├── design_and_marketing_handbook_writing.txt
 │   │   ├── design_sga_house_style.md
+│   │   ├── events
+│   │   │   └── 2027
+│   │   │       └── seminar-1
+│   │   │           └── index.html
 │   │   ├── index.html
 │   │   ├── jek.sh
 │   │   ├── kill_serve.sh
@@ -539,8 +563,6 @@
 │   │   │   │   ├── questions.txt
 │   │   │   │   ├── setup.sh
 │   │   │   │   └── style.css
-│   │   │   ├── qv_builder
-│   │   │   │   └── index.html
 │   │   │   ├── sga_errs
 │   │   │   │   └── index.html
 │   │   │   ├── sga_qem
@@ -555,9 +577,6 @@
 │   │   │   └── index.html
 │   │   ├── publications
 │   │   │   └── index.html
-│   │   ├── release
-│   │   │   └── etherial-precision
-│   │   │       └── index.html
 │   │   ├── releases
 │   │   │   └── index.html
 │   │   ├── robots.txt
@@ -570,6 +589,8 @@
 │   │   │   ├── member_cloud.R
 │   │   │   ├── member_cloud.png
 │   │   │   ├── quick_dev.sh
+│   │   │   ├── sync_awards.sh
+│   │   │   ├── sync_events.sh
 │   │   │   └── sync_relseases.sh
 │   │   ├── team
 │   │   │   ├── bill-mcdonald.md
@@ -640,6 +661,10 @@
 │   │   ├── auth
 │   │   │   ├── callback.html
 │   │   │   └── start.html
+│   │   ├── awards
+│   │   │   └── 2027
+│   │   │       └── open-omics
+│   │   │           └── index.html
 │   │   ├── calendar
 │   │   │   └── index.html
 │   │   ├── ceopage
@@ -648,6 +673,10 @@
 │   │   │   └── index.html
 │   │   ├── design_and_marketing_handbook_writing.txt
 │   │   ├── design_sga_house_style.md
+│   │   ├── events
+│   │   │   └── 2027
+│   │   │       └── seminar-1
+│   │   │           └── index.html
 │   │   ├── index.html
 │   │   ├── jek.sh
 │   │   ├── kill_serve.sh
@@ -683,8 +712,6 @@
 │   │   │   │   ├── questions.txt
 │   │   │   │   ├── setup.sh
 │   │   │   │   └── style.css
-│   │   │   ├── qv_builder
-│   │   │   │   └── index.html
 │   │   │   ├── sga_errs
 │   │   │   │   └── index.html
 │   │   │   ├── sga_qem
@@ -699,9 +726,6 @@
 │   │   │   └── index.html
 │   │   ├── publications
 │   │   │   └── index.html
-│   │   ├── release
-│   │   │   └── etherial-precision
-│   │   │       └── index.html
 │   │   ├── releases
 │   │   │   └── index.html
 │   │   ├── robots.txt
@@ -714,6 +738,8 @@
 │   │   │   ├── member_cloud.R
 │   │   │   ├── member_cloud.png
 │   │   │   ├── quick_dev.sh
+│   │   │   ├── sync_awards.sh
+│   │   │   ├── sync_events.sh
 │   │   │   └── sync_relseases.sh
 │   │   ├── team
 │   │   │   ├── bill-mcdonald.md
@@ -755,8 +781,6 @@
 │   │   │   ├── questions.txt
 │   │   │   ├── setup.sh
 │   │   │   └── style.css
-│   │   ├── qv_builder
-│   │   │   └── index.html
 │   │   ├── sga_errs
 │   │   │   └── index.html
 │   │   ├── sga_qem
@@ -771,9 +795,6 @@
 │   │   └── index.html
 │   ├── publications
 │   │   └── index.html
-│   ├── release
-│   │   └── etherial-precision
-│   │       └── index.html
 │   ├── releases
 │   │   └── index.html
 │   ├── robots.txt
@@ -786,6 +807,8 @@
 │   │   ├── member_cloud.R
 │   │   ├── member_cloud.png
 │   │   ├── quick_dev.sh
+│   │   ├── sync_awards.sh
+│   │   ├── sync_events.sh
 │   │   └── sync_relseases.sh
 │   ├── team
 │   │   ├── bill-mcdonald.md
@@ -843,11 +866,19 @@
 ├── auth
 │   ├── callback.html
 │   └── start.html
+├── awards
+│   └── 2027
+│       └── open_omics
+│           └── index.md
 ├── calendar.md
 ├── ceopage.md
 ├── contact.md
 ├── design_and_marketing_handbook_writing.txt
 ├── design_sga_house_style.md
+├── events
+│   └── 2027
+│       └── seminar_1
+│           └── index.md
 ├── images
 │   ├── android-chrome-192x192.png
 │   ├── android-chrome-512x512.png
@@ -926,8 +957,10 @@
 │   ├── member_cloud.R
 │   ├── member_cloud.png
 │   ├── quick_dev.sh
+│   ├── sync_awards.sh
+│   ├── sync_events.sh
 │   └── sync_relseases.sh
 ├── team.md
 └── temp
 
-247 directories, 683 files
+265 directories, 698 files

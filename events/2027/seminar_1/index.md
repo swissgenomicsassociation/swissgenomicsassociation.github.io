@@ -18,11 +18,9 @@ lang: en
 ## About
 
 Genomics and multi-omics increasingly connect academia, healthcare, and industry. Yet many of the systems used to generate, analyse, and interpret data still rely on different formats, interfaces, and conventions.
-
 Shared standards can make these systems easier to connect, compare, and verify while allowing each organisation to choose its own methods, software, and commercial model.
 
 This seminar brings together people from across genomics and multi-omics to discuss emerging formats, interfaces, software standards, and evidence structures that create and amplify lasting collective value.
-
 The programme will be intentionally focused, with short invited talks, open discussion, the 2027 Open Omics Awards, and informal networking.
 
 ## Registration
@@ -30,21 +28,22 @@ The programme will be intentionally focused, with short invited talks, open disc
 Registration is required but entry is free.
 We will contact you with more information as the date approaches. 
 
-**Registration here:** <https://forms.gle/G3o32RFVUqow8QLR7>
+Registration here: <https://forms.gle/G3o32RFVUqow8QLR7>
 
 ## Programme
 
 The programme is currently being developed.
 
-* Welcome and state of SGA, 10 minutes
-* Short talk 1, 20 minutes, Q&A
-* Short talk 2, 20 minutes, Q&A
-* Coffee break
-* Short talk 3, 20 minutes, Q&A
-* Short talk 4, 20 minutes, Q&A
-* [2027 Open Omics Awards](/awards/2027/open-omics/), 20 minutes
-* Discussion: priorities for SGA 2027–2028, 30 minutes
-* Informal apéro / networking
+* **14:00 - 14:30** Arrival
+* **14:30 - 14:40** Welcome and introduction
+* **14:40 - 15:00** Short talk 1, Q&A
+* **15:00 - 15:20** Short talk 2, Q&A
+* Break
+* **15:40 - 16:00** [2027 Open Omics Awards](/awards/2027/open-omics/)
+* **16:00 - 16:20** Short talk 3, Q&A
+* **16:20 - 16:40** Short talk 4, Q&A
+* **16:40 - 17:00** Open discussion: priorities for SGA 2027–2028
+* **17:00** Informal apéro / networking
 
 Speaker names, talk titles, and timings will be announced here.
 

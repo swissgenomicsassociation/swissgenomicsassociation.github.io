@@ -8,9 +8,11 @@ lang: en
 
 The Swiss Genomics Association awards recognise contributions that meaningfully advance what the genomics and omics community can achieve and create foundations that others can build upon.
 **Open Omics describes an ecosystem in which knowledge, systems, and products can connect, be understood, and work together across organisations.** It allows companies and institutions to remain free to use their own software, methods, and intellectual property.
+
 For example, a biotechnology company may develop an advanced new genomic product, while hospitals remain uncertain whether they can use or trust its outputs because the formats, evidence structures, or interfaces are incompatible with their own systems. Shared standards can remove that barrier without requiring the company to disclose its proprietary methods.
 
 We therefore seek contributions with lasting collective value. These may include scientific methods, standards, software, infrastructure, reference resources, clinical implementations, interoperability efforts, enabling technologies, or other advances that improve what becomes possible across genomics and omics.
+
 The awards reflect the principles of the [Swiss Genomics Association](https://www.swissgenomicsassociation.ch/): scientific ambition guided by evidence, shared standards, interoperability, responsible implementation, open reflection, and long-term benefit.
 
 ## Awards
