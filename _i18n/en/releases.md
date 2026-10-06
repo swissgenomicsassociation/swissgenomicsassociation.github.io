@@ -28,9 +28,6 @@
 [PDF (EN)]({{ '/assets/release/sga_errs/latest/sga_errs_1.0.pdf' }}){: target="_blank"} | 
 [HTML (EN)]({{ '/assets/release/sga_errs/latest/sga_errs_1.0' }}){: target="_blank"}
 
-* **Founding charter**: Defining the shared foundation for responsible, collaborative, and resilient genomics in the public interest.\
-[PDF (EN)]({{ '/assets/release/founding_charter/latest/founding_charter.pdf' | relative_url }}){: target="_blank"} |
-[Repository](https://github.com/swissgenomicsassociation/founding_charter)
 
 ## Drafts in progress
 

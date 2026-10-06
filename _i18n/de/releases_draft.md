@@ -1,3 +1,6 @@
+* **Gründungsurkunde**: Definition der gemeinsamen Grundlage für verantwortungsvolle, kollaborative und widerstandsfähige Genomik im öffentlichen Interesse.\
+[PDF (EN)]({{ '/assets/release/founding_charter/latest/founding_charter.pdf' | relative_url }}){: target="_blank"} |
+[Repository](https://github.com/swissgenomicsassociation/founding_charter)
 
 * **Leitlinie**: Konsensleitlinie der Schweizerischen Genomik-Vereinigung zur evidenzbasierten Interpretation genomischer Varianten bei mendelischen Erkrankungen.\
 [Über](/de/pages/design_project_qv_evidence_flag) | 

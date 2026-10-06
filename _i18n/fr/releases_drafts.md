@@ -1,3 +1,7 @@
+* **Charte fondatrice** : Définition des bases communes pour une génomique responsable, collaborative et résiliente au service de l’intérêt public.\
+[PDF (EN)]({{ '/assets/release/founding_charter/latest/founding_charter.pdf' | relative_url }}){: target="_blank"} |
+[Repository](https://github.com/swissgenomicsassociation/founding_charter)
+
 * **Directive** : Directive de consensus de l’Association Suisse de Génomique pour l’interprétation fondée sur les preuves des variants génomiques dans les maladies mendéliennes.\
 [À propos](/fr/pages/design_project_qv_evidence_flag) | 
 [PDF (EN)]({{ '/assets/release/mendelian_disease_interpretation/latest/mendelian_disease_interpretation_v1.pdf' | relative_url }}){:target="_blank"} |

@@ -28,10 +28,6 @@
 [PDF (EN)]({{ '/assets/release/sga_errs/latest/sga_errs_1.0.pdf' }}){: target="_blank"} |
 [HTML (EN)]({{ '/assets/release/sga_errs/latest/sga_errs_1.0' }}){: target="_blank"}
 
-* **Gründungsurkunde**: Definition der gemeinsamen Grundlage für verantwortungsvolle, kollaborative und widerstandsfähige Genomik im öffentlichen Interesse.\
-[PDF (EN)]({{ '/assets/release/founding_charter/latest/founding_charter.pdf' | relative_url }}){: target="_blank"} |
-[Repository](https://github.com/swissgenomicsassociation/founding_charter)
-
 ## Entwürfe in Bearbeitung
 
 <div class="draft-notice">

@@ -1,3 +1,7 @@
+* **Carta fondativa**: Definizione delle basi condivise per una genomica responsabile, collaborativa e resiliente nell’interesse pubblico.\
+[PDF (EN)]({{ '/assets/release/founding_charter/latest/founding_charter.pdf' | relative_url }}){: target="_blank"} |
+[Repository](https://github.com/swissgenomicsassociation/founding_charter)
+
 * **Linee guida**: Linee guida di consenso dell’Associazione Svizzera di Genomica per l’interpretazione basata sulle evidenze delle varianti genomiche nelle malattie mendeliane.\
 [Informazioni](/it/pages/design_project_qv_evidence_flag) | 
 [PDF (EN)]({{ '/assets/release/mendelian_disease_interpretation/latest/mendelian_disease_interpretation_v1.pdf' | relative_url }}){:target="_blank"} |
