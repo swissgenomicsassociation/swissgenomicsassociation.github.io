@@ -9,7 +9,7 @@ lang: en
 ## Emerging standards with lasting collective value
 
 **Date:** Wednesday, 12 May 2027  
-**Location:** Zürich
+**Location:** Zürich  
 **Room:** To be announced  
 **Time:** 14:00  
 **Awards:** [2027 Open Omics Awards](/awards/2027/open-omics/)  

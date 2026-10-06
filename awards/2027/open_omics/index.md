@@ -7,9 +7,7 @@ lang: en
 ---
 
 The Swiss Genomics Association awards recognise contributions that meaningfully advance what the genomics and omics community can achieve and create foundations that others can build upon.
-
 **Open Omics describes an ecosystem in which knowledge, systems, and products can connect, be understood, and work together across organisations.** It allows companies and institutions to remain free to use their own software, methods, and intellectual property.
-
 For example, a biotechnology company may develop an advanced new genomic product, while hospitals remain uncertain whether they can use or trust its outputs because the formats, evidence structures, or interfaces are incompatible with their own systems. Shared standards can remove that barrier without requiring the company to disclose its proprietary methods.
 
 We therefore seek contributions with lasting collective value. These may include scientific methods, standards, software, infrastructure, reference resources, clinical implementations, interoperability efforts, enabling technologies, or other advances that improve what becomes possible across genomics and omics.
@@ -57,7 +55,7 @@ Name - Short description - URL
 
 | Stage | Date |
 |---|---|
-| Nominations open | Novemer 2027 |
+| Nominations open | October 2026 |
 | Nominations close |  1 April 2027 |
 | Review and judging | April 2027 |
 | Award recipients announced | 17 April 2027 |
@@ -78,6 +76,8 @@ To be announced.
 
 To be announced.
 
+
+
 ## Principles
 
 SGA awards are guided by several broad considerations:
@@ -89,9 +89,23 @@ SGA awards are guided by several broad considerations:
 - **Quality:** the contribution should be scientifically, technically, or operationally credible.
 - **Foresight:** its value should be considered in terms of where omics needs to progress, not only where the field stands today.
 
-Open access, open-source development, reproducibility, transparency, and shared standards can be important means of achieving these aims. They are valued for the extent to which they strengthen collective progress and allow advances to be understood, adopted, tested, and extended.
+Open access, open-source development, reproducibility, transparency, and shared standards can all contribute to these aims, but none is a requirement in itself. They are valued where they create wider benefit by helping advances to be understood, adopted, tested, connected, or extended across organisations and communities.
 
-Adoption and popularity may provide evidence of value, but they do not determine the award. New or emerging contributions may represent important advances before widespread adoption has occurred.
+Proprietary software, internal methods, and intellectual property may remain private where the contribution still creates clear collective value through its outputs, interfaces, standards, evidence, or other shared foundations.
+
+## Examples
+
+Open Omics contributions can take many forms. Examples might include:
+
+- a company team that publishes clear specifications, APIs, schemas, or technical documentation that allow other organisations to integrate reliably with its products;
+- researchers who publish a new method, standard, or framework whose performance can be evaluated and whose approach can be adopted or extended by others;
+- a clinical or laboratory team that connects genomic analysis with shared healthcare infrastructure through interoperable formats, evidence structures, or interfaces;
+- a sequencing, diagnostics, or hardware manufacturer that publishes the technical standards needed for its platform to work reliably with downstream systems;
+- a non-profit, consortium, or community team that maintains a widely useful database, ontology, reference resource, standard, or service; and
+- contributors who establish common identifiers, formats, interfaces, or conventions that allow independent systems to exchange information reliably.
+
+We encourage nominations that interpret Open Omics broadly and identify less obvious contributions with lasting collective value.
+The contribution should be visible enough for its wider value to be assessed. Proprietary software, internal methods, and intellectual property may remain private.
 
 ## Judging
 
